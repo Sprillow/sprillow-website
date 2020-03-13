@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import curvedShadow from "../images/curved-shadow.svg"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const MAX_WIDTH = 960
@@ -12,16 +11,19 @@ const MAX_WIDTH = 960
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-
-    <img
+    <div
       style={{
-        top: 0,
-        position: "absolute",
         zIndex: -1,
-        width: "170vw",
+        position: "absolute",
+        top: "0",
+        width: "100vw",
+        height: "360vh",
         maxWidth: "none",
+        backgroundImage: `url(${curvedShadow})`,
+        backgroundSize: "auto 100%",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "30% -300px",
       }}
-      src={curvedShadow}
     />
 
     {/* HERO */}
@@ -48,7 +50,7 @@ const IndexPage = () => (
     <div
       style={{
         height: "100vh",
-        backgroundColor: "pink",
+        // backgroundColor: "pink",
         margin: `0 auto`,
         maxWidth: MAX_WIDTH,
       }}

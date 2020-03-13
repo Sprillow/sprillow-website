@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import curvedShadow from "../images/curved-shadow.svg"
+
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
@@ -10,6 +12,17 @@ const MAX_WIDTH = 960
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+
+    <img
+      style={{
+        top: 0,
+        position: "absolute",
+        zIndex: -1,
+        width: "170vw",
+        maxWidth: "none",
+      }}
+      src={curvedShadow}
+    />
 
     {/* HERO */}
     <div

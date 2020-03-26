@@ -1,0 +1,522 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Circular-STD Font */
+
+@font-face {
+  font-family: "CircularStd-Book";
+  src: url("../fonts/circular-std/CircularStd-Book.woff2") format("woff2"),
+    url("../fonts/circular-std/CircularStd-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CircularStd-Medium";
+  src: url("../fonts/circular-std/CircularStd-Medium.ttf") format("woff2"),
+    url("../fonts/circular-std/CircularStd-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CircularStd-Bold";
+  src: url("../fonts/circular-std/CircularStd-Bold.ttf") format("woff2"),
+    url("../fonts/circular-std/CircularStd-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CircularStd-Black";
+  src: url("../fonts/circular-std/CircularStd-Black.woff2") format("woff2"),
+    url("../fonts/circular-std/CircularStd-Black.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font: normal 2.5rem "CircularStd-Bold";
+  color: #ffffff;
+}
+
+h2 {
+  font: normal 1.5rem "CircularStd-Medium";
+}
+
+h3 {
+  font: normal 1rem "CircularStd-Medium";
+  color: #b7b7b7;
+}
+
+p {
+  font: normal 0.9rem "CircularStd-Book";
+  line-height: 1.5rem;
+}
+
+.background-shape {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 296vh;
+  max-width: none;
+  background-image: url("../images/curved-shadow.svg");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: 30% -300px;
+}
+
+.contact-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 0px;
+  width: 60px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* SECTIONS */
+
+$max-width: 960px;
+$section-padding: 60px 20px 0;
+
+.section-wrapper {
+  height: 100vh;
+}
+
+.section {
+  max-width: $max-width;
+  padding: $section-padding;
+  margin: 0 auto;
+  --vh: 1vh;
+  box-sizing: border-box;
+}
+
+.section-heading {
+  margin-bottom: 60px;
+}
+
+/* Hero Section */
+
+.hero {
+  .hero-text {
+    padding-top: 10rem;
+  }
+
+  .hero-heading {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .hero-sub-heading {
+    color: hsla(0, 0%, 100%, 0.69);
+    font-family: "CircularStd-Book";
+    font-size: 1.2rem;
+    line-height: 2rem;
+    max-width: 500px;
+  }
+
+  .hero-sub-heading span {
+    position: relative;
+  }
+
+  .hero-sub-heading span::after {
+    background-image: url("../images/underline-curly.svg");
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 44px;
+    content: "";
+    width: 126px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.hero-scroll-section {
+  position: fixed;
+  bottom: 10px;
+  left: calc(50% - 20px);
+  width: 100vw;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+.hero-scroll-section.hide-scroll {
+  opacity: 0;
+}
+
+.mouse-icon {
+  bottom: 0;
+  width: 40px;
+  opacity: 1;
+  // transition: opacity 0.3s ease;
+  cursor: pointer;
+
+  animation: {
+    name: MoveUpDown;
+    iteration-count: infinite;
+    duration: 2s;
+    timing-function: ease-in-out;
+  }
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -20px);
+  }
+}
+
+/* What We Do Section */
+
+.line-curly-divider {
+  width: 100vw;
+}
+
+.what-we-do {
+  .what-we-do-diagram {
+    position: relative;
+    margin: auto;
+    height: 70vh;
+    display: flex;
+  }
+
+  .what-we-do-step-description {
+    max-width: 20vw;
+    position: absolute;
+    left: 39%;
+    top: 32%;
+    z-index: 2;
+  }
+
+  .what-we-do-step-title {
+    position: absolute;
+    width: 7rem;
+    transition: color 0.1s ease;
+    cursor: pointer;
+    z-index: 2;
+
+    &:hover {
+      color: pink;
+    }
+
+    &.top-left {
+      left: 16%;
+      top: 15%;
+    }
+
+    &.top-right {
+      right: 16%;
+      top: 15%;
+    }
+
+    &.bottom-right {
+      right: 16%;
+      bottom: 10%;
+    }
+
+    &.bottom-left {
+      left: 16%;
+      bottom: 10%;
+    }
+  }
+
+  .discovery-subcategories,
+  .design-subcategories,
+  .delivery-subcategories,
+  .feedback-subcategories {
+    z-index: 1;
+  }
+
+  .discovery-subcategory {
+    position: absolute;
+    font: normal 0.8rem "CircularStd-Book";
+    line-height: 1.5rem;
+    color: #f4ffed;
+    opacity: 0.8;
+
+    &.first {
+      top: 4%;
+      left: 10%;
+    }
+
+    &.second {
+      top: 12%;
+      left: 5%;
+    }
+
+    &.third {
+      top: 20%;
+      left: 5%;
+    }
+
+    &.fourth {
+      top: 28%;
+      left: 10%;
+    }
+  }
+
+  .design-subcategory {
+    position: absolute;
+    font: normal 0.8rem "CircularStd-Book";
+    line-height: 1.5rem;
+    color: #f4ffed;
+    opacity: 0.8;
+
+    &.first {
+      top: 5%;
+      right: 15%;
+    }
+
+    &.second {
+      top: 15%;
+      right: 10%;
+    }
+
+    &.third {
+      top: 25%;
+      right: 15%;
+    }
+  }
+
+  .delivery-subcategory {
+    position: absolute;
+    font: normal 0.8rem "CircularStd-Book";
+    line-height: 1.5rem;
+    color: #f4ffed;
+    opacity: 0.8;
+
+    &.first {
+      bottom: 20%;
+      right: 4%;
+    }
+
+    &.second {
+      bottom: 10%;
+      right: 2%;
+    }
+
+    &.third {
+      bottom: 1%;
+      right: 4%;
+    }
+  }
+
+  .feedback-subcategory {
+    position: absolute;
+    font: normal 0.8rem "CircularStd-Book";
+    line-height: 1.5rem;
+    color: #f4ffed;
+    opacity: 0.8;
+
+    &.first {
+      bottom: 20%;
+      left: 8%;
+    }
+
+    &.second {
+      bottom: 10%;
+      left: 6%;
+    }
+
+    &.third {
+      bottom: 1%;
+      left: 8%;
+    }
+  }
+}
+
+// #what-we-do-circle
+//   #Ellipse_24:hover
+//   ~ #what-we-do-circle
+//   #masking_green_circle-2 {
+//   fill: pink;
+//   fill-opacity: 0.4;
+// }
+
+// path#masking_green_circle-2.what-we-do-circle-2 {
+//   fill: pink;
+//   fill-opacity: 0.4;
+// }
+
+// #what-we-do-circle #earth:hover ~ #masking_green_circle-4 {
+//   fill: pink;
+//   fill-opacity: 0.4;
+// }
+
+#what-we-do-circle #earth,
+#what-we-do-circle #ellipse-honeybee {
+  z-index: 2;
+  -webkit-filter: drop-shadow(0px 0px 20px transparent);
+  filter: drop-shadow(0px 0px 20px transparent);
+  transition: filter 0.2s ease;
+  cursor: pointer;
+}
+
+#what-we-do-circle #honeybee,
+#seedling {
+  z-index: 2;
+  cursor: pointer;
+}
+
+image#honeybee:hover ~ path.what-we-do-circle-cls-5 {
+  -webkit-filter: drop-shadow(0px 0px 20px pink);
+  filter: drop-shadow(0px 0px 20px pink);
+}
+
+#what-we-do-circle #earth:hover,
+#what-we-do-circle #ellipse-honeybee:hover {
+  -webkit-filter: drop-shadow(0px 0px 20px pink);
+  filter: drop-shadow(0px 0px 20px pink);
+}
+
+#seedling:hover > #ellipse-seedling {
+  -webkit-filter: drop-shadow(0px 0px 20px pink);
+  filter: drop-shadow(0px 0px 20px pink);
+}
+
+// #what-we-do-circle #masking_green_circle-4:hover {
+//   fill: pink;
+//   z-index: 2;
+//   fill-opacity: 0.4;
+// }
+
+/* recent work section */
+
+.our-recent-work {
+  // padding: $section-padding;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: rgba(54, 45, 147, 0.32);
+}
+
+/* Get To Know Us section */
+.get-to-know-us {
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .about-profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: grey;
+      margin-bottom: 2rem;
+    }
+
+    .about-person {
+      display: flex;
+      flex-direction: column;
+      max-width: 350px;
+    }
+  }
+}
+
+/* Lets Work Together section */
+.lets-work-together {
+  .contact-button a {
+    border: 1.5px solid pink;
+    color: pink;
+    font: normal 0.9rem "CircularStd-Medium";
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+  }
+}
+
+/*=============================================>>>>>
+= Breakpoints =
+===============================================>>>>>*/
+$breakpoints: (
+  extra-large: 1920px,
+  large: 1600px,
+  desktop: 1340px,
+  tablet: 1080px,
+  small-tablet: 960px,
+  mobile: 800px,
+  small-mobile: 400px,
+);
+
+/*=============================================>>>>>
+= Media Up =
+===============================================>>>>>*/
+
+// @include media-up(mobile) {}
+@mixin media-up($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/*=============================================>>>>>
+= Media Down =
+===============================================>>>>>*/
+
+// @include media-down(mobile) {}
+@mixin media-down($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// @include media-down(mobile) {
+//   height: 50vh;
+// }
+
+// .mouse-icon {
+//   @include horizontal-align(absolute);
+//   top: auto;
+//   bottom: 50%;
+//   height: 100px;
+//   width: 35px;
+//   opacity: 1;
+//   transition: opacity 0.3s ease;
+
+//   @include media-down(mobile) {
+//     height: 75px;
+//     width: 25px;
+//   }
+
+//   @keyframes mouse-bob {
+//     0% {
+//       transform: translateY(50%) translateX(-50%);
+//     }
+//     50% {
+//       transform: translateY(60%) translateX(-50%);
+//     }
+//     100% {
+//       transform: translateY(50%) translateX(-50%);
+//     }
+//   }
+// }

@@ -1,0 +1,28 @@
+.header-wrapper {
+  top: 0;
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: "CircularStd-Book";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: padding 0.3s ease;
+  position: fixed;
+  z-index: 2;
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  color: #a4ce9d;
+}
+
+.header-item {
+  margin-left: 40px;
+  cursor: pointer;
+  font-size: 18px;
+}

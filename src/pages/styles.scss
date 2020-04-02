@@ -36,6 +36,10 @@
   font-style: normal;
 }
 
+html {
+  font: 100%/1em;
+}
+
 h1 {
   font: normal 2.5rem "CircularStd-Bold";
   color: #ffffff;
@@ -80,7 +84,7 @@ p {
 /* SECTIONS */
 
 $max-width: 960px;
-$section-padding: 60px 20px 0;
+$section-padding: 40px 20px 0;
 
 .section-wrapper {
   height: 100vh;
@@ -174,10 +178,6 @@ $section-padding: 60px 20px 0;
 }
 
 /* What We Do Section */
-
-.line-curly-divider {
-  width: 100vw;
-}
 
 .what-we-do {
   .what-we-do-diagram {
@@ -388,6 +388,19 @@ image#honeybee:hover ~ path.what-we-do-circle-cls-5 {
 // }
 
 /* recent work section */
+
+.line-curly-divider-top {
+  width: 100vw;
+  margin-top: -40px;
+  margin-left: -8px;
+}
+
+.line-curly-divider-bottom {
+  width: 100vw;
+  bottom: -50px;
+  margin-left: -8px;
+  position: relative;
+}
 
 .our-recent-work {
   // padding: $section-padding;

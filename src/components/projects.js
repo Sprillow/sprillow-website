@@ -46,7 +46,7 @@ function Project({ project }) {
         <h2 className="project-name">{project.name}</h2>
         <div className="project-efforts-wrapper">
           {project.efforts.map(effort => (
-            <div className="project-efforts-item">{effort} .</div>
+            <div className="project-efforts-item">{effort} </div>
           ))}
         </div>
       </div>

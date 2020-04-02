@@ -93,17 +93,18 @@ const IndexPage = () => {
       {/* /WHAT WE DO */}
 
       {/* RECENT WORK */}
-      <div className="our-recent-work section-wrapper">
-        <LineCurlyDivider className="line-curly-divier" />
+      <div className="our-recent-work">
+        <LineCurlyDivider className="line-curly-divider-top" />
         <div className="section">
           <h1 className="section-heading">Our recent work</h1>
         </div>
         <Projects />
+        <LineCurlyDivider className="line-curly-divider-bottom" />
       </div>
       {/* /RECENT WORK */}
 
       {/* GET TO KNOW US */}
-      <div className="get-to-know-us section-wrapper">
+      <div className="get-to-know-us">
         <div className="section">
           <h1 className="section-heading">Get to know us</h1>
           <div className="about-content">

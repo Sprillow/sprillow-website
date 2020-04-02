@@ -3,7 +3,7 @@
 
   .project {
     // width: 60vw;
-    margin: 0 8vw;
+    margin: 0 9vw;
     box-sizing: border-box;
 
     .project-image {
@@ -41,15 +41,15 @@
     }
 
     .project-question {
-      margin-bottom: 3.5rem;
+      margin-bottom: 1.5rem;
       color: #ffffff;
-      font: normal 1rem "CircularStd-Medium";
+      font: normal 0.9rem "CircularStd-Medium";
       line-height: 1.75rem;
     }
 
     .project-tags-and-link-wrapper {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       // align-items: flex-end;
       justify-content: space-between;
     }
@@ -58,6 +58,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+      margin-bottom: 1.5rem;
     }
 
     .project-tags-item {

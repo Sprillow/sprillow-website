@@ -1,6 +1,7 @@
 .header-wrapper {
   top: 0;
-  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100vw;
   max-width: 1280px;
   display: flex;
@@ -9,9 +10,18 @@
   font-family: "CircularStd-Book";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: padding 0.3s ease;
+  transition: padding 0.3s ease, opacity 0.6s ease, background-color 0.6s ease;
   position: fixed;
   z-index: 2;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.header-wrapper.header-hidden {
+  opacity: 0;
+}
+.header-wrapper.header-off-top {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .header-link {

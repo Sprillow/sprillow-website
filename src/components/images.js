@@ -38,6 +38,22 @@ const queries = graphql`
         }
       }
     }
+
+    cosense: file(relativePath: { eq: "cosense.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    ufc: file(relativePath: { eq: "acorn-app-screenshot.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 
@@ -56,4 +72,14 @@ const AcornScreenshot = () => {
   return <Img fluid={data.acorn.childImageSharp.fluid} />
 }
 
-export { Logo, Seedling, AcornScreenshot }
+const CosenseScreenshot = () => {
+  const data = useStaticQuery(queries)
+  return <Img fluid={data.cosense.childImageSharp.fluid} />
+}
+
+const UfcScreenshot = () => {
+  const data = useStaticQuery(queries)
+  return <Img fluid={data.ufc.childImageSharp.fluid} />
+}
+
+export { Logo, Seedling, AcornScreenshot, CosenseScreenshot, UfcScreenshot }

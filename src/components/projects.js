@@ -3,37 +3,36 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "./projects.scss"
-import { AcornScreenshot } from "./images"
+import { AcornScreenshot, CosenseScreenshot, UfcScreenshot } from "./images"
 
 const projects = [
   {
     name: "Acorn",
     image: <AcornScreenshot />,
     efforts: ["UX Design", "UI Design", "App Development"],
-    subheading: "Rapid Sensemaking MacOS, Linux & Windows Native App",
-    question:
-      "How can we breakdown barriers of communication in service of getting collective data to make informed and wholistic decisions?",
-    tags: ["holochain", "peer-to-peer-technology", "collective-sensemaking"],
-    url: "https://github.com/rapid-sensemaking-framework/cosense",
+    subheading: "Project Management MacOS, Linux Desktop App",
+    question: "?",
+    tags: ["holochain", "peer-to-peer-technology", "project-management"],
+    url: "https://github.com/h-be/acorn-docs",
   },
   {
     name: "Unified Field Corporation",
-    image: <AcornScreenshot />,
-    efforts: ["UX Design", "UI Design", "App Development"],
-    subheading: "Rapid Sensemaking MacOS, Linux & Windows Native App",
-    question:
-      "How can we breakdown barriers of communication in service of getting collective data to make informed and wholistic decisions?",
-    tags: ["holochain", "peer-to-peer-technology", "collective-sensemaking"],
-    url: "https://github.com/rapid-sensemaking-framework/cosense",
+    image: <UfcScreenshot />,
+    efforts: ["Advisory", "Strategy", "Tech Architecture"],
+    subheading:
+      "Advisory capacity for tech stack development for a food systems",
+    question: "How can we...?",
+    tags: ["holochain", "food-production", "food-systems"],
+    url: "",
   },
   {
     name: "cosense",
-    image: <AcornScreenshot />,
+    image: <CosenseScreenshot />,
     efforts: ["UX Design", "UI Design", "App Development"],
     subheading: "Rapid Sensemaking MacOS, Linux & Windows Native App",
     question:
       "How can we breakdown barriers of communication in service of getting collective data to make informed and wholistic decisions?",
-    tags: ["holochain", "peer-to-peer-technology", "collective-sensemaking"],
+    tags: ["cross-platform", "social-algorithms", "collective-sensemaking"],
     url: "https://github.com/rapid-sensemaking-framework/cosense",
   },
 ]
@@ -59,9 +58,11 @@ function Project({ project }) {
             <div className="project-tags-item">#{tag}</div>
           ))}
         </div>
-        <div className="project-link-button">
-          <a href={project.url}>See on Github</a>
-        </div>
+        {project.url && (
+          <div className="project-link-button">
+            <a href={project.url}>See on Github</a>
+          </div>
+        )}
       </div>
     </div>
   )

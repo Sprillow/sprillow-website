@@ -1,25 +1,31 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import { Logo } from "./images"
-import useWindowScroll from "@react-hook/window-scroll"
-import usePrevious from "../hooks/useprevious"
+import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 import "./header.css"
 
 const Header = ({ siteTitle }) => {
-  const scrollY = useWindowScroll(120 /*fps*/)
-  const previousScrollY = usePrevious(scrollY)
-  const show = !scrollY || previousScrollY > scrollY
-  const isOffTop = scrollY > 120
+  const [isOffTop, setIsOffTop] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+
+  useScrollPosition(({ prevPos, currPos }) => {
+    console.log(currPos.y, prevPos.y)
+    const checkIsVisible = currPos.y > prevPos.y
+    setIsVisible(checkIsVisible)
+    const checkIsOffTop = currPos.y < -120
+    setIsOffTop(checkIsOffTop)
+  })
+
   return (
     <>
       {
         <header>
           {/* header wrapper */}
           <div
-            className={`header-wrapper ${show ? "" : "header-hidden"} ${
-              isOffTop ? "header-off-top" : ""
+            className={`header-wrapper ${isOffTop ? "header-off-top" : ""} ${
+              isVisible ? "" : "header-hidden"
             }`}
           >
             <h1 style={{ margin: 0 }}>

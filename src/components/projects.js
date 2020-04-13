@@ -44,8 +44,10 @@ function Project({ project }) {
       <div className="project-name-and-efforts-wrapper">
         <h2 className="project-name">{project.name}</h2>
         <div className="project-efforts-wrapper">
-          {project.efforts.map(effort => (
-            <div className="project-efforts-item">{effort} </div>
+          {project.efforts.map((effort, index) => (
+            <div key={index} className="project-efforts-item">
+              {effort}{" "}
+            </div>
           ))}
         </div>
       </div>
@@ -54,8 +56,10 @@ function Project({ project }) {
       <div className="project-question">{project.question}</div>
       <div className="project-tags-and-link-wrapper">
         <div className="project-tags-wrapper">
-          {project.tags.map(tag => (
-            <div className="project-tags-item">#{tag}</div>
+          {project.tags.map((tag, index) => (
+            <div key={index} className="project-tags-item">
+              #{tag}
+            </div>
           ))}
         </div>
         {project.url && (

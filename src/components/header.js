@@ -13,10 +13,10 @@ const Header = ({ siteTitle }) => {
   useScrollPosition(({ prevPos, currPos }) => {
     console.log(currPos.y, prevPos.y)
     const checkIsVisible = currPos.y > prevPos.y
-    setIsVisible(checkIsVisible)
+    if (checkIsVisible !== isVisible) setIsVisible(checkIsVisible)
     const checkIsOffTop = currPos.y < -120
-    setIsOffTop(checkIsOffTop)
-  })
+    if (checkIsOffTop !== isOffTop) setIsOffTop(checkIsOffTop)
+  }, [isVisible, isOffTop])
 
   return (
     <>

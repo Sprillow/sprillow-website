@@ -1,0 +1,252 @@
+$active-color: green;
+$hover-color: pink;
+
+.what-we-do-diagram {
+  position: relative;
+  margin: auto;
+  height: 70vh;
+  display: flex;
+}
+
+.what-we-do-circle {
+  position: relative;
+  margin: auto;
+  height: 70vh;
+  display: flex;
+}
+
+.what-we-do-step-description {
+  max-width: 20vw;
+  position: absolute;
+  left: 39%;
+  top: 32%;
+  z-index: 2;
+}
+
+.what-we-do-diagram {
+  .top-left {
+    position: absolute;
+    left: 16%;
+    top: 15%;
+  }
+
+  .top-right {
+    position: absolute;
+    right: 16%;
+    top: 15%;
+  }
+
+  .bottom-right {
+    position: absolute;
+    right: 19%;
+    bottom: 14%;
+  }
+
+  .bottom-left {
+    position: absolute;
+    left: 19%;
+    bottom: 14%;
+  }
+}
+
+.what-we-do-step-title {
+  position: absolute;
+  transition: color 0.1s ease;
+  cursor: pointer;
+  z-index: 2;
+  margin: 0;
+
+  &.hovering {
+    color: $hover-color;
+  }
+
+  &.active {
+    color: $active-color;
+  }
+}
+
+.subcategories {
+  z-index: 1;
+  width: 1px;
+  height: 1px;
+}
+
+.subcategory {
+  position: absolute;
+  font: normal 0.8rem "CircularStd-Book";
+  line-height: 1.5rem;
+  color: #f4ffed;
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.discovery-subcategories {
+  .discovery-subcategory {
+    top: 0;
+    left: 0;
+  }
+
+  &.active,
+  &.hovering {
+    .discovery-subcategory {
+      opacity: 0.8;
+
+      &.first {
+        transform: translate(60px, -70px);
+      }
+
+      &.second {
+        transform: translate(-60px, -60px);
+      }
+
+      &.third {
+        transform: translate(-120px, 0px);
+      }
+
+      &.fourth {
+        transform: translate(-50px, 60px);
+      }
+    }
+  }
+}
+
+.design-subcategories {
+  .design-subcategory {
+    top: 0;
+    right: 0;
+  }
+
+  &.active,
+  &.hovering {
+    .design-subcategory {
+      opacity: 0.8;
+
+      &.first {
+        transform: translate(20px, -60px);
+      }
+
+      &.second {
+        transform: translate(110px, -10px);
+      }
+
+      &.third {
+        transform: translate(105px, 50px);
+      }
+    }
+  }
+}
+
+.delivery-subcategories {
+  .delivery-subcategory {
+    bottom: -33px;
+    right: 0;
+  }
+
+  &.active,
+  &.hovering {
+    .delivery-subcategory {
+      opacity: 0.8;
+
+      &.first {
+        transform: translate(-40px, 60px);
+      }
+
+      &.second {
+        transform: translate(80px, 40px);
+      }
+
+      &.third {
+        transform: translate(190px, -20px);
+      }
+
+      &.fourth {
+        transform: translate(150px, -70px);
+      }
+    }
+  }
+}
+
+.feedback-subcategories {
+  .feedback-subcategory {
+    bottom: -33px;
+    left: 0;
+  }
+
+  &.active,
+  &.hovering {
+    .feedback-subcategory {
+      opacity: 0.8;
+
+      &.first {
+        transform: translate(-20px, 60px);
+      }
+
+      &.second {
+        transform: translate(-110px, 10px);
+      }
+
+      &.third {
+        transform: translate(-105px, -50px);
+      }
+    }
+  }
+}
+
+$default-drop-shadow: drop-shadow(0px 0px 20px transparent);
+$active-drop-shadow: drop-shadow(0px 0px 20px $active-color);
+$hover-drop-shadow: drop-shadow(0px 0px 20px $hover-color);
+
+#earth {
+  -webkit-filter: $default-drop-shadow;
+  filter: $default-drop-shadow;
+  transition: filter 0.2s ease;
+  cursor: pointer;
+
+  &.hovering {
+    -webkit-filter: $hover-drop-shadow;
+    filter: $hover-drop-shadow;
+  }
+
+  &.active {
+    -webkit-filter: $active-drop-shadow;
+    filter: $active-drop-shadow;
+  }
+}
+
+#earth,
+#seedling,
+#ellipse-seedling,
+#ear-of-rice,
+#ellipse-ear-of-rice,
+#honeybee,
+#ellipse-honeybee {
+  cursor: pointer;
+}
+
+#ellipse-honeybee,
+#ellipse-ear-of-rice,
+#ellipse-seedling {
+  .what-we-do-circle-cls-5 {
+    -webkit-filter: $default-drop-shadow;
+    filter: $default-drop-shadow;
+    transition: filter 0.2s ease;
+    cursor: pointer;
+  }
+
+  &.hovering {
+    .what-we-do-circle-cls-5 {
+      -webkit-filter: $hover-drop-shadow;
+      filter: $hover-drop-shadow;
+    }
+  }
+
+  &.active {
+    .what-we-do-circle-cls-5 {
+      -webkit-filter: $active-drop-shadow;
+      filter: $active-drop-shadow;
+    }
+  }
+}

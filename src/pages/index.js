@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import useWindowScroll from "@react-hook/window-scroll"
 import { Link } from "gatsby"
 import "./styles.scss"
@@ -10,9 +10,8 @@ import "./styles.scss"
 // file names or they will not work
 import Scroll from "../images/scroll.inline.svg"
 import Contact from "../images/contact.inline.svg"
-import WhatWeDoCircle from "../images/what-we-do-circle.inline.svg"
 import LineCurlyDivider from "../images/line-curly-divider.inline.svg"
-
+import WhatWeDoDiagram from "../components/whatwedo"
 import { Seedling } from "../components/images"
 import Projects from "../components/projects"
 
@@ -21,6 +20,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => {
   const scrollY = useWindowScroll(120 /*fps*/)
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -51,44 +51,7 @@ const IndexPage = () => {
       {/* WHAT WE DO */}
       <div className="what-we-do section-wrapper section">
         <h1 className="section-heading">What we do</h1>
-
-        <div className="what-we-do-diagram">
-          <h2 className="what-we-do-step-title top-left">Discovery</h2>
-          <div className="discovery-subcategories">
-            <h3 className="discovery-subcategory first">Strategy</h3>
-            <h3 className="discovery-subcategory second">Consultation</h3>
-            <h3 className="discovery-subcategory third">UX Reseach</h3>
-            <h3 className="discovery-subcategory fourth">Facilitation</h3>
-          </div>
-          <h2 className="what-we-do-step-title top-right">Design</h2>
-          <div className="design-subcategories">
-            <h3 className="design-subcategory first">UX Design</h3>
-            <h3 className="design-subcategory second">UI Design</h3>
-            <h3 className="design-subcategory third">Visual Identity</h3>
-          </div>
-          <h2 className="what-we-do-step-title bottom-right">Delivery</h2>
-          <div className="delivery-subcategories">
-            <h3 className="delivery-subcategory first">
-              Custom App development
-            </h3>
-            <h3 className="delivery-subcategory second">Technology Stack</h3>
-            <h3 className="delivery-subcategory third">E-commerce solutions</h3>
-          </div>
-          <h2 className="what-we-do-step-title bottom-left">Feedback</h2>
-          <div className="feedback-subcategories">
-            <h3 className="feedback-subcategory first">Optimization</h3>
-            <h3 className="feedback-subcategory second">Analytics</h3>
-            <h3 className="feedback-subcategory third">Retrospectives</h3>
-          </div>
-          <p className="what-we-do-step-description">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit id in libero,
-            purus nullam conubia torquent volutpat sollicitudin himenaeos et
-            aenean nulla facilisis, cras netus rutrum vel taciti lacus curabitur
-            eget laoreet.
-          </p>
-          <WhatWeDoCircle className="what-we-do-diagram" />
-          <div className="what-we-do-step"></div>
-        </div>
+        <WhatWeDoDiagram />
       </div>
       {/* /WHAT WE DO */}
 

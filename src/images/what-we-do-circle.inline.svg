@@ -10,32 +10,6 @@
         stroke-linecap: round;
         stroke-width: 3px;
         stroke-dasharray: 6 10;
-         <!-- -webkit-animation: spin 20s infinite;
-  -moz-animation: spin 20s infinite;
-  animation: spin 20s infinite;
-  transform-origin: 50% 50%;
-}
-
-@-moz-keyframes spin {
-  0% {
-        -moz-transform: rotate(0deg);
-    }
-
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-} -->
       }
 
       .what-we-do-circle-cls-2 {
@@ -65,10 +39,10 @@
       }
 
       .what-we-do-circle-cls-9 {
-        filter: url(#ellipse-seedling);
+        filter: url(#Path_45);
       } 
     </style>
-    <filter id="ellipse-seedling" x="13.432" y="0" width="979.802" height="979.556" filterUnits="userSpaceOnUse">
+    <filter id="Path_45" x="13.432" y="0" width="979.802" height="979.556" filterUnits="userSpaceOnUse">
       <feOffset input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feFlood flood-color="#dedede" flood-opacity="0.698"/>

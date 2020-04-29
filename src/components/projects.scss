@@ -3,7 +3,7 @@
 
   .project {
     // width: 60vw;
-    margin: 0 9vw;
+    margin: 0 7vw;
     box-sizing: border-box;
 
     .project-image {
@@ -69,19 +69,24 @@
 
     .project-link-button {
       height: 2.5rem;
-    }
-
-    .project-link-button a {
-      border: 1.5px solid pink;
-      color: pink;
-      font: normal 0.9rem "CircularStd-Medium";
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 4px;
+      a {
+        border: 1.5px solid pink;
+        color: pink;
+        font: normal 0.9rem "CircularStd-Medium";
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+      }
     }
   }
 }
 
 .project-profiles .project .project-image {
   margin-bottom: 1rem;
+}
+
+.slick-slide.slick-active.slick-center.slick-current,
+.slick-slide,
+.slick-slide.slick-cloned {
+  width: 880px;
 }

@@ -1,3 +1,62 @@
+/*=============================================>>>>>
+= Breakpoints =
+===============================================>>>>>*/
+$breakpoints: (
+  extra-large: 1920px,
+  large: 1600px,
+  desktop: 1340px,
+  tablet: 1080px,
+  small-tablet: 960px,
+  mobile: 800px,
+  small-mobile: 400px,
+);
+
+/*=============================================>>>>>
+= Media Up =
+===============================================>>>>>*/
+
+// @include media-up(mobile) {}
+@mixin media-up($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/*=============================================>>>>>
+= Media Down =
+===============================================>>>>>*/
+
+// @include media-down(mobile) {}
+@mixin media-down($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,21 +100,32 @@ html {
 }
 
 h1 {
-  font: normal 2.5rem "CircularStd-Bold";
+  font: normal 2.8rem "CircularStd-Medium";
   color: #ffffff;
 }
 
 h2 {
-  font: normal 1.5rem "CircularStd-Medium";
+  font: normal 1.8rem "CircularStd-Medium";
 }
 
 h3 {
-  font: normal 1rem "CircularStd-Medium";
+  font: normal 1.2rem "CircularStd-Book";
+  line-height: 2rem;
+  color: #b7b7b7;
+}
+
+h4 {
+  font: normal 1rem "CircularStd-Book";
   color: #b7b7b7;
 }
 
 p {
-  font: normal 0.9rem "CircularStd-Book";
+  font: normal 1.1rem "CircularStd-Book";
+  line-height: 1.7rem;
+}
+
+a {
+  font: normal 1.2rem "CircularStd-Book";
   line-height: 1.5rem;
 }
 
@@ -84,7 +154,7 @@ p {
 /* SECTIONS */
 
 $max-width: 960px;
-$section-padding: 40px 20px 0;
+$section-padding: 40px 30px 0;
 
 .section-wrapper {
   height: 100vh;
@@ -106,20 +176,21 @@ $section-padding: 40px 20px 0;
 
 .hero {
   .hero-text {
-    padding-top: 10rem;
+    padding-top: 12rem;
   }
 
   .hero-heading {
     display: inline-block;
     margin-right: 10px;
+    font-size: 3.5rem;
   }
 
   .hero-sub-heading {
-    color: hsla(0, 0%, 100%, 0.69);
+    color: hsla(0, 0%, 100%, 0.8);
     font-family: "CircularStd-Book";
-    font-size: 1.2rem;
-    line-height: 2rem;
-    max-width: 500px;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    max-width: 610px;
   }
 
   .hero-sub-heading span {
@@ -202,18 +273,30 @@ $section-padding: 40px 20px 0;
 }
 
 /* Get To Know Us section */
+
+// @include media() {
+//   .about-content {
+//     flex-direction: column;
+//   }
+// }
 .get-to-know-us {
+  padding-top: 40px;
+
   .about-content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 3rem;
 
-    .about-profile-image {
-      width: 150px;
-      height: 150px;
+    .about-profile-image-wrapper {
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      background-color: grey;
       margin-bottom: 2rem;
+    }
+
+    .about-profile-image-wrapper img {
+      border-radius: 50%;
     }
 
     .about-person {
@@ -222,10 +305,31 @@ $section-padding: 40px 20px 0;
       max-width: 350px;
     }
   }
+  .about-images {
+    .about-image-wrapper {
+      max-width: 500px;
+      // background-color: #ffffff;
+      border-radius: 4px;
+
+      img {
+        padding: 40px;
+        border-radius: 4px;
+      }
+
+      &.right img {
+        transform: rotate(6deg);
+      }
+      &.left img {
+        transform: rotate(-6deg);
+      }
+    }
+  }
 }
 
 /* Lets Work Together section */
 .lets-work-together {
+  padding-top: 60px;
+  max-height: 500px;
   .contact-button a {
     border: 1.5px solid pink;
     color: pink;
@@ -234,64 +338,70 @@ $section-padding: 40px 20px 0;
     padding: 12px 20px;
     border-radius: 4px;
   }
-}
+  .contact-text {
+    color: hsla(0, 0%, 100%, 0.8);
+    margin-bottom: 40px;
+  }
 
-/*=============================================>>>>>
-= Breakpoints =
-===============================================>>>>>*/
-$breakpoints: (
-  extra-large: 1920px,
-  large: 1600px,
-  desktop: 1340px,
-  tablet: 1080px,
-  small-tablet: 960px,
-  mobile: 800px,
-  small-mobile: 400px,
-);
+  .contact-emails-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 
-/*=============================================>>>>>
-= Media Up =
-===============================================>>>>>*/
-
-// @include media-up(mobile) {}
-@mixin media-up($breakpoint) {
-  // If the breakpoint exists in the map.
-  @if map-has-key($breakpoints, $breakpoint) {
-    // Get the breakpoint value.
-    $breakpoint-value: map-get($breakpoints, $breakpoint);
-
-    // Write the media query.
-    @media (min-width: $breakpoint-value) {
-      @content;
+  .contact-button {
+    line-height: 4.5rem;
+    a {
+      border: 1.5px solid pink;
+      color: pink;
+      font: normal 1.2rem "CircularStd-Medium";
+      text-decoration: none;
+      padding: 16px 20px;
+      border-radius: 4px;
     }
-
-    // If the breakpoint doesn't exist in the map.
-  } @else {
-    // Log a warning.
-    @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
 }
 
-/*=============================================>>>>>
-= Media Down =
-===============================================>>>>>*/
+// Footer Section
 
-// @include media-down(mobile) {}
-@mixin media-down($breakpoint) {
-  // If the breakpoint exists in the map.
-  @if map-has-key($breakpoints, $breakpoint) {
-    // Get the breakpoint value.
-    $breakpoint-value: map-get($breakpoints, $breakpoint);
+.footer {
+  font: normal 1.2rem "CircularStd-Book";
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: row;
 
-    // Write the media query.
-    @media (max-width: ($breakpoint-value - 1)) {
-      @content;
+  .footer-title {
+    margin-bottom: 10px;
+    color: hsla(0, 0%, 100%, 0.7);
+  }
+
+  .see-our-work-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-right: 40px;
+
+    .github-icon {
+      width: 30px;
+      height: 30px;
+      padding: 10px;
+      margin-left: -10px;
+      box-sizing: content-box;
+      cursor: pointer;
     }
+  }
 
-    // If the breakpoint doesn't exist in the map.
-  } @else {
-    // Log a warning.
-    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  .say-hi-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    .contact-emails-wrapper {
+      display: flex;
+      flex-direction: row;
+      .contact-email {
+        color: #ffffff;
+        margin: 10px;
+      }
+    }
   }
 }
 

@@ -3,6 +3,7 @@
     <style>
       .contact-cls-1 {
         fill: #f7f7f7;
+        transition: fill 0.2s ease;
       }
 
       .contact-cls-2 {
@@ -11,6 +12,9 @@
 
       .contact-cls-3 {
         filter: url(#contact-circle);
+      }
+      .contact-cls-1:hover {
+        fill: pink;
       }
     </style>
     <filter id="contact-circle" x="0" y="0" width="102" height="102" filterUnits="userSpaceOnUse">
@@ -23,7 +27,7 @@
   </defs>
   <g id="contact" transform="translate(-1778 -945)">
     <g class="contact-cls-3" transform="matrix(1, 0, 0, 1, 1778, 945)">
-      <circle id="contact-circle-2" data-name="contact-circle" class="contact-cls-1" cx="42" cy="42" r="42" transform="translate(9 9)"/>
+      <circle id="contact-circle" data-name="contact-circle" class="contact-cls-1" cx="42" cy="42" r="42" transform="translate(9 9)"/>
     </g>
     <path id="mail-icon" class="contact-cls-2" d="M2.063,0H33.937A2.085,2.085,0,0,1,35.4.6,2.058,2.058,0,0,1,36,2.063v21.9a2.007,2.007,0,0,1-.356,1.156.863.863,0,0,1-.194.292.9.9,0,0,1-.194.14,2.041,2.041,0,0,1-1.318.486H2.063a2.085,2.085,0,0,1-1.458-.6A2.04,2.04,0,0,1,0,23.978V2.074A2.065,2.065,0,0,1,2.063.011ZM1.577,23.1,12.745,11.9,1.577,2.8Zm12.4-10.2L2.463,24.454H33.429L22.423,12.907,18.794,16a.785.785,0,0,1-1.015.011l-3.813-3.1Zm9.656-1.026L34.412,23.19V2.7ZM2.592,1.588,18.275,14.376l15-12.788Z" transform="translate(1811 982.573)"/>
   </g>

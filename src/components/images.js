@@ -25,7 +25,7 @@ const queries = graphql`
 
     seedling: file(relativePath: { eq: "seedling-emoji.png" }) {
       childImageSharp {
-        fixed(height: 35) {
+        fixed(height: 40) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -48,6 +48,39 @@ const queries = graphql`
     }
 
     ufc: file(relativePath: { eq: "acorn-app-screenshot.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    pegahProfile: file(relativePath: { eq: "sprillow-pegah-profile.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    connorProfile: file(relativePath: { eq: "sprillow-connor-profile.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    connorWorking: file(relativePath: { eq: "sprillow-connor-working.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    connorFacilitating: file(
+      relativePath: { eq: "sprillow-connor-facilitating-dweb.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 700) {
           ...GatsbyImageSharpFluid
@@ -82,4 +115,34 @@ const UfcScreenshot = () => {
   return <Img fluid={data.ufc.childImageSharp.fluid} />
 }
 
-export { Logo, Seedling, AcornScreenshot, CosenseScreenshot, UfcScreenshot }
+const PegahProfile = () => {
+  const data = useStaticQuery(queries)
+  return <Img fluid={data.pegahProfile.childImageSharp.fluid} />
+}
+
+const ConnorProfile = () => {
+  const data = useStaticQuery(queries)
+  return <Img fluid={data.connorProfile.childImageSharp.fluid} />
+}
+
+const ConnorWorking = () => {
+  const data = useStaticQuery(queries)
+  return <Img fluid={data.connorWorking.childImageSharp.fluid} />
+}
+
+const ConnorFacilitating = () => {
+  const data = useStaticQuery(queries)
+  return <Img fluid={data.connorFacilitating.childImageSharp.fluid} />
+}
+
+export {
+  Logo,
+  Seedling,
+  AcornScreenshot,
+  CosenseScreenshot,
+  UfcScreenshot,
+  PegahProfile,
+  ConnorProfile,
+  ConnorWorking,
+  ConnorFacilitating,
+}

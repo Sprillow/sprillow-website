@@ -11,8 +11,15 @@ import "./styles.scss"
 import Scroll from "../images/scroll.inline.svg"
 import Contact from "../images/contact.inline.svg"
 import LineCurlyDivider from "../images/line-curly-divider.inline.svg"
+import GithubIcon from "../images/github-icon.inline.svg"
 import WhatWeDoDiagram from "../components/whatwedo"
-import { Seedling } from "../components/images"
+import {
+  Seedling,
+  PegahProfile,
+  ConnorProfile,
+  ConnorWorking,
+  ConnorFacilitating,
+} from "../components/images"
 import Projects from "../components/projects"
 
 import Layout from "../components/layout"
@@ -26,7 +33,9 @@ const IndexPage = () => {
       <SEO title="Home" />
       <div className="background-shape" />
 
-      <Contact className="contact-icon" />
+      <a href="mailto:pegah@sprillow.com">
+        <Contact className="contact-icon" />
+      </a>
 
       {/* HERO */}
       <div className="hero section-wrapper section">
@@ -72,9 +81,11 @@ const IndexPage = () => {
           <h1 className="section-heading">Get to know us</h1>
           <div className="about-content">
             <div className="about-person">
-              <div className="about-profile-image"></div>
+              <div className="about-profile-image-wrapper">
+                <PegahProfile />
+              </div>
               <h2 className="about-title">Pegah Vaezi</h2>
-              <h3 className="about-subtitle">Designer</h3>
+              <h4 className="about-subtitle">Designer</h4>
               <p className="about-description">
                 Lorem ipsum dolor sit amet consectetur adipiscing elit id in
                 libero, purus nullam conubia torquent volutpat sollicitudin
@@ -89,9 +100,11 @@ const IndexPage = () => {
               </p>
             </div>
             <div className="about-person">
-              <div className="about-profile-image"></div>
+              <div className="about-profile-image-wrapper">
+                <ConnorProfile />
+              </div>
               <h2 className="about-title">Connor Turland</h2>
-              <h3 className="about-subtitle">Developer, facilitator</h3>
+              <h4 className="about-subtitle">Developer, facilitator</h4>
               <p className="about-description">
                 Lorem ipsum dolor sit amet consectetur adipiscing elit id in
                 libero, purus nullam conubia torquent volutpat sollicitudin
@@ -106,6 +119,14 @@ const IndexPage = () => {
               </p>
             </div>
           </div>
+          <div className="about-images">
+            <div className="about-image-wrapper right">
+              <ConnorWorking />
+            </div>
+            <div className="about-image-wrapper left">
+              <ConnorFacilitating />
+            </div>
+          </div>
         </div>
       </div>
       {/* /GET TO KNOW US */}
@@ -114,15 +135,39 @@ const IndexPage = () => {
       <div className="lets-work-together section-wrapper">
         <div className="section">
           <h1 className="section-heading">Let's work together</h1>
-          <h2 className="contact-text">
+          <h3 className="contact-text">
             We’re excited to collaborate with you! Send us a message and let us
             know about your project plus any details to help us make your dream
             come through
-          </h2>
+          </h3>
+          <div className="contact-button">
+            <a href="mailto:pegah@sprillow.com">Send us a message</a>
+          </div>
+
           <a className="contact-button"></a>
         </div>
       </div>
       {/* /LETS WORK TOGETHER */}
+
+      {/* Footer */}
+      <div className="footer section">
+        <div className="see-our-work-wrapper">
+          <div className="footer-title">See our work</div>{" "}
+          <GithubIcon className="github-icon" />
+        </div>
+        <div className="say-hi-wrapper">
+          <div className="footer-title">Say hi</div>
+          <div className="contact-emails-wrapper">
+            <a href="mailto:connor@sprillow.com" className="contact-email">
+              pegah@sprillow.com
+            </a>
+            <a href="mailto:connor@sprillow.com" className="contact-email">
+              connor@sprillow.com
+            </a>
+          </div>
+        </div>
+      </div>
+      {/* Footer */}
     </Layout>
   )
 }

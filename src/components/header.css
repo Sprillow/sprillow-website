@@ -22,7 +22,7 @@
   opacity: 0;
 }
 .header-wrapper.header-off-top {
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
 }
 
 .header-link {

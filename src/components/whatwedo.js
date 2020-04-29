@@ -225,11 +225,11 @@ export default function WhatWeDoDiagram() {
           activeItem === DELIVERY ? "active" : ""
         } ${hoveringItem === DELIVERY ? "hovering" : ""}`}
       >
-        <h3 className="subcategory delivery-subcategory first">Native Apps</h3>
-        <h3 className="subcategory delivery-subcategory second">Mobile Apps</h3>
-        <h3 className="subcategory delivery-subcategory third">
+        <h3 className="subcategory delivery-subcategory first">
           E-commerce solutions
         </h3>
+        <h3 className="subcategory delivery-subcategory second">Mobile Apps</h3>
+        <h3 className="subcategory delivery-subcategory third">Native Apps</h3>
         <h3 className="subcategory delivery-subcategory fourth">
           Peer-to-peer solutions
         </h3>

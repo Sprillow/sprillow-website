@@ -1,4 +1,4 @@
-$active-color: green;
+$active-color: #ffc6c6;
 $hover-color: pink;
 
 .what-we-do-diagram {
@@ -26,25 +26,25 @@ $hover-color: pink;
 .what-we-do-diagram {
   .top-left {
     position: absolute;
-    left: 16%;
+    left: 13%;
     top: 15%;
   }
 
   .top-right {
     position: absolute;
-    right: 16%;
+    right: 18%;
     top: 15%;
   }
 
   .bottom-right {
     position: absolute;
-    right: 19%;
+    right: 16%;
     bottom: 14%;
   }
 
   .bottom-left {
     position: absolute;
-    left: 19%;
+    left: 14%;
     bottom: 14%;
   }
 }
@@ -55,6 +55,8 @@ $hover-color: pink;
   cursor: pointer;
   z-index: 2;
   margin: 0;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
 
   &.hovering {
     color: $hover-color;
@@ -73,7 +75,7 @@ $hover-color: pink;
 
 .subcategory {
   position: absolute;
-  font: normal 0.8rem "CircularStd-Book";
+  font: normal 1rem "CircularStd-Book";
   line-height: 1.5rem;
   color: #f4ffed;
   opacity: 0;
@@ -159,11 +161,11 @@ $hover-color: pink;
       }
 
       &.third {
-        transform: translate(190px, -20px);
+        transform: translate(140px, -20px);
       }
 
       &.fourth {
-        transform: translate(150px, -70px);
+        transform: translate(80px, -70px);
       }
     }
   }
@@ -189,7 +191,7 @@ $hover-color: pink;
       }
 
       &.third {
-        transform: translate(-105px, -50px);
+        transform: translate(-105px, -70px);
       }
     }
   }

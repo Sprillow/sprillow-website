@@ -87,8 +87,8 @@ const IndexPage = () => {
               <h2 className="about-title">Pegah Vaezi</h2>
               <h4 className="about-subtitle">Designer</h4>
               <p className="about-description">
-                Pegah loves plants, both as metaphors, and as real things. When
-                she's not designing, she's probably researching, watering
+                Pegah loves plants, both as metaphors, and as living things.
+                When she's not designing, she's probably researching, watering
                 plants, or enjoying some cuisine exploration. Pegah likes wood,
                 plants, and anything inspired by nature. She is in her best when
                 she listens to nature. The best moments are when her work brings

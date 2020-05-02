@@ -87,16 +87,17 @@ const IndexPage = () => {
               <h2 className="about-title">Pegah Vaezi</h2>
               <h4 className="about-subtitle">Designer</h4>
               <p className="about-description">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit id in
-                libero, purus nullam conubia torquent volutpat sollicitudin
-                himenaeos et aenean nulla facilisis, cras netus rutrum vel
-                taciti lacus curabitur eget laoreet. Id neque primis elementum
-                orci a feugiat turpis commodo, blandit fusce imperdiet justo
-                vehicula netus nulla penatibus, platea aptent massa tellus sed
-                ligula aenean. Integer orci posuere augue dictumst nullam
-                pulvinar netus lectus cubilia, pellentesque vitae tempor
-                vehicula maecenas porttitor bibendum nisl fringilla turpis, dis
-                molestie fames commodo urna aliquet aenean varius.
+                Pegah loves plants, both as metaphors, and as real things. When
+                she's not designing, she's probably researching, watering
+                plants, or enjoying some cuisine exploration. Pegah likes wood,
+                plants, and anything inspired by nature. She is in her best when
+                she listens to nature. The best moments are when her work brings
+                thoughtfulness, joy, and inspiration to the people, and respect
+                to the environment and humanity. Pegah loves unique things
+                created with character and thoughtfulness. She also loves it
+                when work of design actually has a positive impact in the world.
+                In her design work she brings joy, thoughtfulness, and
+                inpiration to its audience and users.
               </p>
             </div>
             <div className="about-person">
@@ -106,16 +107,19 @@ const IndexPage = () => {
               <h2 className="about-title">Connor Turland</h2>
               <h4 className="about-subtitle">Developer, facilitator</h4>
               <p className="about-description">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit id in
-                libero, purus nullam conubia torquent volutpat sollicitudin
-                himenaeos et aenean nulla facilisis, cras netus rutrum vel
-                taciti lacus curabitur eget laoreet. Id neque primis elementum
-                orci a feugiat turpis commodo, blandit fusce imperdiet justo
-                vehicula netus nulla penatibus, platea aptent massa tellus sed
-                ligula aenean. Integer orci posuere augue dictumst nullam
-                pulvinar netus lectus cubilia, pellentesque vitae tempor
-                vehicula maecenas porttitor bibendum nisl fringilla turpis, dis
-                molestie fames commodo urna aliquet aenean varius.
+                Connor is a minimalist. He likes keeping life simple so that he
+                can focus on the big and hard puzzles. He is a contemplater,
+                with a mind that works overtime on juicy challenges. Sometimes
+                they keep him up at night, and then wake him up at 6 in the
+                morning and he has to get out of bed and get back to it. With
+                people, Connor has a strong diplomatic side, and is able to
+                connect with many different people with diverse perspectives and
+                make everyone feel heard. Connor adores learning. He is
+                currently learning Farsi (Persian) and Spanish. Connor is a
+                tinkerer and fixer. He grew up tearing about and putting
+                together the raw parts of computers for fun, and was always
+                entranced by technology. He is a self-taught developer and
+                facilitator.
               </p>
             </div>
           </div>

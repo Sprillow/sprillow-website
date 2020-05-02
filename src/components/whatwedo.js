@@ -29,7 +29,7 @@ export default function WhatWeDoDiagram() {
   // set this to DISCOVERY, DESIGN, DELIVERY, or FEEDBACK
   // to develop the layout quickly and easily for the
   // expanded subcategories
-  const [activeItem, setActiveItem] = useState(DELIVERY)
+  const [activeItem, setActiveItem] = useState(DISCOVERY)
   const [hoveringItem, setHoveringItem] = useState()
 
   const activateDiscovery = () => setActiveItem(DISCOVERY)

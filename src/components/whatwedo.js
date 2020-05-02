@@ -172,6 +172,8 @@ export default function WhatWeDoDiagram() {
         onClick={activateDiscovery}
         onMouseOver={hoverDiscovery}
         onMouseOut={clearHover}
+        onFocus={hoverDiscovery}
+        onBlur={clearHover}
       >
         Discovery
       </h2>
@@ -196,6 +198,8 @@ export default function WhatWeDoDiagram() {
         onClick={activateDesign}
         onMouseOver={hoverDesign}
         onMouseOut={clearHover}
+        onFocus={hoverDesign}
+        onBlur={clearHover}
       >
         Design
       </h2>
@@ -217,6 +221,8 @@ export default function WhatWeDoDiagram() {
         onClick={activateDelivery}
         onMouseOver={hoverDelivery}
         onMouseOut={clearHover}
+        onFocus={hoverDelivery}
+        onBlur={clearHover}
       >
         Delivery
       </h2>
@@ -241,6 +247,8 @@ export default function WhatWeDoDiagram() {
         onClick={activateFeedback}
         onMouseOver={hoverFeedback}
         onMouseOut={clearHover}
+        onFocus={hoverFeedback}
+        onBlur={clearHover}
       >
         Feedback
       </h2>

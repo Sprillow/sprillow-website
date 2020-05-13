@@ -1,7 +1,4 @@
 import React from "react"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
 import "./projects.scss"
 import { AcornScreenshot, CosenseScreenshot, UfcScreenshot } from "./images"
 
@@ -15,26 +12,26 @@ const projects = [
     tags: ["holochain", "peer-to-peer-technology", "project-management"],
     url: "https://github.com/h-be/acorn-docs",
   },
-  {
-    name: "Unified Field Corporation",
-    image: <UfcScreenshot />,
-    efforts: ["Advisory", "Strategy", "Tech Architecture"],
-    subheading:
-      "Advisory capacity for tech stack development for a food systems",
-    question: "How can we...?",
-    tags: ["holochain", "food-production", "food-systems"],
-    url: "",
-  },
-  {
-    name: "cosense",
-    image: <CosenseScreenshot />,
-    efforts: ["UX Design", "UI Design", "App Development"],
-    subheading: "Rapid Sensemaking MacOS, Linux & Windows Native App",
-    question:
-      "How can we breakdown barriers of communication in service of getting collective data to make informed and wholistic decisions?",
-    tags: ["cross-platform", "social-algorithms", "collective-sensemaking"],
-    url: "https://github.com/rapid-sensemaking-framework/cosense",
-  },
+  // {
+  //   name: "Unified Field Corporation",
+  //   image: <UfcScreenshot />,
+  //   efforts: ["Advisory", "Strategy", "Tech Architecture"],
+  //   subheading:
+  //     "Advisory capacity for tech stack development for a food systems",
+  //   question: "How can we...?",
+  //   tags: ["holochain", "food-production", "food-systems"],
+  //   url: "",
+  // },
+  // {
+  //   name: "cosense",
+  //   image: <CosenseScreenshot />,
+  //   efforts: ["UX Design", "UI Design", "App Development"],
+  //   subheading: "Rapid Sensemaking MacOS, Linux & Windows Native App",
+  //   question:
+  //     "How can we breakdown barriers of communication in service of getting collective data to make informed and wholistic decisions?",
+  //   tags: ["cross-platform", "social-algorithms", "collective-sensemaking"],
+  //   url: "https://github.com/rapid-sensemaking-framework/cosense",
+  // },
 ]
 
 function Project({ project }) {
@@ -73,21 +70,11 @@ function Project({ project }) {
 }
 
 export default function Projects() {
-  const settings = {
-    arrows: false,
-    centerMode: true,
-    // infinite: true,
-    centerPadding: "15%",
-    slidesToShow: 1,
-    speed: 500,
-  }
   return (
     <div className="project-profiles">
-      <Slider {...settings}>
-        {projects.map((project, index) => (
-          <Project key={index} project={project} />
-        ))}
-      </Slider>
+      {projects.map((project, index) => (
+        <Project key={index} project={project} />
+      ))}
     </div>
   )
 }

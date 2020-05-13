@@ -42,8 +42,8 @@ const IndexPage = () => {
         <div className="hero-text">
           <h1 className="hero-heading">
             Hey, we are <span>Sprillow</span>
+            <Seedling />
           </h1>{" "}
-          <Seedling />
           <p className="hero-sub-heading">
             design, development and consultation studio focused on co-creating
             systems change initiatives

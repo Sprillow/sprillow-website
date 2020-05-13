@@ -4,19 +4,27 @@ import React, { useState } from "react"
 import { Logo } from "./images"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
-import "./header.css"
+import "./header.scss"
+
+// SVGS as react components MUST
+// have .inline.svg at the end of their
+// file names or they will not work
+import ToggleNavButton from "../images/toggle-nav-button.inline.svg"
 
 const Header = ({ siteTitle }) => {
   const [isOffTop, setIsOffTop] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
 
-  useScrollPosition(({ prevPos, currPos }) => {
-    console.log(currPos.y, prevPos.y)
-    const checkIsVisible = currPos.y > prevPos.y
-    if (checkIsVisible !== isVisible) setIsVisible(checkIsVisible)
-    const checkIsOffTop = currPos.y < -120
-    if (checkIsOffTop !== isOffTop) setIsOffTop(checkIsOffTop)
-  }, [isVisible, isOffTop])
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      console.log(currPos.y, prevPos.y)
+      const checkIsVisible = currPos.y > prevPos.y
+      if (checkIsVisible !== isVisible) setIsVisible(checkIsVisible)
+      const checkIsOffTop = currPos.y < -120
+      if (checkIsOffTop !== isOffTop) setIsOffTop(checkIsOffTop)
+    },
+    [isVisible, isOffTop]
+  )
 
   return (
     <>
@@ -35,18 +43,15 @@ const Header = ({ siteTitle }) => {
           {siteTitle} */}
               </Link>
             </h1>
-            <ul
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                listStyle: "none",
-              }}
-            >
+            <ul className="header-menu">
               <li className="header-item">services</li>
               <li className="header-item">portfolio</li>
               <li className="header-item">about</li>
             </ul>
+            <ToggleNavButton className="toggle-nav-button" />
           </div>
+
+          <button className="toggle-nav-button"></button>
         </header>
       }
     </>

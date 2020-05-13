@@ -57,6 +57,12 @@ $breakpoints: (
   }
 }
 
+/*================================================*/
+
+/*=============================================>>>>>
+= Fonts =
+===============================================>>>>>*/
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -177,12 +183,19 @@ $section-padding: 40px 30px 0;
 .hero {
   .hero-text {
     padding-top: 12rem;
+    @include media-down(mobile) {
+      padding-top: 8rem;
+    }
   }
 
   .hero-heading {
     display: inline-block;
     margin-right: 10px;
     font-size: 3.5rem;
+
+    span {
+      margin-right: 1rem;
+    }
   }
 
   .hero-sub-heading {
@@ -274,15 +287,13 @@ $section-padding: 40px 30px 0;
 
 /* Get To Know Us section */
 
-// @include media() {
-//   .about-content {
-//     flex-direction: column;
-//   }
-// }
 .get-to-know-us {
   padding-top: 40px;
 
   .about-content {
+    @include media-down(mobile) {
+      flex-direction: column;
+    }
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -303,6 +314,7 @@ $section-padding: 40px 30px 0;
       display: flex;
       flex-direction: column;
       max-width: 350px;
+      margin-bottom: 3rem;
     }
   }
   .about-images {

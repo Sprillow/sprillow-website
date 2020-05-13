@@ -1,0 +1,129 @@
+/*=============================================>>>>>
+= Breakpoints =
+===============================================>>>>>*/
+$breakpoints: (
+  extra-large: 1920px,
+  large: 1600px,
+  desktop: 1340px,
+  tablet: 1080px,
+  small-tablet: 960px,
+  mobile: 800px,
+  small-mobile: 400px,
+);
+
+/*=============================================>>>>>
+= Media Up =
+===============================================>>>>>*/
+
+// @include media-up(mobile) {}
+@mixin media-up($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/*=============================================>>>>>
+= Media Down =
+===============================================>>>>>*/
+
+// @include media-down(mobile) {}
+@mixin media-down($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+/*================================================*/
+
+.header-wrapper {
+  @include media-down(mobile) {
+    left: 0;
+  }
+  @include media-up(mobile) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  top: 0;
+  width: 100vw;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: "CircularStd-Book";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 0.6s ease-in 0s;
+  position: fixed;
+  z-index: 2;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.header-wrapper.header-hidden {
+  transform: translate(-50%, -100%);
+  opacity: 0;
+}
+.header-wrapper.header-off-top {
+  /* background: rgba(0, 0, 0, 0.2); */
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  color: #a4ce9d;
+}
+
+.header-item {
+  margin-left: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  list-style: none;
+}
+
+.header-menu {
+  @include media-down(mobile) {
+    display: none;
+  }
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.toggle-nav-button {
+  display: block;
+  background: none;
+  -webkit-transition: right 0.3s ease;
+  transition: right 0.3s ease;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  box-sizing: content-box;
+  width: 40px;
+  height: 40px;
+}

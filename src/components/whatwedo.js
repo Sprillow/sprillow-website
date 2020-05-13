@@ -7,8 +7,23 @@ const DESIGN = "design"
 const DELIVERY = "delivery"
 const FEEDBACK = "feedback"
 
+// TODO
+
+/*
+
+
+
+*/
 const DESCRIPTIONS = {
-  [DISCOVERY]: <>A bunch of text explaining discovery</>,
+  [DISCOVERY]: (
+    <>
+      Getting to shared understanding is a process of discovery. We need to
+      share our ideas with each other to see if we are on the same page, and
+      clarify assumptions, intentions, and requirements. We are well trained in
+      methods of research and facilitation to help establish project clarity
+      early on.
+    </>
+  ),
   [DESIGN]: <>A bunch of text explaining design</>,
   [DELIVERY]: <>A bunch of text explaining delivery</>,
   [FEEDBACK]: <>A bunch of text explaining feedback</>,
@@ -164,112 +179,138 @@ export default function WhatWeDoDiagram() {
   })
 
   return (
-    <div className="what-we-do-diagram">
-      <h2
-        className={`what-we-do-step-title top-left ${
-          activeItem === DISCOVERY ? "active" : ""
-        } ${hoveringItem === DISCOVERY ? "hovering" : ""}`}
-        onClick={activateDiscovery}
-        onMouseOver={hoverDiscovery}
-        onMouseOut={clearHover}
-        onFocus={hoverDiscovery}
-        onBlur={clearHover}
-      >
-        Discovery
-      </h2>
-      <div
-        className={`subcategories discovery-subcategories top-left ${
-          activeItem === DISCOVERY ? "active" : ""
-        } ${hoveringItem === DISCOVERY ? "hovering" : ""}`}
-      >
-        <h3 className="subcategory discovery-subcategory first">Strategy</h3>
-        <h3 className="subcategory discovery-subcategory second">
-          Consultation
-        </h3>
-        <h3 className="subcategory discovery-subcategory third">UX Research</h3>
-        <h3 className="subcategory discovery-subcategory fourth">
-          Facilitation
-        </h3>
+    <>
+      <div className="what-we-do-diagram">
+        <h2
+          className={`what-we-do-step-title top-left ${
+            activeItem === DISCOVERY ? "active" : ""
+          } ${hoveringItem === DISCOVERY ? "hovering" : ""}`}
+          onClick={activateDiscovery}
+          onMouseOver={hoverDiscovery}
+          onMouseOut={clearHover}
+          onFocus={hoverDiscovery}
+          onBlur={clearHover}
+        >
+          Discovery
+        </h2>
+        <div
+          className={`subcategories discovery-subcategories top-left ${
+            activeItem === DISCOVERY ? "active" : ""
+          } ${hoveringItem === DISCOVERY ? "hovering" : ""}`}
+        >
+          <h3 className="subcategory discovery-subcategory first">Strategy</h3>
+          <h3 className="subcategory discovery-subcategory second">
+            Consultation
+          </h3>
+          <h3 className="subcategory discovery-subcategory third">
+            UX Research
+          </h3>
+          <h3 className="subcategory discovery-subcategory fourth">
+            Facilitation
+          </h3>
+        </div>
+        <h2
+          className={`what-we-do-step-title top-right ${
+            activeItem === DESIGN ? "active" : ""
+          } ${hoveringItem === DESIGN ? "hovering" : ""}`}
+          onClick={activateDesign}
+          onMouseOver={hoverDesign}
+          onMouseOut={clearHover}
+          onFocus={hoverDesign}
+          onBlur={clearHover}
+        >
+          Design
+        </h2>
+        <div
+          className={`subcategories design-subcategories top-right ${
+            activeItem === DESIGN ? "active" : ""
+          } ${hoveringItem === DESIGN ? "hovering" : ""}`}
+        >
+          <h3 className="subcategory design-subcategory first">UX Design</h3>
+          <h3 className="subcategory design-subcategory second">UI Design</h3>
+          <h3 className="subcategory design-subcategory third">
+            Visual Identity
+          </h3>
+        </div>
+        <h2
+          className={`what-we-do-step-title bottom-right ${
+            activeItem === DELIVERY ? "active" : ""
+          } ${hoveringItem === DELIVERY ? "hovering" : ""}`}
+          onClick={activateDelivery}
+          onMouseOver={hoverDelivery}
+          onMouseOut={clearHover}
+          onFocus={hoverDelivery}
+          onBlur={clearHover}
+        >
+          Delivery
+        </h2>
+        <div
+          className={`subcategories delivery-subcategories bottom-right ${
+            activeItem === DELIVERY ? "active" : ""
+          } ${hoveringItem === DELIVERY ? "hovering" : ""}`}
+        >
+          <h3 className="subcategory delivery-subcategory first">
+            E-commerce solutions
+          </h3>
+          <h3 className="subcategory delivery-subcategory second">
+            Mobile Apps
+          </h3>
+          <h3 className="subcategory delivery-subcategory third">
+            Native Apps
+          </h3>
+          <h3 className="subcategory delivery-subcategory fourth">
+            Peer-to-peer solutions
+          </h3>
+        </div>
+        <h2
+          className={`what-we-do-step-title bottom-left ${
+            activeItem === FEEDBACK ? "active" : ""
+          } ${hoveringItem === FEEDBACK ? "hovering" : ""}`}
+          onClick={activateFeedback}
+          onMouseOver={hoverFeedback}
+          onMouseOut={clearHover}
+          onFocus={hoverFeedback}
+          onBlur={clearHover}
+        >
+          Feedback
+        </h2>
+        <div
+          className={`subcategories feedback-subcategories bottom-left ${
+            activeItem === FEEDBACK ? "active" : ""
+          } ${hoveringItem === FEEDBACK ? "hovering" : ""}`}
+        >
+          <h3 className="subcategory feedback-subcategory first">
+            Optimization
+          </h3>
+          <h3 className="subcategory feedback-subcategory second">Analytics</h3>
+          <h3 className="subcategory feedback-subcategory third">
+            Retrospectives
+          </h3>
+        </div>
+        {activeItem &&
+          Object.keys(DESCRIPTIONS).map((descriptionKey, index) => {
+            const description = DESCRIPTIONS[descriptionKey]
+            return (
+              <p
+                key={index}
+                className={`what-we-do-step-description ${
+                  activeItem === descriptionKey ? "active" : ""
+                }`}
+              >
+                {description}
+              </p>
+            )
+          })}
+        <WhatWeDoCircle className="what-we-do-circle" />
+        <div className="what-we-do-step"></div>
       </div>
-      <h2
-        className={`what-we-do-step-title top-right ${
-          activeItem === DESIGN ? "active" : ""
-        } ${hoveringItem === DESIGN ? "hovering" : ""}`}
-        onClick={activateDesign}
-        onMouseOver={hoverDesign}
-        onMouseOut={clearHover}
-        onFocus={hoverDesign}
-        onBlur={clearHover}
-      >
-        Design
-      </h2>
-      <div
-        className={`subcategories design-subcategories top-right ${
-          activeItem === DESIGN ? "active" : ""
-        } ${hoveringItem === DESIGN ? "hovering" : ""}`}
-      >
-        <h3 className="subcategory design-subcategory first">UX Design</h3>
-        <h3 className="subcategory design-subcategory second">UI Design</h3>
-        <h3 className="subcategory design-subcategory third">
-          Visual Identity
-        </h3>
+      <div className="what-we-do-mobile">
+        what-we-do-mobile
+        <h2>Discovery</h2>
+        <h2>Design</h2>
+        <h2>Delivery</h2>
+        <h2>Feedback</h2>
       </div>
-      <h2
-        className={`what-we-do-step-title bottom-right ${
-          activeItem === DELIVERY ? "active" : ""
-        } ${hoveringItem === DELIVERY ? "hovering" : ""}`}
-        onClick={activateDelivery}
-        onMouseOver={hoverDelivery}
-        onMouseOut={clearHover}
-        onFocus={hoverDelivery}
-        onBlur={clearHover}
-      >
-        Delivery
-      </h2>
-      <div
-        className={`subcategories delivery-subcategories bottom-right ${
-          activeItem === DELIVERY ? "active" : ""
-        } ${hoveringItem === DELIVERY ? "hovering" : ""}`}
-      >
-        <h3 className="subcategory delivery-subcategory first">
-          E-commerce solutions
-        </h3>
-        <h3 className="subcategory delivery-subcategory second">Mobile Apps</h3>
-        <h3 className="subcategory delivery-subcategory third">Native Apps</h3>
-        <h3 className="subcategory delivery-subcategory fourth">
-          Peer-to-peer solutions
-        </h3>
-      </div>
-      <h2
-        className={`what-we-do-step-title bottom-left ${
-          activeItem === FEEDBACK ? "active" : ""
-        } ${hoveringItem === FEEDBACK ? "hovering" : ""}`}
-        onClick={activateFeedback}
-        onMouseOver={hoverFeedback}
-        onMouseOut={clearHover}
-        onFocus={hoverFeedback}
-        onBlur={clearHover}
-      >
-        Feedback
-      </h2>
-      <div
-        className={`subcategories feedback-subcategories bottom-left ${
-          activeItem === FEEDBACK ? "active" : ""
-        } ${hoveringItem === FEEDBACK ? "hovering" : ""}`}
-      >
-        <h3 className="subcategory feedback-subcategory first">Optimization</h3>
-        <h3 className="subcategory feedback-subcategory second">Analytics</h3>
-        <h3 className="subcategory feedback-subcategory third">
-          Retrospectives
-        </h3>
-      </div>
-      {activeItem && (
-        <p className="what-we-do-step-description">
-          {DESCRIPTIONS[activeItem]}
-        </p>
-      )}
-      <WhatWeDoCircle className="what-we-do-circle" />
-      <div className="what-we-do-step"></div>
-    </div>
+    </>
   )
 }

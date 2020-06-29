@@ -17,7 +17,6 @@ const Header = ({ siteTitle }) => {
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      console.log(currPos.y, prevPos.y)
       const checkIsVisible = currPos.y > prevPos.y
       if (checkIsVisible !== isVisible) setIsVisible(checkIsVisible)
       const checkIsOffTop = currPos.y < -120
@@ -25,6 +24,23 @@ const Header = ({ siteTitle }) => {
     },
     [isVisible, isOffTop]
   )
+
+  const scrollToHome = event => {
+    event.preventDefault()
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
+  const scrollToSection = event => {
+    event.preventDefault()
+    const id = new URL(event.target.href).hash
+    const element = document.querySelector(id)
+    element.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
 
   return (
     <>
@@ -37,16 +53,28 @@ const Header = ({ siteTitle }) => {
             }`}
           >
             <h1 style={{ margin: 0 }}>
-              <Link className="header-link" to="/">
+              <a className="header-link" href="/#hello" onClick={scrollToHome}>
                 <Logo />
                 {/* <br />
           {siteTitle} */}
-              </Link>
+              </a>
             </h1>
             <ul className="header-menu">
-              <li className="header-item">services</li>
-              <li className="header-item">portfolio</li>
-              <li className="header-item">about</li>
+              <li className="header-item">
+                <a href="/#services" onClick={scrollToSection}>
+                  services
+                </a>
+              </li>
+              <li className="header-item">
+                <a href="/#portfolio" onClick={scrollToSection}>
+                  portfolio
+                </a>
+              </li>
+              <li className="header-item">
+                <a href="/#about" onClick={scrollToSection}>
+                  about
+                </a>
+              </li>
             </ul>
             <ToggleNavButton className="toggle-nav-button" />
           </div>

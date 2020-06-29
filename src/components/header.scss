@@ -102,6 +102,11 @@ $breakpoints: (
   cursor: pointer;
   font-size: 18px;
   list-style: none;
+
+  a {
+    color: #ffc6c6;
+    text-decoration: none;
+  }
 }
 
 .header-menu {

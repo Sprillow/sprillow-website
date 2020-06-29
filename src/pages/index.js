@@ -1,6 +1,5 @@
-import React, { useEffect } from "react"
+import React from "react"
 import useWindowScroll from "@react-hook/window-scroll"
-import { Link } from "gatsby"
 import "./styles.scss"
 
 // import svg images here:
@@ -26,19 +25,26 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-  const scrollY = useWindowScroll(120 /*fps*/)
+  const scrollY = useWindowScroll(30 /*fps*/)
+
+  const scrollToServices = () => {
+    const element = document.querySelector("#services")
+    element.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
 
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="background-shape" />
+      {/* <div className="background-shape" /> */}
 
       <a href="mailto:pegah@sprillow.com">
         <Contact className="contact-icon" />
       </a>
 
       {/* HERO */}
-      <div className="hero section-wrapper section">
+      <div id="hello" className="hero section-wrapper section">
         <div className="hero-text">
           <h1 className="hero-heading">
             Hey, we are <span>Sprillow</span>
@@ -52,20 +58,20 @@ const IndexPage = () => {
         <div
           className={`hero-scroll-section ${scrollY > 5 ? "hide-scroll" : ""}`}
         >
-          <Scroll className="mouse-icon" />
+          <Scroll className="mouse-icon" onClick={scrollToServices} />
         </div>
       </div>
       {/* /HERO */}
 
       {/* WHAT WE DO */}
-      <div className="what-we-do section-wrapper section">
+      <div id="services" className="what-we-do section-wrapper section">
         <h1 className="section-heading">What we do</h1>
         <WhatWeDoDiagram />
       </div>
       {/* /WHAT WE DO */}
 
       {/* RECENT WORK */}
-      <div className="our-recent-work">
+      <div id="portfolio" className="our-recent-work">
         <LineCurlyDivider className="line-curly-divider-top" />
         <div className="section">
           <h1 className="section-heading">Our recent work</h1>
@@ -76,7 +82,7 @@ const IndexPage = () => {
       {/* /RECENT WORK */}
 
       {/* GET TO KNOW US */}
-      <div className="get-to-know-us">
+      <div id="about" className="get-to-know-us">
         <div className="section">
           <h1 className="section-heading">Get to know us</h1>
           <div className="about-content">

@@ -1,5 +1,4 @@
 import React from "react"
-import useWindowScroll from "@react-hook/window-scroll"
 import "./styles.scss"
 
 // import svg images here:
@@ -23,9 +22,12 @@ import Projects from "../components/projects"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import useIntersect from "../hooks/useIntersect"
 
 const IndexPage = () => {
-  const scrollY = useWindowScroll(30 /*fps*/)
+  const [topOfScreenRef, topOfScreenIntersectEntry] = useIntersect({
+    threshold: [0.5],
+  })
 
   const scrollToServices = () => {
     const element = document.querySelector("#services")
@@ -44,6 +46,7 @@ const IndexPage = () => {
       </a>
 
       {/* HERO */}
+      <div className="top-of-site-pixel-anchor" ref={topOfScreenRef}></div>
       <div id="hello" className="hero section-wrapper section">
         <div className="hero-text">
           <h1 className="hero-heading">
@@ -56,7 +59,13 @@ const IndexPage = () => {
           </p>
         </div>
         <div
-          className={`hero-scroll-section ${scrollY > 5 ? "hide-scroll" : ""}`}
+          className={`hero-scroll-section ${
+            topOfScreenIntersectEntry &&
+            topOfScreenIntersectEntry.boundingClientRect &&
+            topOfScreenIntersectEntry.boundingClientRect.y < 0
+              ? "hide-scroll"
+              : ""
+          }`}
         >
           <Scroll className="mouse-icon" onClick={scrollToServices} />
         </div>

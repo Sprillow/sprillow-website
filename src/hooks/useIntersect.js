@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react"
 
 export default ({ root = null, rootMargin, threshold = 0 }) => {
+  if (process.env.NODE_ENV === "production") {
+    return [() => {}, {}]
+  }
   const [entry, updateEntry] = useState({})
   const [node, setNode] = useState(null)
 

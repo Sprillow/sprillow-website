@@ -116,12 +116,20 @@ body {
     display: block;
   }
 }
+
+.mobile-menu-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
 .mobile-only {
   display: none;
   font-family: europa, sans-serif;
 
   @include media-down(mobile) {
-    display: block;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
   }
 }
@@ -129,6 +137,7 @@ body {
 .page-header .trigger-menu {
   @include media-down(mobile) {
     display: flex;
+    flex-direction: row;
   }
   align-items: center;
   font-size: 1.3rem;

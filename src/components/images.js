@@ -90,49 +90,48 @@ const queries = graphql`
   }
 `
 
-const Logo = () => {
+const Image = ({ type, imgName }) => {
   const data = useStaticQuery(queries)
-  return <Img fixed={data.logo.childImageSharp.fixed} />
+  const props = {
+    [type]: data[imgName] ? data[imgName].childImageSharp[type] : null
+  }
+  return <Img {...props} />
+}
+
+const Logo = () => {
+  return <Image type="fixed" imgName="logo" />
 }
 
 const Seedling = () => {
-  const data = useStaticQuery(queries)
-  return <Img fixed={data.seedling.childImageSharp.fixed} />
+  return <Image type="fixed" imgName="seedling" />
 }
 
 const AcornScreenshot = () => {
-  const data = useStaticQuery(queries)
-  return <Img fluid={data.acorn.childImageSharp.fluid} />
+  return <Image type="fluid" imgName="acorn" />
 }
 
 const CosenseScreenshot = () => {
-  const data = useStaticQuery(queries)
-  return <Img fluid={data.cosense.childImageSharp.fluid} />
+  return <Image type="fluid" imgName="cosense" />
 }
 
 const UfcScreenshot = () => {
-  const data = useStaticQuery(queries)
-  return <Img fluid={data.ufc.childImageSharp.fluid} />
+  return <Image type="fluid" imgName="ufc" />
 }
 
 const PegahProfile = () => {
-  const data = useStaticQuery(queries)
-  return <Img fluid={data.pegahProfile.childImageSharp.fluid} />
+  return <Image type="fluid" imgName="pegahProfile" />
 }
 
 const ConnorProfile = () => {
-  const data = useStaticQuery(queries)
-  return <Img fluid={data.connorProfile.childImageSharp.fluid} />
+  return <Image type="fluid" imgName="connorProfile" />
 }
 
 const ConnorWorking = () => {
-  const data = useStaticQuery(queries)
-  return <Img fluid={data.connorWorking.childImageSharp.fluid} />
+  return <Image type="fluid" imgName="connorWorking" />
 }
 
 const ConnorFacilitating = () => {
-  const data = useStaticQuery(queries)
-  return <Img fluid={data.connorFacilitating.childImageSharp.fluid} />
+  return <Image type="fluid" imgName="connorFacilitating" />
 }
 
 export {

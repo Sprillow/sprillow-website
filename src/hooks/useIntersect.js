@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from "react"
 
 export default ({ root = null, rootMargin, threshold = 0 }) => {
+  // SSR = server side rendering
+  const isSSR = typeof window === "undefined"
+  if (isSSR) {
+    return [() => {}, {}]
+  }
+
   const [entry, updateEntry] = useState({})
   const [node, setNode] = useState(null)
 

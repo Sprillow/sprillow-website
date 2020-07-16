@@ -39,7 +39,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      {/* <div className="background-shape" /> */}
+      <div className="background-shape" />
 
       <a href="mailto:pegah@sprillow.com">
         <Contact className="contact-icon" />
@@ -156,8 +156,8 @@ const IndexPage = () => {
           <h1 className="section-heading">Let's work together</h1>
           <h3 className="contact-text">
             We’re excited to collaborate with you! Send us a message and let us
-            know about your project plus any details to help us make your dream
-            come through
+            know about your project plus any details to help us make your vision
+            become reality
           </h3>
           <div className="contact-button">
             <a href="mailto:pegah@sprillow.com">Send us a message</a>

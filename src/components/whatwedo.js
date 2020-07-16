@@ -17,11 +17,10 @@ const FEEDBACK = "feedback"
 const DESCRIPTIONS = {
   [DISCOVERY]: (
     <>
-      Getting to shared understanding is a process of discovery. We need to
-      share our ideas with each other to see if we are on the same page, and
-      clarify assumptions, intentions, and requirements. We are well trained in
-      methods of research and facilitation to help establish project clarity
-      early on.
+      Getting to shared understanding is a process of discovery. We share our
+      ideas to see if we are on the same page, and clarify assumptions,
+      intentions, and requirements. We are well trained in methods of research
+      and facilitation to help establish project clarity early on.
     </>
   ),
   [DESIGN]: <>A bunch of text explaining design</>,

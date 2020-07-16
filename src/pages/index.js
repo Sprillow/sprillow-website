@@ -54,7 +54,7 @@ const IndexPage = () => {
             <Seedling />
           </h1>{" "}
           <p className="hero-sub-heading">
-            design, development and consultation studio focused on co-creating
+            a design, development and consultation studio focused on co-creating
             systems change initiatives
           </p>
         </div>

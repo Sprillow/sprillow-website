@@ -125,11 +125,11 @@ const Header = () => {
             </ul>
           </div>
         </div>
-        <div className="mobile-menu-wrapper">
-        <ul className="menu mobile-only">
-          <NavLinks />
-        </ul>
-        </div>
+        {/* <div className="mobile-menu-wrapper"> */}
+          <ul className="menu mobile-only">
+            <NavLinks />
+          </ul>
+        {/* </div> */}
       </nav>
     </header>
   )

@@ -73,32 +73,44 @@ html {
 }
 
 h1 {
-  font: 700 3rem latienne-pro !important;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: latienne-pro !important;
   color: #ffffff;
 }
 
 h2 {
-  font: 600 2.2rem europa;
+  font-size: 2.2rem;
+  font-weight: 600;
+  font-family: europa !important;
 }
 
 h3 {
-  font: 500 1.4rem europa;
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: europa !important;
   line-height: 2rem;
   color: #b7b7b7;
 }
 
 h4 {
-  font: normal 1.2rem europa;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-family: europa !important;
   color: #b7b7b7;
 }
 
 p {
-  font: normal 1.1rem europa;
+  font-size: 1.1rem;
+  font-weight: normal;
+  font-family: europa !important;
   line-height: 1.7rem;
 }
 
 a {
-  font: normal 1.2rem europa;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-family: europa !important;
   line-height: 1.5rem;
 }
 

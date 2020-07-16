@@ -1,0 +1,359 @@
+/*=============================================>>>>>
+= Breakpoints =
+===============================================>>>>>*/
+$breakpoints: (
+  extra-large: 1920px,
+  large: 1600px,
+  desktop: 1340px,
+  tablet: 1080px,
+  small-tablet: 960px,
+  mobile: 800px,
+  small-mobile: 400px,
+);
+
+/*=============================================>>>>>
+= Media Up =
+===============================================>>>>>*/
+
+// @include media-up(mobile) {}
+@mixin media-up($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/*=============================================>>>>>
+= Media Down =
+===============================================>>>>>*/
+
+// @include media-down(mobile) {}
+@mixin media-down($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/*================================================*/
+
+$active-color: #ffc6c6;
+$hover-color: pink;
+
+.what-we-do-diagram {
+  @include media-down(mobile) {
+    display: none;
+  }
+  position: relative;
+  margin: auto;
+  display: flex;
+}
+
+.what-we-do-circle {
+  position: relative;
+  margin: auto;
+  display: flex;
+}
+
+.what-we-do-step-description {
+  max-width: 320px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  // margin-left: -130px;
+  // margin-top: -50%;
+  z-index: 2;
+  opacity: 0;
+  transition: transform 0.7s ease, opacity 0.5s ease;
+  transform: translateX(-50%) translateY(-20%);
+  font-size: 1.1rem;
+  text-align: center;
+
+  &.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 3;
+  }
+}
+
+.what-we-do-diagram {
+  .top-left {
+    position: absolute;
+    left: 13%;
+    top: 15%;
+  }
+
+  .top-right {
+    position: absolute;
+    right: 18%;
+    top: 15%;
+  }
+
+  .bottom-right {
+    position: absolute;
+    right: 16%;
+    bottom: 16%;
+  }
+
+  .bottom-left {
+    position: absolute;
+    left: 14%;
+    bottom: 16%;
+  }
+}
+
+.what-we-do-step-title {
+  position: absolute;
+  transition: color 0.1s ease;
+  cursor: pointer;
+  z-index: 2;
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+
+  &.hovering {
+    color: $hover-color;
+  }
+
+  &.active {
+    color: $active-color;
+  }
+}
+
+.subcategories {
+  z-index: 1;
+  width: 1px;
+  height: 1px;
+}
+
+.subcategory {
+  position: absolute;
+  font: normal 1rem europa;
+  line-height: 1.5rem;
+  color: #f4ffed;
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.discovery-subcategories {
+  .discovery-subcategory {
+    top: 0;
+    left: 0;
+  }
+
+  &.active,
+  &.hovering {
+    .discovery-subcategory {
+      opacity: 0.8;
+
+      &.first {
+        transform: translate(60px, -90px);
+      }
+
+      &.second {
+        transform: translate(-60px, -60px);
+      }
+
+      &.third {
+        transform: translate(-130px, 0px);
+      }
+
+      &.fourth {
+        transform: translate(-60px, 60px);
+      }
+    }
+  }
+}
+
+.design-subcategories {
+  .design-subcategory {
+    top: 0;
+    right: 0;
+  }
+
+  &.active,
+  &.hovering {
+    .design-subcategory {
+      opacity: 0.8;
+
+      &.first {
+        transform: translate(20px, -70px);
+      }
+
+      &.second {
+        transform: translate(110px, -10px);
+      }
+
+      &.third {
+        transform: translate(125px, 60px);
+      }
+    }
+  }
+}
+
+.delivery-subcategories {
+  .delivery-subcategory {
+    bottom: -33px;
+    right: -15px;
+  }
+
+  &.active,
+  &.hovering {
+    .delivery-subcategory {
+      opacity: 0.8;
+      line-height: 1.26;
+      text-align: center;
+
+      // e-commerce solutions
+      &.first {
+        transform: translate(-40px, 100px);
+      }
+
+      // native apps
+      &.second {
+        transform: translate(90px, 40px);
+      }
+
+      // mobile apps
+      &.third {
+        transform: translate(140px, -20px);
+      }
+
+      // peer-to-peer solutions
+      &.fourth {
+        transform: translate(90px, -90px);
+      }
+    }
+  }
+}
+
+.feedback-subcategories {
+  .feedback-subcategory {
+    bottom: -33px;
+    left: 0;
+  }
+
+  &.active,
+  &.hovering {
+    .feedback-subcategory {
+      opacity: 0.8;
+
+      &.first {
+        transform: translate(-20px, 60px);
+      }
+
+      &.second {
+        transform: translate(-110px, 10px);
+      }
+
+      &.third {
+        transform: translate(-105px, -70px);
+      }
+    }
+  }
+}
+
+$default-drop-shadow: drop-shadow(0px 0px 20px transparent);
+$active-drop-shadow: drop-shadow(0px 0px 20px $active-color);
+$hover-drop-shadow: drop-shadow(0px 0px 20px $hover-color);
+
+#earth {
+  -webkit-filter: $default-drop-shadow;
+  filter: $default-drop-shadow;
+  transition: filter 0.2s ease;
+  cursor: pointer;
+
+  &.hovering {
+    -webkit-filter: $hover-drop-shadow;
+    filter: $hover-drop-shadow;
+  }
+
+  &.active {
+    -webkit-filter: $active-drop-shadow;
+    filter: $active-drop-shadow;
+  }
+}
+
+#earth,
+#seedling,
+#ellipse-seedling,
+#ear-of-rice,
+#ellipse-ear-of-rice,
+#honeybee,
+#ellipse-honeybee {
+  cursor: pointer;
+}
+
+#ellipse-honeybee,
+#ellipse-ear-of-rice,
+#ellipse-seedling {
+  .what-we-do-circle-cls-5 {
+    -webkit-filter: $default-drop-shadow;
+    filter: $default-drop-shadow;
+    transition: filter 0.2s ease;
+    cursor: pointer;
+  }
+
+  &.hovering {
+    .what-we-do-circle-cls-5 {
+      -webkit-filter: $hover-drop-shadow;
+      filter: $hover-drop-shadow;
+    }
+  }
+
+  &.active {
+    .what-we-do-circle-cls-5 {
+      -webkit-filter: $active-drop-shadow;
+      filter: $active-drop-shadow;
+    }
+  }
+}
+
+.what-we-do-mobile {
+  @include media-up(mobile) {
+    display: none;
+  }
+
+  .what-we-do-section-mobile {
+    margin-bottom: 4rem;
+    .what-we-do-section-heading-mobile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      svg {
+        max-height: 2.2rem;
+        max-width: 2.2rem;
+        margin-right: 20px;
+      }
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

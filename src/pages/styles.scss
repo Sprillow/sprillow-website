@@ -1,0 +1,431 @@
+/*=============================================>>>>>
+= Breakpoints =
+===============================================>>>>>*/
+$breakpoints: (
+  extra-large: 1920px,
+  large: 1600px,
+  desktop: 1340px,
+  tablet: 1080px,
+  small-tablet: 960px,
+  mobile: 800px,
+  small-mobile: 400px,
+);
+
+/*=============================================>>>>>
+= Media Up =
+===============================================>>>>>*/
+
+// @include media-up(mobile) {}
+@mixin media-up($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/*=============================================>>>>>
+= Media Down =
+===============================================>>>>>*/
+
+// @include media-down(mobile) {}
+@mixin media-down($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/*================================================*/
+
+/*=============================================>>>>>
+= Fonts =
+===============================================>>>>>*/
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font: 100%/1em;
+}
+
+h1 {
+  font: 700 3rem latienne-pro;
+  color: #ffffff;
+}
+
+h2 {
+  font: 600 2.2rem europa;
+}
+
+h3 {
+  font: 500 1.4rem europa;
+  line-height: 2rem;
+  color: #b7b7b7;
+}
+
+h4 {
+  font: normal 1.2rem europa;
+  color: #b7b7b7;
+}
+
+p {
+  font: normal 1.1rem europa;
+  line-height: 1.7rem;
+}
+
+a {
+  font: normal 1.2rem europa;
+  line-height: 1.5rem;
+}
+
+.background-shape {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 296vh;
+  max-width: none;
+  background-image: url("../images/curved-shadow.svg");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: 30% -300px;
+}
+
+.contact-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 0px;
+  width: 60px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* SECTIONS */
+
+$max-width: 960px;
+$section-padding: 6rem 30px 6rem;
+
+.section-wrapper {
+  min-height: 50vh;
+}
+
+.section {
+  max-width: $max-width;
+  padding: $section-padding;
+  margin: 0 auto;
+  --vh: 1vh;
+  box-sizing: border-box;
+}
+
+.section-heading {
+  margin-bottom: 4rem;
+}
+
+/* Hero Section */
+
+#hello {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.top-of-site-pixel-anchor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 0px;
+  left: 0;
+}
+
+.hero {
+  .hero-text {
+    @include media-down(mobile) {
+      padding-top: 8rem;
+    }
+  }
+
+  .hero-heading {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 3.2rem;
+
+    span {
+      margin-right: 1rem;
+    }
+  }
+
+  .hero-sub-heading {
+    color: hsla(0, 0%, 100%, 0.8);
+    font-family: europa;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    max-width: 630px;
+  }
+
+  .hero-sub-heading span {
+    position: relative;
+  }
+
+  .hero-sub-heading span::after {
+    background-image: url("../images/underline-curly.svg");
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 44px;
+    content: "";
+    width: 126px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.hero-scroll-section {
+  position: fixed;
+  bottom: 10px;
+  left: calc(50% - 20px);
+  width: 100vw;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+.hero-scroll-section.hide-scroll {
+  opacity: 0;
+}
+
+.mouse-icon {
+  bottom: 0;
+  width: 40px;
+  opacity: 1;
+  // transition: opacity 0.3s ease;
+  cursor: pointer;
+
+  animation: {
+    name: MoveUpDown;
+    iteration-count: infinite;
+    duration: 2s;
+    timing-function: ease-in-out;
+  }
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -20px);
+  }
+}
+
+/* What We Do Section */
+
+/* recent work section */
+
+.line-curly-divider-top {
+  width: 102vw;
+  margin-top: -40px;
+  margin-left: -8px;
+}
+
+.line-curly-divider-bottom {
+  width: 102vw;
+  bottom: -50px;
+  margin-left: -8px;
+  position: relative;
+}
+
+.our-recent-work {
+  // padding: $section-padding;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: rgba(54, 45, 147, 0.32);
+}
+
+/* Get To Know Us section */
+
+.get-to-know-us {
+  padding-top: 40px;
+
+  .about-content {
+    @include media-down(mobile) {
+      flex-direction: column;
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+
+    .about-profile-image-wrapper {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+    }
+
+    .about-profile-image-wrapper img {
+      border-radius: 50%;
+    }
+
+    .about-person {
+      display: flex;
+      flex-direction: column;
+      padding: 0 40px;
+      margin-bottom: 3rem;
+    }
+  }
+  .about-images {
+    .about-image-wrapper {
+      max-width: 500px;
+      // background-color: #ffffff;
+      border-radius: 4px;
+
+      img {
+        padding: 40px;
+        border-radius: 4px;
+      }
+
+      &.right img {
+        transform: rotate(6deg);
+      }
+      &.left img {
+        transform: rotate(-6deg);
+      }
+    }
+  }
+}
+
+/* Lets Work Together section */
+.lets-work-together {
+  margin-bottom: 4rem;
+  .contact-button a {
+    border: 1.5px solid pink;
+    color: pink;
+    font: normal 0.9rem europa;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+  }
+  .contact-text {
+    color: hsla(0, 0%, 100%, 0.8);
+    margin-bottom: 3rem;
+  }
+
+  .contact-emails-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-button {
+    line-height: 4.5rem;
+    a {
+      border: 1.5px solid pink;
+      color: pink;
+      font: normal 1.2rem europa;
+      text-decoration: none;
+      padding: 16px 20px;
+      border-radius: 4px;
+    }
+  }
+}
+
+// Footer Section
+
+.footer {
+  font: normal 1.2rem europa;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+
+  .footer-title {
+    margin-bottom: 10px;
+    color: hsla(0, 0%, 100%, 0.7);
+  }
+
+  .see-our-work-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-right: 40px;
+
+    .github-icon {
+      width: 30px;
+      height: 30px;
+      padding: 10px;
+      margin-left: -10px;
+      box-sizing: content-box;
+      cursor: pointer;
+    }
+  }
+
+  .say-hi-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    .contact-emails-wrapper {
+      display: flex;
+      flex-direction: row;
+      @include media-down(mobile) {
+        flex-direction: column;
+      }
+      .contact-email {
+        color: #ffffff;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+// @include media-down(mobile) {
+//   height: 50vh;
+// }
+
+// .mouse-icon {
+//   @include horizontal-align(absolute);
+//   top: auto;
+//   bottom: 50%;
+//   height: 100px;
+//   width: 35px;
+//   opacity: 1;
+//   transition: opacity 0.3s ease;
+
+//   @include media-down(mobile) {
+//     height: 75px;
+//     width: 25px;
+//   }
+
+//   @keyframes mouse-bob {
+//     0% {
+//       transform: translateY(50%) translateX(-50%);
+//     }
+//     50% {
+//       transform: translateY(60%) translateX(-50%);
+//     }
+//     100% {
+//       transform: translateY(50%) translateX(-50%);
+//     }
+//   }
+// }

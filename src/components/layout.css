@@ -1,5 +1,5 @@
 html {
-  background-color: #263834;
+  background-color: #1B2723;
   color: #ffffff;
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -23,6 +23,9 @@ nav,
 section,
 summary {
   display: block;
+}
+main {
+  overflow-x: hidden;
 }
 audio,
 canvas,
@@ -201,7 +204,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 100%, 0.934);
+  color: hsla(30, 80%, 96.1%, 0.93);
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;

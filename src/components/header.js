@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import _ from "underscore"
 import React, { useEffect, useState } from "react"
 import { Logo } from "./images"
 
@@ -40,6 +41,11 @@ const NavLinks = () => {
           about
         </a>
       </li>
+      <li>
+        <a href="/#connect" onClick={scrollToSection}>
+          connect
+        </a>
+      </li>
     </>
   )
 }
@@ -63,7 +69,7 @@ const Header = () => {
 
     const checkScroll = () => {
       const currentScroll = window.pageYOffset
-      if (currentScroll == 0) {
+      if (currentScroll < 90) {
         body.classList.remove(scrollUp)
         return
       }
@@ -82,12 +88,13 @@ const Header = () => {
       }
       lastScroll = currentScroll
     }
-    window.addEventListener("scroll", checkScroll)
+    const checkScrollThrottled = _.throttle(checkScroll, 50)
+    window.addEventListener("scroll", checkScrollThrottled)
 
     // unmount/cleanup
     return () => {
       triggerMenu.removeEventListener("click", toggleMenu)
-      window.removeEventListener("scroll", checkScroll)
+      window.removeEventListener("scroll", checkScrollThrottled)
     }
   }, [])
 
@@ -111,7 +118,7 @@ const Header = () => {
               <svg width="12" height="12" viewBox="0 0 24 24">
                 <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
               </svg>
-              <span>MENU</span>
+              <span>menu</span>
             </button>
             <ul className="desktop-menu desktop-only">
               <NavLinks />

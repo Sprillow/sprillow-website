@@ -7,8 +7,12 @@ const projects = [
     name: "Acorn",
     image: <AcornScreenshot />,
     efforts: ["UX Design", "UI Design", "App Development"],
-    subheading: "Project Management MacOS, Linux Desktop App",
-    question: "?",
+    subheading: "MacOS & Linux Desktop App for Project Management",
+    question: `Modelled playfully after the energetic nature of
+    squirrels, Acorn is a collaborative desktop application
+    for teams and individuals to map their aspirational goals
+    and efforts. We used cutting edge peer-to-peer software
+    Holochain for this project.`,
     tags: ["holochain", "peer-to-peer-technology", "project-management"],
     url: "https://github.com/h-be/acorn-docs",
   },
@@ -51,7 +55,6 @@ function Project({ project }) {
       <h3 className="project-subheading">{project.subheading}</h3>
 
       <div className="project-question">{project.question}</div>
-      <div className="project-tags-and-link-wrapper">
         <div className="project-tags-wrapper">
           {project.tags.map((tag, index) => (
             <div key={index} className="project-tags-item">
@@ -60,12 +63,9 @@ function Project({ project }) {
           ))}
         </div>
         {project.url && (
-          <div className="project-link-button">
-            <a href={project.url}>See on Github</a>
-          </div>
+            <a className="project-link-button" href={project.url}>See on Github</a>
         )}
       </div>
-    </div>
   )
 }
 

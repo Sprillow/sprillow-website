@@ -69,9 +69,9 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px 60px;
+  padding: 12px 30px 8px;
   z-index: 4;
-  transition: transform 0.4s;
+  transition: transform 0.6s;
   color: #fff;
 
   .trigger-menu-wrapper-center {
@@ -98,6 +98,7 @@ body {
 
       li {
         padding: 20px;
+        margin-bottom: 0;
 
         a {
           text-decoration: none;
@@ -117,9 +118,11 @@ body {
 }
 .mobile-only {
   display: none;
+  font-family: europa, sans-serif;
 
   @include media-down(mobile) {
     display: block;
+    cursor: pointer;
   }
 }
 
@@ -133,7 +136,7 @@ body {
   letter-spacing: 0.2em;
   background: none;
   border: none;
-  font-family: "CircularStd-Medium", helvetica, sans-serif;
+  font-family: europa, helvetica, sans-serif;
 }
 
 .page-header .trigger-menu svg {

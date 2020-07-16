@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react"
 import "./whatwedo.scss"
 import WhatWeDoCircle from "../images/what-we-do-circle.inline.svg"
+import useIntersect from "../hooks/useIntersect"
+
+import Discovery from "../images/discovery.inline.svg"
+import Design from "../images/design.inline.svg"
+import Delivery from "../images/delivery.inline.svg"
+import Feedback from "../images/feedback.inline.svg"
 
 const DISCOVERY = "discovery"
 const DESIGN = "design"
@@ -17,15 +23,36 @@ const FEEDBACK = "feedback"
 const DESCRIPTIONS = {
   [DISCOVERY]: (
     <>
-      Getting to shared understanding is a process of discovery. We share our
-      ideas to see if we are on the same page, and clarify assumptions,
-      intentions, and requirements. We are well trained in methods of research
-      and facilitation to help establish project clarity early on.
+      Getting to shared understanding is a process of discovery. We all share
+      ideas to get on the same page, and clarify assumptions, intentions, and
+      requirements. We are well trained in methods of research and facilitation
+      to help establish project clarity early on.
     </>
   ),
-  [DESIGN]: <>A bunch of text explaining design</>,
-  [DELIVERY]: <>A bunch of text explaining delivery</>,
-  [FEEDBACK]: <>A bunch of text explaining feedback</>,
+  [DESIGN]: (
+    <>
+      Design doesn't happen in a vacuum. We develop a picture of your users or
+      audience so we know who we're creating for. We follow a think-make-check
+      iterative process to design a well-tested experience that's going to feel
+      seamless to your users.
+    </>
+  ),
+  [DELIVERY]: (
+    <>
+      Time to build. We craft the code of your project with utmost attention to
+      quality, user-friendliness, reliability, and maintainability. We can
+      deliver on technical solutions from low-level systems to web services;
+      data visualizations; and fast, friendly web or native interfaces.
+    </>
+  ),
+  [FEEDBACK]: (
+    <>
+      Never stop learning. It is integral to the process to pause, reflect, and
+      be informed. We establish the tools and techniques for gathering and
+      interpreting the data points you need to make data-driven decisions in
+      areas with room for improvement.
+    </>
+  ),
 }
 
 const EARTH = "earth"
@@ -43,7 +70,10 @@ export default function WhatWeDoDiagram() {
   // set this to DISCOVERY, DESIGN, DELIVERY, or FEEDBACK
   // to develop the layout quickly and easily for the
   // expanded subcategories
-  const [activeItem, setActiveItem] = useState(DISCOVERY)
+  const [whatWeDoRef, whatWeDoIntersectEntry] = useIntersect({
+    threshold: [0.4],
+  })
+  const [activeItem, setActiveItem] = useState()
   const [hoveringItem, setHoveringItem] = useState()
 
   const activateDiscovery = () => setActiveItem(DISCOVERY)
@@ -56,6 +86,13 @@ export default function WhatWeDoDiagram() {
   const hoverDelivery = () => setHoveringItem(DELIVERY)
   const hoverFeedback = () => setHoveringItem(FEEDBACK)
   const clearHover = () => setHoveringItem(null)
+
+  // on scroll into view, activate discovery
+  useEffect(() => {
+    if (!activeItem && whatWeDoIntersectEntry.isIntersecting) {
+      activateDiscovery()
+    }
+  }, [whatWeDoIntersectEntry.isIntersecting])
 
   // click and activate
   useEffect(() => {
@@ -179,7 +216,7 @@ export default function WhatWeDoDiagram() {
 
   return (
     <>
-      <div className="what-we-do-diagram">
+      <div className="what-we-do-diagram" ref={whatWeDoRef}>
         <h2
           className={`what-we-do-step-title top-left ${
             activeItem === DISCOVERY ? "active" : ""
@@ -249,16 +286,16 @@ export default function WhatWeDoDiagram() {
           } ${hoveringItem === DELIVERY ? "hovering" : ""}`}
         >
           <h3 className="subcategory delivery-subcategory first">
-            E-commerce solutions
+          E-commerce <br/> Solutions
           </h3>
           <h3 className="subcategory delivery-subcategory second">
-            Mobile Apps
+          Native Apps
           </h3>
           <h3 className="subcategory delivery-subcategory third">
-            Native Apps
+          Mobile Apps
           </h3>
           <h3 className="subcategory delivery-subcategory fourth">
-            Peer-to-peer solutions
+            Peer-to-peer  <br/> Solutions
           </h3>
         </div>
         <h2
@@ -286,29 +323,54 @@ export default function WhatWeDoDiagram() {
             Retrospectives
           </h3>
         </div>
-        {activeItem &&
-          Object.keys(DESCRIPTIONS).map((descriptionKey, index) => {
-            const description = DESCRIPTIONS[descriptionKey]
-            return (
-              <p
-                key={index}
-                className={`what-we-do-step-description ${
-                  activeItem === descriptionKey ? "active" : ""
-                }`}
-              >
-                {description}
-              </p>
-            )
-          })}
+        {Object.keys(DESCRIPTIONS).map((descriptionKey, index) => {
+          const description = DESCRIPTIONS[descriptionKey]
+          return (
+            <p
+              key={index}
+              className={`what-we-do-step-description ${
+                activeItem === descriptionKey ? "active" : ""
+              }`}
+            >
+              {description}
+            </p>
+          )
+        })}
         <WhatWeDoCircle className="what-we-do-circle" />
         <div className="what-we-do-step"></div>
       </div>
       <div className="what-we-do-mobile">
-        what-we-do-mobile
-        <h2>Discovery</h2>
-        <h2>Design</h2>
-        <h2>Delivery</h2>
-        <h2>Feedback</h2>
+        <div className="what-we-do-section-mobile">
+          <div className="what-we-do-section-heading-mobile">
+            <Discovery />
+            <h2>Discovery</h2>
+          </div>
+          <p>{DESCRIPTIONS[DISCOVERY]}</p>
+        </div>
+
+        <div className="what-we-do-section-mobile">
+          <div className="what-we-do-section-heading-mobile">
+            <Design />
+            <h2>Design</h2>
+          </div>
+          <p>{DESCRIPTIONS[DESIGN]}</p>
+        </div>
+
+        <div className="what-we-do-section-mobile">
+          <div className="what-we-do-section-heading-mobile">
+            <Delivery />
+            <h2>Delivery</h2>
+          </div>
+          <p>{DESCRIPTIONS[DELIVERY]}</p>
+        </div>
+
+        <div className="what-we-do-section-mobile">
+          <div className="what-we-do-section-heading-mobile">
+            <Feedback />
+            <h2>Feedback</h2>
+          </div>
+          <p>{DESCRIPTIONS[FEEDBACK]}</p>
+        </div>
       </div>
     </>
   )

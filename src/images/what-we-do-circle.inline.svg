@@ -23,7 +23,6 @@
       }
 
       .what-we-do-circle-cls-4 {
-        stroke: #707070;
       }
 
       .what-we-do-circle-cls-5, .what-we-do-circle-cls-7 {
@@ -31,7 +30,6 @@
       }
 
       .what-we-do-circle-cls-7 {
-        fill: #707070;
       }
 
       .what-we-do-circle-cls-8 {

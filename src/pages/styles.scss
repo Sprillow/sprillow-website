@@ -68,70 +68,37 @@ $breakpoints: (
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Circular-STD Font */
-
-@font-face {
-  font-family: "CircularStd-Book";
-  src: url("../fonts/circular-std/CircularStd-Book.woff2") format("woff2"),
-    url("../fonts/circular-std/CircularStd-Book.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "CircularStd-Medium";
-  src: url("../fonts/circular-std/CircularStd-Medium.ttf") format("woff2"),
-    url("../fonts/circular-std/CircularStd-Medium.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CircularStd-Bold";
-  src: url("../fonts/circular-std/CircularStd-Bold.ttf") format("woff2"),
-    url("../fonts/circular-std/CircularStd-Bold.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CircularStd-Black";
-  src: url("../fonts/circular-std/CircularStd-Black.woff2") format("woff2"),
-    url("../fonts/circular-std/CircularStd-Black.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
   font: 100%/1em;
 }
 
 h1 {
-  font: normal 2.8rem "CircularStd-Medium";
+  font: 700 3rem latienne-pro;
   color: #ffffff;
 }
 
 h2 {
-  font: normal 1.8rem "CircularStd-Medium";
+  font: 600 2.2rem europa;
 }
 
 h3 {
-  font: normal 1.2rem "CircularStd-Book";
+  font: 500 1.4rem europa;
   line-height: 2rem;
   color: #b7b7b7;
 }
 
 h4 {
-  font: normal 1rem "CircularStd-Book";
+  font: normal 1.2rem europa;
   color: #b7b7b7;
 }
 
 p {
-  font: normal 1.1rem "CircularStd-Book";
+  font: normal 1.1rem europa;
   line-height: 1.7rem;
 }
 
 a {
-  font: normal 1.2rem "CircularStd-Book";
+  font: normal 1.2rem europa;
   line-height: 1.5rem;
 }
 
@@ -160,10 +127,10 @@ a {
 /* SECTIONS */
 
 $max-width: 960px;
-$section-padding: 40px 30px 0;
+$section-padding: 6rem 30px 6rem;
 
 .section-wrapper {
-  height: 100vh;
+  min-height: 50vh;
 }
 
 .section {
@@ -175,10 +142,16 @@ $section-padding: 40px 30px 0;
 }
 
 .section-heading {
-  margin-bottom: 60px;
+  margin-bottom: 4rem;
 }
 
 /* Hero Section */
+
+#hello {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
 
 .top-of-site-pixel-anchor {
   position: absolute;
@@ -190,7 +163,6 @@ $section-padding: 40px 30px 0;
 
 .hero {
   .hero-text {
-    padding-top: 12rem;
     @include media-down(mobile) {
       padding-top: 8rem;
     }
@@ -199,7 +171,7 @@ $section-padding: 40px 30px 0;
   .hero-heading {
     display: inline-block;
     margin-right: 10px;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
 
     span {
       margin-right: 1rem;
@@ -208,10 +180,10 @@ $section-padding: 40px 30px 0;
 
   .hero-sub-heading {
     color: hsla(0, 0%, 100%, 0.8);
-    font-family: "CircularStd-Book";
-    font-size: 1.5rem;
+    font-family: europa;
+    font-size: 1.4rem;
     line-height: 2.5rem;
-    max-width: 610px;
+    max-width: 630px;
   }
 
   .hero-sub-heading span {
@@ -274,13 +246,13 @@ $section-padding: 40px 30px 0;
 /* recent work section */
 
 .line-curly-divider-top {
-  width: 100vw;
+  width: 102vw;
   margin-top: -40px;
   margin-left: -8px;
 }
 
 .line-curly-divider-bottom {
-  width: 100vw;
+  width: 102vw;
   bottom: -50px;
   margin-left: -8px;
   position: relative;
@@ -321,7 +293,7 @@ $section-padding: 40px 30px 0;
     .about-person {
       display: flex;
       flex-direction: column;
-      max-width: 350px;
+      padding: 0 40px;
       margin-bottom: 3rem;
     }
   }
@@ -348,19 +320,18 @@ $section-padding: 40px 30px 0;
 
 /* Lets Work Together section */
 .lets-work-together {
-  padding-top: 60px;
-  max-height: 500px;
+  margin-bottom: 4rem;
   .contact-button a {
     border: 1.5px solid pink;
     color: pink;
-    font: normal 0.9rem "CircularStd-Medium";
+    font: normal 0.9rem europa;
     text-decoration: none;
     padding: 12px 20px;
     border-radius: 4px;
   }
   .contact-text {
     color: hsla(0, 0%, 100%, 0.8);
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
   }
 
   .contact-emails-wrapper {
@@ -373,7 +344,7 @@ $section-padding: 40px 30px 0;
     a {
       border: 1.5px solid pink;
       color: pink;
-      font: normal 1.2rem "CircularStd-Medium";
+      font: normal 1.2rem europa;
       text-decoration: none;
       padding: 16px 20px;
       border-radius: 4px;
@@ -384,7 +355,7 @@ $section-padding: 40px 30px 0;
 // Footer Section
 
 .footer {
-  font: normal 1.2rem "CircularStd-Book";
+  font: normal 1.2rem europa;
   padding-bottom: 40px;
   display: flex;
   flex-direction: row;
@@ -417,6 +388,9 @@ $section-padding: 40px 30px 0;
     .contact-emails-wrapper {
       display: flex;
       flex-direction: row;
+      @include media-down(mobile) {
+        flex-direction: column;
+      }
       .contact-email {
         color: #ffffff;
         margin: 10px;

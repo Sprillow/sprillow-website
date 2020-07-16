@@ -1,8 +1,7 @@
 .project-profiles {
-  width: 100vw;
 
   .project {
-    max-width: 700px;
+    max-width: 760px;
     margin: 0 auto;
     box-sizing: border-box;
 
@@ -30,20 +29,20 @@
     }
 
     .project-efforts-item {
-      font: normal 0.8rem "CircularStd-Medium";
+      font: normal 0.8rem europa;
       margin-left: 10px;
     }
 
     .project-subheading {
       margin-bottom: 2rem;
       color: #b7b7b7;
-      font: normal 1rem "CircularStd-Medium";
+      font: normal 1rem europa;
     }
 
     .project-question {
       margin-bottom: 1.5rem;
       color: #ffffff;
-      font: normal 0.9rem "CircularStd-Medium";
+      font: normal 1rem europa;
       line-height: 1.75rem;
     }
 
@@ -63,20 +62,20 @@
 
     .project-tags-item {
       color: #b7b7b7;
-      font: normal 0.7rem "CircularStd-Book";
+      font: normal 0.7rem europa;
       margin-right: 10px;
     }
 
-    .project-link-button {
-      height: 2.5rem;
-      a {
+    a.project-link-button {
         border: 1.5px solid pink;
         color: pink;
-        font: normal 0.9rem "CircularStd-Medium";
+        font: normal 0.9rem europa;
         text-decoration: none;
         padding: 12px 20px;
         border-radius: 4px;
-      }
+        display: block;
+        max-width: max-content;
+        margin-top: 2rem;
     }
   }
 }

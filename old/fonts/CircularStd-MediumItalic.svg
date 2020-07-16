@@ -7,9 +7,9 @@ Created by FontForge 20161116 at Tue Jun 27 15:03:48 2017
 Generated in 2013 by FontLab Studio. Copyright info pending.
 </metadata>
 <defs>
-<font id="CircularStd-MediumItalic" horiz-adv-x="570" >
+<font id="europaItalic" horiz-adv-x="570" >
   <font-face 
-    font-family="CircularStd"
+    font-family=europa
     font-weight="500"
     font-style="italic"
     font-stretch="normal"

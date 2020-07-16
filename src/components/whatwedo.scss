@@ -68,30 +68,33 @@ $hover-color: pink;
   }
   position: relative;
   margin: auto;
-  height: 70vh;
   display: flex;
 }
 
 .what-we-do-circle {
   position: relative;
   margin: auto;
-  height: 70vh;
   display: flex;
 }
 
 .what-we-do-step-description {
-  max-width: 20vw;
+  max-width: 320px;
   position: absolute;
-  left: 39%;
-  top: 32%;
+  left: 50%;
+  top: 50%;
+  // margin-left: -130px;
+  // margin-top: -50%;
   z-index: 2;
   opacity: 0;
   transition: transform 0.7s ease, opacity 0.5s ease;
-  transform: scale(0.7);
+  transform: translateX(-50%) translateY(-20%);
+  font-size: 1.1rem;
+  text-align: center;
 
   &.active {
     opacity: 1;
-    transform: scale(1);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 3;
   }
 }
 
@@ -111,13 +114,13 @@ $hover-color: pink;
   .bottom-right {
     position: absolute;
     right: 16%;
-    bottom: 14%;
+    bottom: 16%;
   }
 
   .bottom-left {
     position: absolute;
     left: 14%;
-    bottom: 14%;
+    bottom: 16%;
   }
 }
 
@@ -147,7 +150,7 @@ $hover-color: pink;
 
 .subcategory {
   position: absolute;
-  font: normal 1rem "CircularStd-Book";
+  font: normal 1rem europa;
   line-height: 1.5rem;
   color: #f4ffed;
   opacity: 0;
@@ -169,7 +172,7 @@ $hover-color: pink;
       opacity: 0.8;
 
       &.first {
-        transform: translate(60px, -70px);
+        transform: translate(60px, -90px);
       }
 
       &.second {
@@ -177,11 +180,11 @@ $hover-color: pink;
       }
 
       &.third {
-        transform: translate(-120px, 0px);
+        transform: translate(-130px, 0px);
       }
 
       &.fourth {
-        transform: translate(-50px, 60px);
+        transform: translate(-60px, 60px);
       }
     }
   }
@@ -199,7 +202,7 @@ $hover-color: pink;
       opacity: 0.8;
 
       &.first {
-        transform: translate(20px, -60px);
+        transform: translate(20px, -70px);
       }
 
       &.second {
@@ -207,7 +210,7 @@ $hover-color: pink;
       }
 
       &.third {
-        transform: translate(105px, 50px);
+        transform: translate(125px, 60px);
       }
     }
   }
@@ -216,32 +219,34 @@ $hover-color: pink;
 .delivery-subcategories {
   .delivery-subcategory {
     bottom: -33px;
-    right: 0;
+    right: -15px;
   }
 
   &.active,
   &.hovering {
     .delivery-subcategory {
       opacity: 0.8;
+      line-height: 1.26;
+      text-align: center;
 
       // e-commerce solutions
       &.first {
-        transform: translate(-40px, 60px);
-      }
-
-      // mobile apps
-      &.second {
-        transform: translate(80px, 40px);
+        transform: translate(-40px, 100px);
       }
 
       // native apps
+      &.second {
+        transform: translate(90px, 40px);
+      }
+
+      // mobile apps
       &.third {
         transform: translate(140px, -20px);
       }
 
       // peer-to-peer solutions
       &.fourth {
-        transform: translate(120px, -70px);
+        transform: translate(90px, -90px);
       }
     }
   }
@@ -332,5 +337,23 @@ $hover-drop-shadow: drop-shadow(0px 0px 20px $hover-color);
 .what-we-do-mobile {
   @include media-up(mobile) {
     display: none;
+  }
+
+  .what-we-do-section-mobile {
+    margin-bottom: 4rem;
+    .what-we-do-section-heading-mobile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      svg {
+        max-height: 2.2rem;
+        max-width: 2.2rem;
+        margin-right: 20px;
+      }
+      h2 {
+        margin-bottom: 0;
+      }
+    }
   }
 }

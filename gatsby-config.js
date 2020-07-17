@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Sprillow`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Sprillow Limited is a design, development and consultation studio focused on co-creating systems change initiatives. It was founded in July of 2019.`,
+    author: `@Sprillow`,
   },
   plugins: [
     {

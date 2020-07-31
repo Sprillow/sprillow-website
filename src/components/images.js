@@ -17,7 +17,7 @@ const queries = graphql`
   query {
     logo: file(relativePath: { eq: "sprillow-logo-light-green.png" }) {
       childImageSharp {
-        fixed(height: 70) {
+        fixed(width: 134) {
           ...GatsbyImageSharpFixed
         }
       }

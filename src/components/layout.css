@@ -625,3 +625,9 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+
+main {
+  margin-left: 189px;
+  width: calc(100vw - 189px);
+}

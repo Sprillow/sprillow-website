@@ -1,67 +1,4 @@
-/*=============================================>>>>>
-= Breakpoints =
-===============================================>>>>>*/
-$breakpoints: (
-  extra-large: 1920px,
-  large: 1600px,
-  desktop: 1340px,
-  tablet: 1080px,
-  small-tablet: 960px,
-  mobile: 800px,
-  small-mobile: 400px,
-);
-
-/*=============================================>>>>>
-= Media Up =
-===============================================>>>>>*/
-
-// @include media-up(mobile) {}
-@mixin media-up($breakpoint) {
-  // If the breakpoint exists in the map.
-  @if map-has-key($breakpoints, $breakpoint) {
-    // Get the breakpoint value.
-    $breakpoint-value: map-get($breakpoints, $breakpoint);
-
-    // Write the media query.
-    @media (min-width: $breakpoint-value) {
-      @content;
-    }
-
-    // If the breakpoint doesn't exist in the map.
-  } @else {
-    // Log a warning.
-    @warn 'Invalid breakpoint: #{$breakpoint}.';
-  }
-}
-
-/*=============================================>>>>>
-= Media Down =
-===============================================>>>>>*/
-
-// @include media-down(mobile) {}
-@mixin media-down($breakpoint) {
-  // If the breakpoint exists in the map.
-  @if map-has-key($breakpoints, $breakpoint) {
-    // Get the breakpoint value.
-    $breakpoint-value: map-get($breakpoints, $breakpoint);
-
-    // Write the media query.
-    @media (max-width: ($breakpoint-value - 1)) {
-      @content;
-    }
-
-    // If the breakpoint doesn't exist in the map.
-  } @else {
-    // Log a warning.
-    @warn 'Invalid breakpoint: #{$breakpoint}.';
-  }
-}
-
-/*================================================*/
-
-/*=============================================>>>>>
-= Fonts =
-===============================================>>>>>*/
+@use '../components/shared';
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -70,48 +7,50 @@ $breakpoints: (
 
 html {
   font: 100%/1em;
+  scroll-behavior: smooth;
 }
 
 h1 {
   font-size: 3rem;
-  font-weight: 700 !important;
-  font-family: latienne-pro !important;
+  font-weight: 700;
+  font-family: latienne-pro;
   color: #ffffff;
 }
 
 h2 {
   font-size: 2.2rem;
-  font-weight: 600 !important;
-  font-family: europa !important;
+  font-weight: 600;
+  font-family: latienne-pro;
 }
 
 h3 {
   font-size: 1.4rem;
-  font-weight: 500 !important;
-  font-family: europa !important;
+  font-weight: 500;
+  font-family: europa;
   line-height: 2rem;
   color: #b7b7b7;
 }
 
 h4 {
   font-size: 1.2rem;
-  font-weight: normal !important;
-  font-family: europa !important;
+  font-weight: normal;
+  font-family: europa;
   color: #b7b7b7;
 }
 
 p {
   font-size: 1.1rem;
-  font-weight: normal !important;
-  font-family: europa !important;
+  font-weight: normal;
+  font-family: europa;
   line-height: 1.7rem;
 }
 
 a {
-  font-size: 1.2rem;
-  font-weight: normal !important;
-  font-family: europa !important;
-  line-height: 1.5rem;
+  // font-size: 1.2rem;
+  // line-height: 1.5rem;
+  // font-weight: normal;
+  // font-family: europa;
+  color: shared.$gold;
 }
 
 .background-shape {
@@ -136,34 +75,7 @@ a {
   z-index: 2;
 }
 
-/* SECTIONS */
-
-$max-width: 960px;
-$section-padding: 6rem 30px 6rem;
-
-.section-wrapper {
-  min-height: 50vh;
-}
-
-.section {
-  max-width: $max-width;
-  padding: $section-padding;
-  margin: 0 auto;
-  --vh: 1vh;
-  box-sizing: border-box;
-}
-
-.section-heading {
-  margin-bottom: 4rem;
-}
-
-/* Hero Section */
-
-#hello {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-}
+/* Hello Section */
 
 .top-of-site-pixel-anchor {
   position: absolute;
@@ -173,83 +85,18 @@ $section-padding: 6rem 30px 6rem;
   left: 0;
 }
 
-.hero {
-  .hero-text {
-    @include media-down(mobile) {
-      padding-top: 8rem;
-    }
-  }
-
-  .hero-heading {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 3.2rem;
-
-    span {
-      margin-right: 1rem;
-    }
-  }
-
-  .hero-sub-heading {
-    color: hsla(0, 0%, 100%, 0.8);
-    font-family: europa;
-    font-size: 1.4rem;
-    line-height: 2.5rem;
-    max-width: 630px;
-  }
-
-  .hero-sub-heading span {
-    position: relative;
-  }
-
-  .hero-sub-heading span::after {
-    background-image: url("../images/underline-curly.svg");
-    position: absolute;
-    display: block;
-    left: 0;
-    top: 44px;
-    content: "";
-    width: 126px;
-    height: 40px;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-}
-
-.hero-scroll-section {
-  position: fixed;
-  bottom: 10px;
-  left: calc(50% - 20px);
-  width: 100vw;
-  transition: opacity 0.3s ease;
-  opacity: 1;
-}
-.hero-scroll-section.hide-scroll {
-  opacity: 0;
-}
-
-.mouse-icon {
-  bottom: 0;
-  width: 40px;
-  opacity: 1;
-  // transition: opacity 0.3s ease;
-  cursor: pointer;
-
-  animation: {
-    name: MoveUpDown;
-    iteration-count: infinite;
-    duration: 2s;
-    timing-function: ease-in-out;
-  }
-}
-
-@keyframes MoveUpDown {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, -20px);
+#hello .biz-intro {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  margin: 60px;
+  font-family: latienne-pro;
+  font-size: 40px;
+  line-height: 50px;
+  color: #fff;
+  @include shared.media-up(tablet) {
+    max-width: 70vw;
   }
 }
 
@@ -279,11 +126,11 @@ $section-padding: 6rem 30px 6rem;
 
 /* Get To Know Us section */
 
-.get-to-know-us {
+#about {
   padding-top: 40px;
 
   .about-content {
-    @include media-down(mobile) {
+    @include shared.media-down(mobile) {
       flex-direction: column;
     }
     display: flex;
@@ -291,22 +138,34 @@ $section-padding: 6rem 30px 6rem;
     justify-content: space-around;
     margin-bottom: 3rem;
 
-    .about-profile-image-wrapper {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin-bottom: 2rem;
-    }
-
-    .about-profile-image-wrapper img {
-      border-radius: 50%;
-    }
-
     .about-person {
       display: flex;
       flex-direction: column;
-      padding: 0 40px;
+      padding: 40px;
       margin-bottom: 3rem;
+
+      .about-person-image-name-role {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 40px;
+
+        .about-profile-image-wrapper {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          margin-right: 40px;
+        }
+
+        .about-profile-image-wrapper img {
+          border-radius: 50%;
+        }
+
+        .about-person-name-role {
+          display: flex;
+          flex-direction: column;
+        }
+      }
     }
   }
   .about-images {
@@ -331,7 +190,7 @@ $section-padding: 6rem 30px 6rem;
 }
 
 /* Lets Work Together section */
-.lets-work-together {
+#connect {
   margin-bottom: 4rem;
   .contact-button a {
     border: 1.5px solid pink;
@@ -400,7 +259,7 @@ $section-padding: 6rem 30px 6rem;
     .contact-emails-wrapper {
       display: flex;
       flex-direction: row;
-      @include media-down(mobile) {
+      @include shared.media-down(mobile) {
         flex-direction: column;
       }
       .contact-email {
@@ -411,7 +270,7 @@ $section-padding: 6rem 30px 6rem;
   }
 }
 
-// @include media-down(mobile) {
+// @include shared.media-down(mobile) {
 //   height: 50vh;
 // }
 
@@ -424,7 +283,7 @@ $section-padding: 6rem 30px 6rem;
 //   opacity: 1;
 //   transition: opacity 0.3s ease;
 
-//   @include media-down(mobile) {
+//   @include shared.media-down(mobile) {
 //     height: 75px;
 //     width: 25px;
 //   }

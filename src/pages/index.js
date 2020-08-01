@@ -16,15 +16,28 @@ import Section from "../components/section"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Button from "../components/button"
+
+const projects = [
+  ["Acorn"],
+  ["Online Writing Workshop"],
+  ["Fouladi Projects"],
+  ["Red Cat Bakery"],
+]
+function ProjectPreview({ project }) {
+  return <div className="project-preview">
+    <div className="project-preview-name">{project}</div>
+  </div>
+}
 
 const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
 
-      <a href="mailto:pegah@sprillow.com">
+      {/* <a href="mailto:pegah@sprillow.com">
         <Contact className="contact-icon" />
-      </a>
+      </a> */}
 
       {/* HERO */}
       <Section
@@ -39,16 +52,28 @@ const IndexPage = () => {
           design, development and consultation studio <br />
           <a href="/#focus">focused</a> on co-creating initiatives
           <br />
-          with systems change leverage
+          that affect systems change
         </p>
+        <a href="/#portfolio">
+          <Button
+            text="Our Recent Work"
+            className="recent-work-button"
+          ></Button>
+        </a>
       </Section>
+      <Section id="portfolio" heading="Recent Work">
+        <div className="project-preview-wrapper">
+          {projects.map((project, index) => (
+            <ProjectPreview key={index} project={project} />
+          ))}
+        </div>
+      </Section>
+
       <Section id="services" heading="Our Approach">
         <WhatWeDoDiagram />
       </Section>
 
       <Section id="focus" heading="Our Focus"></Section>
-
-      <Section id="portfolio" heading="Our Work"></Section>
 
       <Section id="about" heading="Get To Know Us.">
         <div className="about-content">

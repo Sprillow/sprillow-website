@@ -85,18 +85,28 @@ a {
   left: 0;
 }
 
-#hello .biz-intro {
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: right;
-  margin: 60px;
-  font-family: latienne-pro;
-  font-size: 40px;
-  line-height: 50px;
-  color: #fff;
-  @include shared.media-up(tablet) {
-    max-width: 70vw;
+#hello {
+  .biz-intro {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    margin: 60px;
+    font-family: latienne-pro;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: #fff;
+    font-weight: 500;
+
+    @include shared.media-up(tablet) {
+      max-width: 70vw;
+    }
+  }
+
+  .recent-work-button {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
   }
 }
 
@@ -104,24 +114,34 @@ a {
 
 /* recent work section */
 
-.line-curly-divider-top {
-  width: 102vw;
-  margin-top: -40px;
-  margin-left: -8px;
-}
+#portfolio {
+  .project-preview-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    width: 100%;
 
-.line-curly-divider-bottom {
-  width: 102vw;
-  bottom: -50px;
-  margin-left: -8px;
-  position: relative;
-}
+    .project-preview {
+      display: flex;
+      align-items: center;
 
-.our-recent-work {
-  // padding: $section-padding;
-  padding-left: 0;
-  padding-right: 0;
-  background-color: rgba(54, 45, 147, 0.32);
+      .project-preview-name {
+        width: 100%;
+        text-align: center;
+        font-family: latienne-pro;
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 1rem;
+      }
+
+      &:nth-child(1), &:nth-child(3) {
+        border-right: shared.$dividing-border;
+      }
+      &:nth-child(1), &:nth-child(2) {
+        border-bottom: shared.$dividing-border;
+      }
+    }
+  }
 }
 
 /* Get To Know Us section */

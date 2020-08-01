@@ -1,0 +1,51 @@
+@use './shared';
+
+$button-height: 60px;
+$spacer: 10px;
+
+.custom-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .custom-button-bars {
+    div {
+      width: $spacer;
+    }
+    div:nth-child(1),
+    div:nth-child(3) {
+      height: $spacer;
+    }
+    div:nth-child(2) {
+      height: $button-height;
+      border-top: shared.$dividing-border;
+      border-bottom: shared.$dividing-border;
+    }
+  }
+
+  .custom-button-left-bars div {
+    border-right: shared.$dividing-border;
+  }
+  .custom-button-right-bars div {
+    border-left: shared.$dividing-border;
+  }
+
+  .custom-button {
+    color: shared.$gold;
+    font-family: europa;
+    font-size: 30px;
+    background-color: rgba(256, 256, 256, 0.06);
+    border-top: shared.$dividing-border;
+    border-bottom: shared.$dividing-border;
+    border-left: none;
+    border-right: none;
+    height: $button-height;
+    padding: 0 40px;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(256, 256, 256, 0.2);
+      cursor: pointer;
+    }
+  }
+}

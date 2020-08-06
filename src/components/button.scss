@@ -1,6 +1,6 @@
 @use './shared';
 
-$button-height: 60px;
+$button-height: 76px;
 $spacer: 10px;
 
 .custom-button-wrapper {
@@ -33,14 +33,14 @@ $spacer: 10px;
   .custom-button {
     color: shared.$gold;
     font-family: europa;
-    font-size: 30px;
+    font-size: 1.4rem;
     background-color: rgba(256, 256, 256, 0.06);
     border-top: shared.$dividing-border;
     border-bottom: shared.$dividing-border;
     border-left: none;
     border-right: none;
     height: $button-height;
-    padding: 0 40px;
+    padding: 0 20px;
     transition: background-color 0.3s ease;
     
     &:hover {

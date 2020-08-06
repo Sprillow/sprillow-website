@@ -628,6 +628,6 @@ pre tt:after {
 
 
 main {
-  margin-left: 189px;
-  width: calc(100vw - 189px);
+  margin-left: 112px;
+  width: calc(100vw - 112px);
 }

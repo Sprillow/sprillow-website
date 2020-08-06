@@ -1,5 +1,6 @@
 import React from "react"
 import "./styles.scss"
+import { useStaticQuery, graphql } from "gatsby"
 
 // import svg images here:
 
@@ -17,20 +18,52 @@ import Section from "../components/section"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/button"
+import Quadrants, { Quadrant } from "../components/quadrants/quadrants"
 
-const projects = [
-  ["Acorn"],
-  ["Online Writing Workshop"],
-  ["Fouladi Projects"],
-  ["Red Cat Bakery"],
-]
+
 function ProjectPreview({ project }) {
-  return <div className="project-preview">
-    <div className="project-preview-name">{project}</div>
-  </div>
+  return (
+    <div className="project-preview">
+      <h3 className="project-preview-name">{project.project}</h3>
+      <div className="project-preview-deliverable">{project.deliverable}</div>
+    </div>
+  )
+}
+function Focus({ focus }) {
+  return (
+    <div className="focus-quadrant">
+      <h3>{focus.Title}</h3>
+      <div className="focus-quadrant-description">{focus.Description}</div>
+    </div>
+  )
 }
 
 const IndexPage = () => {
+  // /content/focus.csv
+  // /content/portfolio.csv
+  // source: https://docs.google.com/spreadsheets/d/1ZGSQMlkejbzv6D22im4BNN6oI5YuD-X4i6Br00dKqRU/edit
+  const {
+    allFocusCsv: { nodes: focuses },
+    allPortfolioCsv: { nodes: portfolio },
+  } = useStaticQuery(graphql`
+    {
+      allFocusCsv {
+        nodes {
+          id
+          Title
+          Description
+        }
+      }
+      allPortfolioCsv {
+        nodes {
+          id
+          project
+          deliverable
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -47,12 +80,13 @@ const IndexPage = () => {
             <span>We are</span> Sprillow<span>.</span>
           </>
         }
+        h1heading
       >
         <p className="biz-intro">
-          design, development and consultation studio <br />
+          We are a design, development and consultation <a href="/#about">studio</a> <br />
           <a href="/#focus">focused</a> on co-creating initiatives
           <br />
-          that affect systems change
+          with systems change leverage.
         </p>
         <a href="/#portfolio">
           <Button
@@ -62,29 +96,41 @@ const IndexPage = () => {
         </a>
       </Section>
       <Section id="portfolio" heading="Recent Work">
-        <div className="project-preview-wrapper">
-          {projects.map((project, index) => (
-            <ProjectPreview key={index} project={project} />
+        <Quadrants>
+          {/* there should only be 4 projects, since we use quadrants */}
+          {portfolio.map((project, index) => (
+            <Quadrant key={index}>
+              <ProjectPreview project={project} />
+            </Quadrant>
           ))}
-        </div>
+        </Quadrants>
       </Section>
 
       <Section id="services" heading="Our Approach">
         <WhatWeDoDiagram />
       </Section>
 
-      <Section id="focus" heading="Our Focus"></Section>
+      <Section id="focus" heading="Our Focus">
+        <Quadrants>
+          {/* there should only be 4 focus, since we use quadrants */}
+          {focuses.map(focus => (
+            <Quadrant key={focus.id}>
+              <Focus focus={focus} />
+            </Quadrant>
+          ))}
+        </Quadrants>
+      </Section>
 
       <Section id="about" heading="Get To Know Us.">
         <div className="about-content">
-          <div className="about-person">
+          <div className="bi-section about-person">
             <div className="about-person-image-name-role">
               <div className="about-profile-image-wrapper">
                 <PegahProfile />
               </div>
               <div className="about-person-name-role">
-                <h2 className="about-title">Pegah Vaezi</h2>
-                <h4 className="about-subtitle">Designer</h4>
+                <h3 className="about-title">Pegah Vaezi</h3>
+                <h5 className="about-subtitle">Designer</h5>
               </div>
             </div>
             <p className="about-description">
@@ -120,14 +166,14 @@ const IndexPage = () => {
               {/* critical reflexivity, critical thinking from art background, into the world of work and design */}
             </p>
           </div>
-          <div className="about-person">
+          <div className="bi-section about-person">
             <div className="about-person-image-name-role">
               <div className="about-profile-image-wrapper">
                 <ConnorProfile />
               </div>
               <div className="about-person-name-role">
-                <h2 className="about-title">Connor Turland</h2>
-                <h4 className="about-subtitle">Developer, facilitator</h4>
+                <h3 className="about-title">Connor Turland</h3>
+                <h5 className="about-subtitle">Developer, facilitator</h5>
               </div>
             </div>
             <p className="about-description">
@@ -156,16 +202,23 @@ const IndexPage = () => {
       </Section>
 
       <Section id="connect" heading="Let's Work Together">
-        <h3 className="contact-text">
-          We’re excited to collaborate with you! Send us a message and let us
-          know about your project plus any details to help us make your vision
-          become reality.
-        </h3>
-        <div className="contact-button">
+        <div className="contact-content">
+        <div className="bi-section contact-text">
+        <p>Sounds like a right fit? We’re excited to collaborate with you. Tell us about your project using our contact form, plus any details to help us make your dream come through. If you’d rather email us directly, send us a message at connor@sprillow.com</p>
+        {/* <div className="contact-button">
           <a href="mailto:pegah@sprillow.com">Send us a message</a>
+        </div> */}
+       
         </div>
 
-        <a className="contact-button"></a>
+        <div className="bi-section contact-form">
+          form 
+        </div>
+
+        </div>
+
+        {/* <a className="contact-button"></a> */}
+        
       </Section>
 
       <div className="footer">

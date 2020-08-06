@@ -8,6 +8,7 @@
 html {
   font: 100%/1em;
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
@@ -15,34 +16,43 @@ h1 {
   font-weight: 700;
   font-family: latienne-pro;
   color: #ffffff;
+  line-height: 3.2rem;
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 600;
   font-family: latienne-pro;
+  line-height: 2.7rem;
 }
 
 h3 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  font-family: europa;
-  line-height: 2rem;
-  color: #b7b7b7;
+  font-size: 2.1rem;
+  font-weight: 600;
+  font-family: latienne-pro;
+  line-height: 2.2rem;
+  color: #ffffff;
 }
 
 h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: latienne-pro;
+  color: #b7b7b7;
+}
+
+h5 {
   font-size: 1.2rem;
-  font-weight: normal;
-  font-family: europa;
+  font-weight: 500;
+  font-family: latienne-pro;
   color: #b7b7b7;
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: normal;
   font-family: europa;
-  line-height: 1.7rem;
+  line-height: 1.5rem;
 }
 
 a {
@@ -73,6 +83,13 @@ a {
   width: 60px;
   cursor: pointer;
   z-index: 2;
+}
+
+/* Inner Sections */
+
+.bi-section {
+  width: 50%;
+  padding: 40px;
 }
 
 /* Hello Section */
@@ -115,39 +132,44 @@ a {
 /* recent work section */
 
 #portfolio {
-  .project-preview-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100%;
+  .project-preview {
     width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
 
-    .project-preview {
-      display: flex;
-      align-items: center;
-
-      .project-preview-name {
-        width: 100%;
-        text-align: center;
-        font-family: latienne-pro;
-        font-weight: bold;
-        font-size: 1.5rem;
-        line-height: 1rem;
-      }
-
-      &:nth-child(1), &:nth-child(3) {
-        border-right: shared.$dividing-border;
-      }
-      &:nth-child(1), &:nth-child(2) {
-        border-bottom: shared.$dividing-border;
-      }
+    .project-preview-name {
+      width: 100%;
+      text-align: center;
     }
+
+    .project-preview-deliverable {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      color: #B7B7B7;
+      text-transform: uppercase;
+      font-family: europa;
+      font-weight: bold;
+    }
+  }
+}
+
+// focus section
+
+#focus {
+  .focus-quadrant {
+    padding: 40px 25% 40px 40px;
+    width: 100%;
+    height: 100%;
   }
 }
 
 /* Get To Know Us section */
 
 #about {
-  padding-top: 40px;
+  
 
   .about-content {
     @include shared.media-down(mobile) {
@@ -158,17 +180,28 @@ a {
     justify-content: space-around;
     margin-bottom: 3rem;
 
+    &:nth-child(1) {
+      border-right: 1px solid rgba(214, 214, 214, 0.2);
+    }
+
     .about-person {
       display: flex;
       flex-direction: column;
-      padding: 40px;
-      margin-bottom: 3rem;
+
+      .about-title {
+        margin-bottom: 1rem;
+      }
+      
+      .about-description {
+        overflow-y: scroll;
+        height: 400px;
+      }
 
       .about-person-image-name-role {
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-bottom: 40px;
+        margin-bottom: 1.5rem;
 
         .about-profile-image-wrapper {
           width: 200px;
@@ -220,10 +253,16 @@ a {
     padding: 12px 20px;
     border-radius: 4px;
   }
-  .contact-text {
-    color: hsla(0, 0%, 100%, 0.8);
-    margin-bottom: 3rem;
+
+  .contact-content {
+    display: flex;
+
+    .contact-text {
+      color: hsla(0, 0%, 100%, 0.8);
+      margin-bottom: 3rem;
+    }
   }
+  
 
   .contact-emails-wrapper {
     display: flex;

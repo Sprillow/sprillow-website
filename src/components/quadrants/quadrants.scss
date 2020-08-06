@@ -1,0 +1,23 @@
+@use '../shared';
+
+.quadrants {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  width: 100%;
+
+  .quadrant {
+    display: flex;
+    align-items: center;
+
+    // first and third child have 
+    &:nth-child(1),
+    &:nth-child(3) {
+      border-right: shared.$dividing-border;
+    }
+    &:nth-child(1),
+    &:nth-child(2) {
+      border-bottom: shared.$dividing-border;
+    }
+  }
+}

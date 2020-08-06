@@ -217,7 +217,7 @@ export default function WhatWeDoDiagram() {
   return (
     <>
       <div className="what-we-do-diagram" ref={whatWeDoRef}>
-        <h2
+        <h4
           className={`what-we-do-step-title top-left ${
             activeItem === DISCOVERY ? "active" : ""
           } ${hoveringItem === DISCOVERY ? "hovering" : ""}`}
@@ -228,24 +228,24 @@ export default function WhatWeDoDiagram() {
           onBlur={clearHover}
         >
           Discovery
-        </h2>
+        </h4>
         <div
           className={`subcategories discovery-subcategories top-left ${
             activeItem === DISCOVERY ? "active" : ""
           } ${hoveringItem === DISCOVERY ? "hovering" : ""}`}
         >
-          <h3 className="subcategory discovery-subcategory first">Strategy</h3>
-          <h3 className="subcategory discovery-subcategory second">
+          <div className="subcategory discovery-subcategory first">Strategy</div>
+          <div className="subcategory discovery-subcategory second">
             Consultation
-          </h3>
-          <h3 className="subcategory discovery-subcategory third">
+          </div>
+          <div className="subcategory discovery-subcategory third">
             UX Research
-          </h3>
-          <h3 className="subcategory discovery-subcategory fourth">
+          </div>
+          <div className="subcategory discovery-subcategory fourth">
             Facilitation
-          </h3>
+          </div>
         </div>
-        <h2
+        <h4
           className={`what-we-do-step-title top-right ${
             activeItem === DESIGN ? "active" : ""
           } ${hoveringItem === DESIGN ? "hovering" : ""}`}
@@ -256,19 +256,19 @@ export default function WhatWeDoDiagram() {
           onBlur={clearHover}
         >
           Design
-        </h2>
+        </h4>
         <div
           className={`subcategories design-subcategories top-right ${
             activeItem === DESIGN ? "active" : ""
           } ${hoveringItem === DESIGN ? "hovering" : ""}`}
         >
-          <h3 className="subcategory design-subcategory first">UX Design</h3>
-          <h3 className="subcategory design-subcategory second">UI Design</h3>
-          <h3 className="subcategory design-subcategory third">
+          <div className="subcategory design-subcategory first">UX Design</div>
+          <div className="subcategory design-subcategory second">UI Design</div>
+          <div className="subcategory design-subcategory third">
             Visual Identity
-          </h3>
+          </div>
         </div>
-        <h2
+        <h4
           className={`what-we-do-step-title bottom-right ${
             activeItem === DELIVERY ? "active" : ""
           } ${hoveringItem === DELIVERY ? "hovering" : ""}`}
@@ -279,26 +279,26 @@ export default function WhatWeDoDiagram() {
           onBlur={clearHover}
         >
           Delivery
-        </h2>
+        </h4>
         <div
           className={`subcategories delivery-subcategories bottom-right ${
             activeItem === DELIVERY ? "active" : ""
           } ${hoveringItem === DELIVERY ? "hovering" : ""}`}
         >
-          <h3 className="subcategory delivery-subcategory first">
+          <div className="subcategory delivery-subcategory first">
           E-commerce <br/> Solutions
-          </h3>
-          <h3 className="subcategory delivery-subcategory second">
+          </div>
+          <div className="subcategory delivery-subcategory second">
           Native Apps
-          </h3>
-          <h3 className="subcategory delivery-subcategory third">
+          </div>
+          <div className="subcategory delivery-subcategory third">
           Mobile Apps
-          </h3>
-          <h3 className="subcategory delivery-subcategory fourth">
+          </div>
+          <div className="subcategory delivery-subcategory fourth">
             Peer-to-peer  <br/> Solutions
-          </h3>
+          </div>
         </div>
-        <h2
+        <h4
           className={`what-we-do-step-title bottom-left ${
             activeItem === FEEDBACK ? "active" : ""
           } ${hoveringItem === FEEDBACK ? "hovering" : ""}`}
@@ -309,19 +309,19 @@ export default function WhatWeDoDiagram() {
           onBlur={clearHover}
         >
           Feedback
-        </h2>
+        </h4>
         <div
           className={`subcategories feedback-subcategories bottom-left ${
             activeItem === FEEDBACK ? "active" : ""
           } ${hoveringItem === FEEDBACK ? "hovering" : ""}`}
         >
-          <h3 className="subcategory feedback-subcategory first">
+          <div className="subcategory feedback-subcategory first">
             Optimization
-          </h3>
-          <h3 className="subcategory feedback-subcategory second">Analytics</h3>
-          <h3 className="subcategory feedback-subcategory third">
+          </div>
+          <div className="subcategory feedback-subcategory second">Analytics</div>
+          <div className="subcategory feedback-subcategory third">
             Retrospectives
-          </h3>
+          </div>
         </div>
         {Object.keys(DESCRIPTIONS).map((descriptionKey, index) => {
           const description = DESCRIPTIONS[descriptionKey]
@@ -343,7 +343,7 @@ export default function WhatWeDoDiagram() {
         <div className="what-we-do-section-mobile">
           <div className="what-we-do-section-heading-mobile">
             <Discovery />
-            <h2>Discovery</h2>
+            <h4>Discovery</h4>
           </div>
           <p>{DESCRIPTIONS[DISCOVERY]}</p>
         </div>
@@ -351,7 +351,7 @@ export default function WhatWeDoDiagram() {
         <div className="what-we-do-section-mobile">
           <div className="what-we-do-section-heading-mobile">
             <Design />
-            <h2>Design</h2>
+            <h4>Design</h4>
           </div>
           <p>{DESCRIPTIONS[DESIGN]}</p>
         </div>
@@ -359,7 +359,7 @@ export default function WhatWeDoDiagram() {
         <div className="what-we-do-section-mobile">
           <div className="what-we-do-section-heading-mobile">
             <Delivery />
-            <h2>Delivery</h2>
+            <h4>Delivery</h4>
           </div>
           <p>{DESCRIPTIONS[DELIVERY]}</p>
         </div>
@@ -367,7 +367,7 @@ export default function WhatWeDoDiagram() {
         <div className="what-we-do-section-mobile">
           <div className="what-we-do-section-heading-mobile">
             <Feedback />
-            <h2>Feedback</h2>
+            <h4>Feedback</h4>
           </div>
           <p>{DESCRIPTIONS[FEEDBACK]}</p>
         </div>

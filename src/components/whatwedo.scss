@@ -36,6 +36,10 @@ $hover-color: pink;
     transform: translateX(-50%) translateY(-50%);
     z-index: 3;
   }
+
+  p & {
+    
+  }
 }
 
 .what-we-do-diagram {

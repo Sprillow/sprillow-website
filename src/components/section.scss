@@ -4,6 +4,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 
   .section-heading {
     color: #FFF;
@@ -26,5 +27,6 @@
 }
 
 #hello .section-heading {
-  font-size: 100px;
+  font-size: 4rem;
+  margin-left: -13rem;
 }

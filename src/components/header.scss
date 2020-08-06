@@ -4,18 +4,24 @@ nav {
   position: fixed;
   height: 100vh;
   text-align: right;
-  padding: 27px;
   box-sizing: border-box;
   border-right: shared.$dividing-border;
+  width: 112px;
+  padding: 10px;
 
   a.logo-image-link {
     display: block;
-    width: 134px;
+    width: 86px;
+    margin: auto;
+  }
+
+  ul {
+    margin-left: 0;
   }
 
   li {
     list-style: none;
-    margin-top: 86px;
+    margin-top: 3rem;
 
     a {
       text-decoration: none;

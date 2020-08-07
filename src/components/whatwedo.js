@@ -8,6 +8,8 @@ import Design from "../images/design.inline.svg"
 import Delivery from "../images/delivery.inline.svg"
 import Feedback from "../images/feedback.inline.svg"
 
+import Quadrants, { Quadrant } from '../components/quadrants/quadrants'
+
 const DISCOVERY = "discovery"
 const DESIGN = "design"
 const DELIVERY = "delivery"
@@ -216,7 +218,14 @@ export default function WhatWeDoDiagram() {
 
   return (
     <>
+    {/* NOT MOBILE */}
       <div className="what-we-do-diagram" ref={whatWeDoRef}>
+      <Quadrants>
+        <Quadrant />
+        <Quadrant />
+        <Quadrant />
+        <Quadrant />
+      </Quadrants>
         <h4
           className={`what-we-do-step-title top-left ${
             activeItem === DISCOVERY ? "active" : ""
@@ -339,6 +348,7 @@ export default function WhatWeDoDiagram() {
         <WhatWeDoCircle className="what-we-do-circle" />
         <div className="what-we-do-step"></div>
       </div>
+      {/* MOBILE */}
       <div className="what-we-do-mobile">
         <div className="what-we-do-section-mobile">
           <div className="what-we-do-section-heading-mobile">

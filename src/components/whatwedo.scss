@@ -4,6 +4,8 @@ $active-color: #ffc6c6;
 $hover-color: pink;
 
 .what-we-do-diagram {
+  height: 100%;
+  
   @include shared.media-down(mobile) {
     display: none;
   }

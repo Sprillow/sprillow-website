@@ -103,6 +103,30 @@ a {
 }
 
 #hello {
+  .hello-compass {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    bottom: 80px;
+    left: 200px;
+    background-image: url('../images/compass.png');
+    background-repeat: no-repeat;
+    background-size: 300px 300px;
+  }
+
+  .hello-willow {
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    // height of section header
+    top: -119px;
+    right: 0;
+    background-image: url('../images/willow.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 2vw -100px;
+  }
+
   .biz-intro {
     position: absolute;
     top: 0;
@@ -162,7 +186,27 @@ a {
   .focus-quadrant {
     padding: 40px 25% 40px 40px;
     width: 100%;
-    height: 100%;
+    height: 100%; 
+    background-repeat: no-repeat;
+    background-size: auto 70%;
+  }
+  
+  .quadrant:nth-child(1) .focus-quadrant {
+    background-image: url("../images/davinci.png");
+    background-position: right center;
+  }
+  .quadrant:nth-child(2) .focus-quadrant {
+    background-image: url("../images/mushroom.png");
+    background-position: 120% center;
+  }
+  .quadrant:nth-child(3) .focus-quadrant {
+    background-image: url("../images/solar.png");
+    background-position: right bottom;
+    background-size: auto 60%;
+  }
+  .quadrant:nth-child(4) .focus-quadrant {
+    background-image: url("../images/waterbottle.png");
+    background-position: right center;
   }
 }
 

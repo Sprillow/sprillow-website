@@ -33,7 +33,7 @@ function Focus({ focus }) {
   return (
     <div className="focus-quadrant">
       <h3>{focus.Title}</h3>
-      <div className="focus-quadrant-description">{focus.Description}</div>
+      <p className="focus-quadrant-description">{focus.Description}</p>
     </div>
   )
 }
@@ -82,6 +82,9 @@ const IndexPage = () => {
         }
         h1heading
       >
+        <div className='hello-compass' />
+        <div className='hello-willow' />
+        <div className='hello-spruce' />
         <p className="biz-intro">
           We are a design, development and consultation <a href="/#about">studio</a> <br />
           <a href="/#focus">focused</a> on co-creating initiatives
@@ -106,7 +109,7 @@ const IndexPage = () => {
         </Quadrants>
       </Section>
 
-      <Section id="services" heading="Our Approach">
+      <Section id="services" heading="Our Approach" bgColor="rgba(88, 7, 7, 0.1)">
         <WhatWeDoDiagram />
       </Section>
 
@@ -121,7 +124,7 @@ const IndexPage = () => {
         </Quadrants>
       </Section>
 
-      <Section id="about" heading="Get To Know Us.">
+      <Section id="about" heading="Get To Know Us" bgColor="rgba(256, 256, 256, 0.05)">
         <div className="about-content">
           <div className="bi-section about-person">
             <div className="about-person-image-name-role">

@@ -179,12 +179,7 @@ export default function WhatWeDoDiagram() {
       activateDiscovery,
       hoverDiscovery
     )
-    setupForSection(
-      IMAGE_WILLOW,
-      ELLIPSE_WILLOW,
-      activateDesign,
-      hoverDesign
-    )
+    setupForSection(IMAGE_WILLOW, ELLIPSE_WILLOW, activateDesign, hoverDesign)
     setupForSection(
       IMAGE_SPRUCE_CONE,
       ELLIPSE_SPRUCE_CONE,
@@ -200,7 +195,12 @@ export default function WhatWeDoDiagram() {
 
     // cleanup
     return () => {
-      teardownForSection(IMAGE_COMPASS, ELLIPSE_COMPASS, activateDiscovery, hoverDiscovery)
+      teardownForSection(
+        IMAGE_COMPASS,
+        ELLIPSE_COMPASS,
+        activateDiscovery,
+        hoverDiscovery
+      )
       teardownForSection(
         IMAGE_WILLOW,
         ELLIPSE_WILLOW,
@@ -226,12 +226,6 @@ export default function WhatWeDoDiagram() {
     <>
       {/* NOT MOBILE */}
       <div className="what-we-do-diagram" ref={whatWeDoRef}>
-        <Quadrants>
-          <Quadrant />
-          <Quadrant />
-          <Quadrant />
-          <Quadrant />
-        </Quadrants>
         <h4
           className={`what-we-do-step-title top-left ${
             activeItem === DISCOVERY ? "active" : ""
@@ -357,6 +351,28 @@ export default function WhatWeDoDiagram() {
         })}
         <WhatWeDoCircle className="what-we-do-circle" />
         <div className="what-we-do-step"></div>
+        <Quadrants>
+          <Quadrant
+            onMouseOver={hoverDiscovery}
+            onMouseOut={clearHover}
+            onClick={activateDiscovery}
+          />
+          <Quadrant
+            onMouseOver={hoverDesign}
+            onMouseOut={clearHover}
+            onClick={activateDesign}
+          />
+          <Quadrant
+            onMouseOver={hoverFeedback}
+            onMouseOut={clearHover}
+            onClick={activateFeedback}
+          />
+          <Quadrant
+            onMouseOver={hoverDelivery}
+            onMouseOut={clearHover}
+            onClick={activateDelivery}
+          />
+        </Quadrants>
       </div>
       {/* MOBILE */}
       <div className="what-we-do-mobile">

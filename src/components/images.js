@@ -54,18 +54,18 @@ const queries = graphql`
         }
       }
     }
-    pegahProfile: file(relativePath: { eq: "sprillow-pegah-profile.jpg" }) {
+    pegahProfile: file(relativePath: { eq: "pegah-image.png" }) {
       childImageSharp {
-        fluid(maxWidth: 700) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 180) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
 
-    connorProfile: file(relativePath: { eq: "sprillow-connor-profile.jpg" }) {
+    connorProfile: file(relativePath: { eq: "connor-image.png" }) {
       childImageSharp {
-        fluid(maxWidth: 700) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 180) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
@@ -119,11 +119,11 @@ const UfcScreenshot = () => {
 }
 
 const PegahProfile = () => {
-  return <Image type="fluid" imgName="pegahProfile" />
+  return <Image type="fixed" imgName="pegahProfile" />
 }
 
 const ConnorProfile = () => {
-  return <Image type="fluid" imgName="connorProfile" />
+  return <Image type="fixed" imgName="connorProfile" />
 }
 
 const ConnorWorking = () => {

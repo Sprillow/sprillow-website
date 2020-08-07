@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import "./whatwedo.scss"
-import WhatWeDoCircle from "../images/what-we-do-circle.inline.svg"
+import WhatWeDoCircle from "../images/our-approach-circle.inline.svg"
 import useIntersect from "../hooks/useIntersect"
 
 import Discovery from "../images/discovery.inline.svg"
@@ -8,7 +8,7 @@ import Design from "../images/design.inline.svg"
 import Delivery from "../images/delivery.inline.svg"
 import Feedback from "../images/feedback.inline.svg"
 
-import Quadrants, { Quadrant } from '../components/quadrants/quadrants'
+import Quadrants, { Quadrant } from "../components/quadrants/quadrants"
 
 const DISCOVERY = "discovery"
 const DESIGN = "design"
@@ -57,16 +57,17 @@ const DESCRIPTIONS = {
   ),
 }
 
-const EARTH = "earth"
+const ELLIPSE_COMPASS = "masking-green-circle-3"
+const IMAGE_COMPASS = "compass"
 
-const ELLIPSE_SEEDLING = "ellipse-seedling"
-const IMAGE_SEEDLING = "seedling"
+const ELLIPSE_WILLOW = "masking-green-circle-2"
+const IMAGE_WILLOW = "willow-leaf"
 
-const ELLIPSE_EAR_OF_RICE = "ellipse-ear-of-rice"
-const IMAGE_EAR_OF_RICE = "ear-of-rice"
+const ELLIPSE_SPRUCE_CONE = "masking-green-circle-4"
+const IMAGE_SPRUCE_CONE = "spruce-cone"
 
-const ELLIPSE_HONEYBEE = "ellipse-honeybee"
-const IMAGE_HONEYBEE = "honeybee"
+const ELLIPSE_HONEYBEE = "masking-green-circle"
+const IMAGE_HONEYBEE = "bee"
 
 export default function WhatWeDoDiagram() {
   // set this to DISCOVERY, DESIGN, DELIVERY, or FEEDBACK
@@ -98,9 +99,9 @@ export default function WhatWeDoDiagram() {
 
   // click and activate
   useEffect(() => {
-    const earth = document.getElementById(EARTH)
-    const seedling = document.getElementById(ELLIPSE_SEEDLING)
-    const earOfRice = document.getElementById(ELLIPSE_EAR_OF_RICE)
+    const earth = document.getElementById(ELLIPSE_COMPASS)
+    const seedling = document.getElementById(ELLIPSE_WILLOW)
+    const earOfRice = document.getElementById(ELLIPSE_SPRUCE_CONE)
     const honeybee = document.getElementById(ELLIPSE_HONEYBEE)
 
     const all = [earth, seedling, earOfRice, honeybee]
@@ -125,9 +126,9 @@ export default function WhatWeDoDiagram() {
 
   // hover
   useEffect(() => {
-    const earth = document.getElementById(EARTH)
-    const seedling = document.getElementById(ELLIPSE_SEEDLING)
-    const earOfRice = document.getElementById(ELLIPSE_EAR_OF_RICE)
+    const earth = document.getElementById(ELLIPSE_COMPASS)
+    const seedling = document.getElementById(ELLIPSE_WILLOW)
+    const earOfRice = document.getElementById(ELLIPSE_SPRUCE_CONE)
     const honeybee = document.getElementById(ELLIPSE_HONEYBEE)
 
     const all = [earth, seedling, earOfRice, honeybee]
@@ -172,16 +173,21 @@ export default function WhatWeDoDiagram() {
       ellipse.removeEventListener("mouseleave", clearHover)
     }
 
-    setupForSection(EARTH, EARTH, activateDiscovery, hoverDiscovery)
     setupForSection(
-      IMAGE_SEEDLING,
-      ELLIPSE_SEEDLING,
+      IMAGE_COMPASS,
+      ELLIPSE_COMPASS,
+      activateDiscovery,
+      hoverDiscovery
+    )
+    setupForSection(
+      IMAGE_WILLOW,
+      ELLIPSE_WILLOW,
       activateDesign,
       hoverDesign
     )
     setupForSection(
-      IMAGE_EAR_OF_RICE,
-      ELLIPSE_EAR_OF_RICE,
+      IMAGE_SPRUCE_CONE,
+      ELLIPSE_SPRUCE_CONE,
       activateDelivery,
       hoverDelivery
     )
@@ -194,16 +200,16 @@ export default function WhatWeDoDiagram() {
 
     // cleanup
     return () => {
-      teardownForSection(EARTH, EARTH, activateDiscovery, hoverDiscovery)
+      teardownForSection(IMAGE_COMPASS, ELLIPSE_COMPASS, activateDiscovery, hoverDiscovery)
       teardownForSection(
-        IMAGE_SEEDLING,
-        ELLIPSE_SEEDLING,
+        IMAGE_WILLOW,
+        ELLIPSE_WILLOW,
         activateDesign,
         hoverDesign
       )
       teardownForSection(
-        IMAGE_EAR_OF_RICE,
-        ELLIPSE_EAR_OF_RICE,
+        IMAGE_SPRUCE_CONE,
+        ELLIPSE_SPRUCE_CONE,
         activateDelivery,
         hoverDelivery
       )
@@ -218,14 +224,14 @@ export default function WhatWeDoDiagram() {
 
   return (
     <>
-    {/* NOT MOBILE */}
+      {/* NOT MOBILE */}
       <div className="what-we-do-diagram" ref={whatWeDoRef}>
-      <Quadrants>
-        <Quadrant />
-        <Quadrant />
-        <Quadrant />
-        <Quadrant />
-      </Quadrants>
+        <Quadrants>
+          <Quadrant />
+          <Quadrant />
+          <Quadrant />
+          <Quadrant />
+        </Quadrants>
         <h4
           className={`what-we-do-step-title top-left ${
             activeItem === DISCOVERY ? "active" : ""
@@ -243,7 +249,9 @@ export default function WhatWeDoDiagram() {
             activeItem === DISCOVERY ? "active" : ""
           } ${hoveringItem === DISCOVERY ? "hovering" : ""}`}
         >
-          <div className="subcategory discovery-subcategory first">Strategy</div>
+          <div className="subcategory discovery-subcategory first">
+            Strategy
+          </div>
           <div className="subcategory discovery-subcategory second">
             Consultation
           </div>
@@ -295,16 +303,16 @@ export default function WhatWeDoDiagram() {
           } ${hoveringItem === DELIVERY ? "hovering" : ""}`}
         >
           <div className="subcategory delivery-subcategory first">
-          E-commerce <br/> Solutions
+            E-commerce <br /> Solutions
           </div>
           <div className="subcategory delivery-subcategory second">
-          Native Apps
+            Native Apps
           </div>
           <div className="subcategory delivery-subcategory third">
-          Mobile Apps
+            Mobile Apps
           </div>
           <div className="subcategory delivery-subcategory fourth">
-            Peer-to-peer  <br/> Solutions
+            Peer-to-peer <br /> Solutions
           </div>
         </div>
         <h4
@@ -327,7 +335,9 @@ export default function WhatWeDoDiagram() {
           <div className="subcategory feedback-subcategory first">
             Optimization
           </div>
-          <div className="subcategory feedback-subcategory second">Analytics</div>
+          <div className="subcategory feedback-subcategory second">
+            Analytics
+          </div>
           <div className="subcategory feedback-subcategory third">
             Retrospectives
           </div>

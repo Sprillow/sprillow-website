@@ -20,14 +20,20 @@ import SEO from "../components/seo"
 import Button from "../components/button"
 import Quadrants, { Quadrant } from "../components/quadrants/quadrants"
 
-
 function ProjectPreview({ project }) {
   return (
-    <Link className="project-preview" href="#">
+    <a
+      className="project-preview"
+      href={project.link}
+      target="_blank"
+      rel="noreferrer"
+    >
       <h3 className="project-preview-name">{project.project}</h3>
       <div className="project-preview-deliverable">{project.deliverable}</div>
-      <div className="project-preview-image" />
-    </Link>
+      <div className="project-preview-image-wrapper">
+        <div className="project-preview-image" />
+      </div>
+    </a>
   )
 }
 function Focus({ focus }) {
@@ -60,6 +66,7 @@ const IndexPage = () => {
           id
           project
           deliverable
+          link
         }
       }
     }
@@ -83,11 +90,12 @@ const IndexPage = () => {
         }
         h1heading
       >
-        <div className='hello-compass' />
-        <div className='hello-willow' />
-        <div className='hello-spruce' />
+        <div className="hello-compass" />
+        <div className="hello-willow" />
+        <div className="hello-spruce" />
         <p className="biz-intro">
-          We are a design, development and consultation <a href="/#about">studio</a> <br />
+          We are a design, development and consultation{" "}
+          <a href="/#about">studio</a> <br />
           <a href="/#focus">focused</a> on co-creating initiatives
           <br />
           with systems change leverage.
@@ -110,7 +118,11 @@ const IndexPage = () => {
         </Quadrants>
       </Section>
 
-      <Section id="services" heading="Our Approach" bgColor="rgba(88, 7, 7, 0.1)">
+      <Section
+        id="services"
+        heading="Our Approach"
+        bgColor="rgba(88, 7, 7, 0.1)"
+      >
         <WhatWeDoDiagram />
       </Section>
 
@@ -125,7 +137,11 @@ const IndexPage = () => {
         </Quadrants>
       </Section>
 
-      <Section id="about" heading="Get To Know Us" bgColor="rgba(256, 256, 256, 0.05)">
+      <Section
+        id="about"
+        heading="Get To Know Us"
+        bgColor="rgba(256, 256, 256, 0.05)"
+      >
         <div className="about-content">
           <div className="bi-section about-person">
             <div className="about-person-image-name-role">
@@ -151,13 +167,14 @@ const IndexPage = () => {
               saying that we have to "think globally, and act locally", because
               we have to understand the interconnections, and then make changes
               to ourselves and in our communities and workplaces that reflect
-              the impacts we all have on each other, and the world. Pegah won't
-              let go of the details. She pays meticulous attention to things
-              that many people would overlook. Because of this Pegah feels a
-              strong connection with the things she touches and sees, whether
-              it's her latest design, the clothing she wears, or the food she
-              loves to cook. She loves to feel the joy of her designs invoking
-              joy, thoughtfulness and inspiration for other people.
+              the impacts we all have on each other, and the world. <br />
+              <br />
+              Pegah won't let go of the details. She pays meticulous attention
+              to things that many people would overlook. Because of this Pegah
+              feels a strong connection with the things she touches and sees,
+              whether it's her latest design, the clothing she wears, or the
+              food she loves to cook. She loves to feel the joy of her designs
+              invoking joy, thoughtfulness and inspiration for other people.
               {/* attention to detail */}
               {/* aligned with her spirit */}
               {/*  */}
@@ -194,12 +211,12 @@ const IndexPage = () => {
               want to talk with you about them longer than you will want to
               talk. As much as that sounds abstract, Connor has the urge to get
               hands-on and apply the precious time of his life to confront
-              systemic challenges head-on. He has been devoted since a young age
-              to the arts and crafts of digital technology, but is also aware
-              that tech isn't a silver bullet. Connor has fun with everything
-              from getting deep in the code, to working face-to-face
-              facilitating at hackathons, workshops, classrooms, and client
-              meetings.
+              systemic challenges head-on. <br />
+              <br /> He has been devoted since a young age to the arts and
+              crafts of digital technology, but is also aware that tech isn't a
+              silver bullet. Connor has fun with everything from getting deep in
+              the code, to working face-to-face facilitating at hackathons,
+              workshops, classrooms, and client meetings.
             </p>
           </div>
         </div>
@@ -207,22 +224,22 @@ const IndexPage = () => {
 
       <Section id="connect" heading="Let's Work Together">
         <div className="contact-content">
-        <div className="bi-section contact-text">
-        <p>Sounds like a right fit? We’re excited to collaborate with you. Tell us about your project using our contact form, plus any details to help us make your dream come through. If you’d rather email us directly, send us a message at connor@sprillow.com</p>
-        {/* <div className="contact-button">
+          <div className="bi-section contact-text">
+            <p>
+              Sounds like a right fit? We’re excited to collaborate with you.
+              Tell us about your project using our contact form, plus any
+              details to help us make your dream come through. If you’d rather
+              email us directly, send us a message at connor@sprillow.com
+            </p>
+            {/* <div className="contact-button">
           <a href="mailto:pegah@sprillow.com">Send us a message</a>
         </div> */}
-       
-        </div>
+          </div>
 
-        <div className="bi-section contact-form">
-          form 
-        </div>
-
+          <div className="bi-section contact-form">form</div>
         </div>
 
         {/* <a className="contact-button"></a> */}
-        
       </Section>
 
       <div className="footer">

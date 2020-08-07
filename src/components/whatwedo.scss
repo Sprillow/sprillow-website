@@ -1,11 +1,12 @@
 @use './shared';
 
-$active-color: #ffc6c6;
-$hover-color: pink;
-
 .what-we-do-diagram {
   height: 100%;
-  
+
+  .quadrant {
+    opacity: 0.5;
+  }
+
   @include shared.media-down(mobile) {
     display: none;
   }
@@ -13,7 +14,7 @@ $hover-color: pink;
 
 .what-we-do-circle {
   position: absolute;
-  width: 60%;
+  width: 65vmin;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -80,11 +81,11 @@ $hover-color: pink;
   line-height: 2.2rem;
 
   &.hovering {
-    color: $hover-color;
+    color: shared.$gold;
   }
 
   &.active {
-    color: $active-color;
+    color: shared.$gold;
   }
 }
 
@@ -225,10 +226,10 @@ $hover-color: pink;
 }
 
 $default-drop-shadow: drop-shadow(0px 0px 20px transparent);
-$active-drop-shadow: drop-shadow(0px 0px 20px $active-color);
-$hover-drop-shadow: drop-shadow(0px 0px 20px $hover-color);
+$active-drop-shadow: drop-shadow(0px 0px 20px shared.$gold);
+$hover-drop-shadow: drop-shadow(0px 0px 20px shared.$gold);
 
-#earth {
+#compass {
   -webkit-filter: $default-drop-shadow;
   filter: $default-drop-shadow;
   transition: filter 0.2s ease;
@@ -245,13 +246,14 @@ $hover-drop-shadow: drop-shadow(0px 0px 20px $hover-color);
   }
 }
 
-#earth,
-#seedling,
-#ellipse-seedling,
-#ear-of-rice,
-#ellipse-ear-of-rice,
-#honeybee,
-#ellipse-honeybee {
+#compass,
+#willow-leaf,
+#spruce-cone,
+#bee,
+#masking-green-circle,
+#masking-green-circle-2,
+#masking-green-circle-3,
+#masking-green-circle-4 {
   cursor: pointer;
 }
 

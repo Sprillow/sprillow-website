@@ -105,26 +105,42 @@ a {
 #hello {
   .hello-compass {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    bottom: 80px;
-    left: 200px;
+    // width: ;
+    width: 20vw;
+    height: 20vw;
+    bottom: 10%;
+    left: 10%;
     background-image: url("../images/compass.png");
     background-repeat: no-repeat;
-    background-size: 300px 300px;
+    background-size: contain;
   }
 
   .hello-willow {
     position: absolute;
-    height: 100%;
-    width: 30%;
+    height: 70%;
+    width: 100%;
     // height of section header
     top: -119px;
     right: 0;
-    background-image: url("../images/willow.png");
+    background-image: url("../images/willow-branch.png");
     background-repeat: no-repeat;
-    background-size: auto;
-    background-position: 2vw -100px;
+    background-size: contain;
+    background-position: right top;
+    opacity: 0.1;
+  }
+
+  .hello-spruce {
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    // height of section header
+    top: -119px;
+    right: 0;
+    background-image: url("../images/spruce-branch-hello.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
+    opacity: 0.1;
   }
 
   .biz-intro {
@@ -179,24 +195,44 @@ a {
       font-weight: bold;
     }
 
-    .project-preview-image {
-      opacity: 0;
+    .project-preview-image-wrapper {
+      padding: 1rem;
       position: absolute;
+      background-color: #343434;
+      opacity: 0;
+      transition: opacity 0.3s ease;
       width: 100%;
       height: 100%;
-      background-repeat: none;
-      background-size: contain;
-      transition: opacity 0.1s ease;
     }
 
-    &:hover .project-preview-image {
+    .project-preview-image {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
+
+    &:hover .project-preview-image-wrapper {
       opacity: 1;
     }
   }
 
   // acorn
   .quadrant:nth-child(1) .project-preview-image {
-    background-image: url("../images/acorn-help-your-team.png");
+    background-image: url("../images/work-acorn-hover.png");
+  }
+  // red cat bakery
+  .quadrant:nth-child(2) .project-preview-image {
+    background-image: url("../images/work-red-cat-hover.png");
+  }
+  // fouladi projects
+  .quadrant:nth-child(3) .project-preview-image {
+    background-image: url("../images/work-fouladi-projects-hover.png");
+  }
+  // online writing workshop
+  .quadrant:nth-child(4) .project-preview-image {
+    background-image: url("../images/work-oww-hover.png");
   }
 }
 

@@ -1,6 +1,6 @@
 import React from "react"
 import "./styles.scss"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 // import svg images here:
 
@@ -23,10 +23,11 @@ import Quadrants, { Quadrant } from "../components/quadrants/quadrants"
 
 function ProjectPreview({ project }) {
   return (
-    <div className="project-preview">
+    <Link className="project-preview" href="#">
       <h3 className="project-preview-name">{project.project}</h3>
       <div className="project-preview-deliverable">{project.deliverable}</div>
-    </div>
+      <div className="project-preview-image" />
+    </Link>
   )
 }
 function Focus({ focus }) {

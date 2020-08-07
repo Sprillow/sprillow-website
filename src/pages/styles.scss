@@ -109,7 +109,7 @@ a {
     height: 300px;
     bottom: 80px;
     left: 200px;
-    background-image: url('../images/compass.png');
+    background-image: url("../images/compass.png");
     background-repeat: no-repeat;
     background-size: 300px 300px;
   }
@@ -121,7 +121,7 @@ a {
     // height of section header
     top: -119px;
     right: 0;
-    background-image: url('../images/willow.png');
+    background-image: url("../images/willow.png");
     background-repeat: no-repeat;
     background-size: auto;
     background-position: 2vw -100px;
@@ -162,6 +162,7 @@ a {
     position: relative;
     display: flex;
     align-items: center;
+    text-decoration: none;
 
     .project-preview-name {
       width: 100%;
@@ -172,11 +173,30 @@ a {
       position: absolute;
       top: 30px;
       right: 30px;
-      color: #B7B7B7;
+      color: #b7b7b7;
       text-transform: uppercase;
       font-family: europa;
       font-weight: bold;
     }
+
+    .project-preview-image {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-repeat: none;
+      background-size: contain;
+      transition: opacity 0.1s ease;
+    }
+
+    &:hover .project-preview-image {
+      opacity: 1;
+    }
+  }
+
+  // acorn
+  .quadrant:nth-child(1) .project-preview-image {
+    background-image: url("../images/acorn-help-your-team.png");
   }
 }
 
@@ -186,11 +206,11 @@ a {
   .focus-quadrant {
     padding: 40px 25% 40px 40px;
     width: 100%;
-    height: 100%; 
+    height: 100%;
     background-repeat: no-repeat;
     background-size: auto 70%;
   }
-  
+
   .quadrant:nth-child(1) .focus-quadrant {
     background-image: url("../images/davinci.png");
     background-position: right center;
@@ -213,8 +233,6 @@ a {
 /* Get To Know Us section */
 
 #about {
-  
-
   .about-content {
     @include shared.media-down(mobile) {
       flex-direction: column;
@@ -235,7 +253,7 @@ a {
       .about-title {
         margin-bottom: 1rem;
       }
-      
+
       .about-description {
         overflow-y: scroll;
         height: 400px;
@@ -306,7 +324,6 @@ a {
       margin-bottom: 3rem;
     }
   }
-  
 
   .contact-emails-wrapper {
     display: flex;

@@ -9,6 +9,10 @@ nav {
   width: 112px;
   padding: 10px;
 
+  @include shared.media-down(mobile) {
+    display: none !important;
+  }
+
   a.logo-image-link {
     display: block;
     width: 86px;

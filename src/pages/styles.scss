@@ -11,6 +11,12 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+main {
+  @include shared.media-up(mobile) {
+    width: 100vw;
+  }
+}
+
 h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -49,10 +55,10 @@ h5 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: normal;
   font-family: europa;
-  line-height: 1.5rem;
+  line-height: 1.7rem;
 }
 
 a {
@@ -88,7 +94,10 @@ a {
 /* Inner Sections */
 
 .bi-section {
-  width: 50%;
+  // put into columns above tablet size
+  @include shared.media-up(tablet) {
+    width: 50%;
+  }
   padding: 40px;
 }
 
@@ -180,9 +189,15 @@ a {
     align-items: center;
     text-decoration: none;
 
+    @include shared.media-down(mobile) {
+      padding: 120px 0;
+    }
+
     .project-preview-name {
       width: 100%;
       text-align: center;
+      margin-bottom: 0;
+      padding: 120px 0;
     }
 
     .project-preview-deliverable {
@@ -240,11 +255,17 @@ a {
 
 #focus {
   .focus-quadrant {
-    padding: 40px 25% 40px 40px;
+    padding: 2rem;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: auto 70%;
+
+    @include shared.media-up(tablet) {
+      .focus-quadrant-description {
+        max-width: 500px;
+      }
+    }
   }
 
   .quadrant:nth-child(1) .focus-quadrant {
@@ -253,7 +274,7 @@ a {
   }
   .quadrant:nth-child(2) .focus-quadrant {
     background-image: url("../images/mushroom.png");
-    background-position: 120% center;
+    background-position: 110% center;
   }
   .quadrant:nth-child(3) .focus-quadrant {
     background-image: url("../images/solar.png");
@@ -270,13 +291,14 @@ a {
 
 #about {
   .about-content {
-    @include shared.media-down(mobile) {
+    height: 100%;
+
+    @include shared.media-down(tablet) {
       flex-direction: column;
     }
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 3rem;
 
     &:nth-child(1) {
       border-right: 1px solid rgba(214, 214, 214, 0.2);
@@ -285,14 +307,14 @@ a {
     .about-person {
       display: flex;
       flex-direction: column;
+      overflow-y: scroll;
 
       .about-title {
         margin-bottom: 1rem;
       }
 
       .about-description {
-        overflow-y: scroll;
-        height: 400px;
+        
       }
 
       .about-person-image-name-role {
@@ -382,77 +404,5 @@ a {
 // Footer Section
 
 .footer {
-  font: normal 1.2rem europa;
-  padding-bottom: 40px;
-  display: flex;
-  flex-direction: row;
-
-  .footer-title {
-    margin-bottom: 10px;
-    color: hsla(0, 0%, 100%, 0.7);
-  }
-
-  .see-our-work-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    margin-right: 40px;
-
-    .github-icon {
-      width: 30px;
-      height: 30px;
-      padding: 10px;
-      margin-left: -10px;
-      box-sizing: content-box;
-      cursor: pointer;
-    }
-  }
-
-  .say-hi-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    .contact-emails-wrapper {
-      display: flex;
-      flex-direction: row;
-      @include shared.media-down(mobile) {
-        flex-direction: column;
-      }
-      .contact-email {
-        color: #ffffff;
-        margin: 10px;
-      }
-    }
-  }
+  
 }
-
-// @include shared.media-down(mobile) {
-//   height: 50vh;
-// }
-
-// .mouse-icon {
-//   @include horizontal-align(absolute);
-//   top: auto;
-//   bottom: 50%;
-//   height: 100px;
-//   width: 35px;
-//   opacity: 1;
-//   transition: opacity 0.3s ease;
-
-//   @include shared.media-down(mobile) {
-//     height: 75px;
-//     width: 25px;
-//   }
-
-//   @keyframes mouse-bob {
-//     0% {
-//       transform: translateY(50%) translateX(-50%);
-//     }
-//     50% {
-//       transform: translateY(60%) translateX(-50%);
-//     }
-//     100% {
-//       transform: translateY(50%) translateX(-50%);
-//     }
-//   }
-// }

@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 import _ from "underscore"
 import React, { useEffect, useState } from "react"
 import { Logo } from "./images"
+import GithubIcon from "../images/github-icon.inline.svg"
 
 import "./header.scss"
 
@@ -94,6 +95,9 @@ const Header = () => {
       <ul>
         <NavLinks />
       </ul>
+      <a href="https://github.com/Sprillow" target="_blank">
+        <GithubIcon className="github-icon" />
+      </a>
     </nav>
   )
 }

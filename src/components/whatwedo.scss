@@ -7,7 +7,7 @@
     opacity: 0.5;
   }
 
-  @include shared.media-down(mobile) {
+  @include shared.media-down(tablet) {
     display: none;
   }
 }
@@ -283,12 +283,13 @@ $hover-drop-shadow: drop-shadow(0px 0px 20px shared.$gold);
 }
 
 .what-we-do-mobile {
-  @include shared.media-up(mobile) {
+  @include shared.media-up(tablet) {
     display: none;
   }
 
   .what-we-do-section-mobile {
-    margin-bottom: 4rem;
+    padding: 2rem 2rem 2rem 2rem;
+
     .what-we-do-section-heading-mobile {
       display: flex;
       flex-direction: row;

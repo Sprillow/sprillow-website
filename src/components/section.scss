@@ -1,13 +1,30 @@
 @use './shared';
 
 .section {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-y: hidden;
+  position: relative;
+  padding-top: 110px;
+
+  // because mobile is currently the breakpoint where the left menu disappears
+  @include shared.media-up(mobile) {
+    padding-left: 111px;
+  }
+
+  @include shared.media-up(tablet) {
+    height: 100vh;
+  }
+
+  &#focus {
+    height: auto;
+    .section-body {
+      height: auto;
+    }
+  }
 
   .section-heading {
-    color: #FFF;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: #fff;
     border-top: shared.$dividing-border;
     border-bottom: shared.$dividing-border;
     text-align: center;
@@ -16,18 +33,33 @@
 
     // hero / home
     span {
-      color: #44584E;
+      color: #44584e;
     }
   }
 
   .section-body {
-    flex: 1;
+    @include shared.media-up(tablet) {
+      height: calc(100vh - 110px);
+    }
     position: relative;
+  }
+}
+
+// EXCEPTIONS
+
+#hello {
+  height: 100vh;
+
+  .section-body {
+    height: calc(100vh - 110px);
   }
 }
 
 #hello .section-heading {
   font-size: 4rem;
-  margin-left: -13rem;
   z-index: 1;
+
+  .left-adjust-heading {
+    margin-left: -13rem;
+  }
 }

@@ -3,10 +3,10 @@ import "./whatwedo.scss"
 import WhatWeDoCircle from "../images/our-approach-circle.inline.svg"
 import useIntersect from "../hooks/useIntersect"
 
-import Discovery from "../images/discovery.inline.svg"
-import Design from "../images/design.inline.svg"
-import Delivery from "../images/delivery.inline.svg"
-import Feedback from "../images/feedback.inline.svg"
+import Discovery from "../images/compass-circle.inline.svg"
+import Design from "../images/willow-leaf-circle.inline.svg"
+import Delivery from "../images/spruce-cone-circle.inline.svg"
+import Feedback from "../images/bee-circle.inline.svg"
 
 import Quadrants, { Quadrant } from "../components/quadrants/quadrants"
 

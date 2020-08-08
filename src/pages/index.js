@@ -8,7 +8,6 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 // have .inline.svg at the end of their
 // file names or they will not work
 import Contact from "../images/contact.inline.svg"
-import GithubIcon from "../images/github-icon.inline.svg"
 import WhatWeDoDiagram from "../components/whatwedo"
 import { PegahProfile, ConnorProfile } from "../components/images"
 import Projects from "../components/projects"
@@ -84,9 +83,9 @@ const IndexPage = () => {
       <Section
         id="hello"
         heading={
-          <>
+          <div className='left-adjust-heading'>
             <span>We are</span> Sprillow<span>.</span>
-          </>
+          </div>
         }
         h1heading
       >
@@ -243,23 +242,7 @@ const IndexPage = () => {
       </Section>
 
       <div className="footer">
-        <div className="see-our-work-wrapper">
-          <div className="footer-title">See our work</div>{" "}
-          <a href="https://github.com/Sprillow" target="_blank">
-            <GithubIcon className="github-icon" />
-          </a>
-        </div>
-        <div className="say-hi-wrapper">
-          <div className="footer-title">Say hi</div>
-          <div className="contact-emails-wrapper">
-            <a href="mailto:connor@sprillow.com" className="contact-email">
-              pegah@sprillow.com
-            </a>
-            <a href="mailto:connor@sprillow.com" className="contact-email">
-              connor@sprillow.com
-            </a>
-          </div>
-        </div>
+        
       </div>
     </Layout>
   )

@@ -3,6 +3,7 @@ import _ from "underscore"
 import React, { useEffect, useState } from "react"
 import { Logo } from "./images"
 import GithubIcon from "../images/github-icon.inline.svg"
+import scrollToSection from "./scroll-help"
 
 import "./header.scss"
 
@@ -24,7 +25,9 @@ const NavLinks = () => {
     <>
       {items.map((item, index) => (
         <li key={index}>
-          <a href={item[0]}>{item[1]}</a>
+          <a href={item[0]} onClick={scrollToSection}>
+            {item[1]}
+          </a>
         </li>
       ))}
     </>

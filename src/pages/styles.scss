@@ -1,5 +1,7 @@
 @use '../components/shared';
 
+$nav-width: 110px;
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7,7 +9,6 @@
 
 html {
   font: 100%/1em;
-  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 }
 
@@ -18,37 +19,37 @@ main {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.4rem;
   font-weight: 700;
   font-family: latienne-pro;
   color: #ffffff;
-  line-height: 3.2rem;
+  line-height: 3.8rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 600;
   font-family: latienne-pro;
-  line-height: 2.7rem;
+  line-height: 3.4rem;
 }
 
 h3 {
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   font-weight: 600;
   font-family: latienne-pro;
-  line-height: 2.2rem;
+  line-height: 2.6rem;
   color: #ffffff;
 }
 
 h4 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
   font-family: latienne-pro;
   color: #b7b7b7;
 }
 
 h5 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   font-family: latienne-pro;
   color: #b7b7b7;
@@ -98,7 +99,10 @@ a {
   @include shared.media-up(tablet) {
     width: 50%;
   }
-  padding: 40px;
+  padding: 2rem;
+  @include shared.media-down(tablet) {
+    padding: 4rem;
+  }
 }
 
 /* Hello Section */
@@ -115,13 +119,14 @@ a {
   .hello-compass {
     position: absolute;
     // width: ;
-    width: 20vw;
-    height: 20vw;
+    width: 10rem;
+    height: 10rem;
     bottom: 10%;
     left: 10%;
     background-image: url("../images/compass.png");
     background-repeat: no-repeat;
     background-size: contain;
+    opacity: 0.8;
   }
 
   .hello-willow {
@@ -135,7 +140,12 @@ a {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right top;
-    opacity: 0.1;
+    opacity: 0.08;
+    @include shared.media-down(mobile) {
+      transform: scale(0.7);
+      top: -189px;
+      right: -115px;
+    }
   }
 
   .hello-spruce {
@@ -188,6 +198,8 @@ a {
     display: flex;
     align-items: center;
     text-decoration: none;
+    cursor: pointer;
+    min-height: 30vh;
 
     @include shared.media-down(mobile) {
       padding: 120px 0;
@@ -197,17 +209,34 @@ a {
       width: 100%;
       text-align: center;
       margin-bottom: 0;
-      padding: 120px 0;
+      padding: 3rem;
+    }
+
+    .project-preview-objective {
+      position: absolute;
+      bottom: 1rem;
+      text-align: center;
+      margin: auto;
+      width: 100%;
+      color: #fff;
+      opacity: 0.7;
+      font-weight: 300;
     }
 
     .project-preview-deliverable {
       position: absolute;
-      top: 30px;
-      right: 30px;
+      top: 1rem;
+      right: 1rem;
       color: #b7b7b7;
       text-transform: uppercase;
       font-family: europa;
-      font-weight: bold;
+      font-weight: 500;
+      @include shared.media-down(tablet) {
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        right: unset;
+      }
     }
 
     .project-preview-image-wrapper {
@@ -266,6 +295,10 @@ a {
         max-width: 500px;
       }
     }
+
+    @include shared.media-down(tablet) {
+      padding: 4rem;
+    }
   }
 
   .quadrant:nth-child(1) .focus-quadrant {
@@ -300,21 +333,27 @@ a {
     flex-direction: row;
     justify-content: space-around;
 
-    &:nth-child(1) {
-      border-right: 1px solid rgba(214, 214, 214, 0.2);
-    }
-
     .about-person {
       display: flex;
       flex-direction: column;
       overflow-y: scroll;
+
+      @include shared.media-up(tablet) {
+        &:nth-child(1) {
+          border-right: 1px solid rgba(214, 214, 214, 0.2);
+        }
+      }
+      @include shared.media-down(tablet) {
+        &:nth-child(1) {
+          border-bottom: 1px solid rgba(214, 214, 214, 0.2);
+        }
+      }
 
       .about-title {
         margin-bottom: 1rem;
       }
 
       .about-description {
-        
       }
 
       .about-person-image-name-role {
@@ -322,12 +361,22 @@ a {
         flex-direction: row;
         align-items: center;
         margin-bottom: 1.5rem;
+        @include shared.media-down(mobile) {
+          flex-direction: column;
+          text-align: center;
+        }
 
         .about-profile-image-wrapper {
           width: 200px;
           height: 200px;
           border-radius: 50%;
-          margin-right: 40px;
+          margin-right: 1rem;
+          @include shared.media-down(small-mobile) {
+            margin-right: 0;
+            margin-bottom: 1rem;
+            width: inherit;
+            height: inherit;
+          }
         }
 
         .about-profile-image-wrapper img {
@@ -364,45 +413,18 @@ a {
 
 /* Lets Work Together section */
 #connect {
-  margin-bottom: 4rem;
-  .contact-button a {
-    border: 1.5px solid pink;
-    color: pink;
-    font: normal 0.9rem europa;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 4px;
-  }
-
   .contact-content {
-    display: flex;
-
-    .contact-text {
-      color: hsla(0, 0%, 100%, 0.8);
-      margin-bottom: 3rem;
-    }
-  }
-
-  .contact-emails-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .contact-button {
-    line-height: 4.5rem;
-    a {
-      border: 1.5px solid pink;
-      color: pink;
-      font: normal 1.2rem europa;
-      text-decoration: none;
-      padding: 16px 20px;
-      border-radius: 4px;
-    }
+    padding: 2rem;
   }
 }
 
 // Footer Section
 
 .footer {
-  
+  padding: 2rem;
+  font-family: europa;
+
+  @include shared.media-up(tablet) {
+    margin-left: $nav-width;
+  }
 }

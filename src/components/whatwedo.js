@@ -379,7 +379,7 @@ export default function WhatWeDoDiagram() {
         <div className="what-we-do-section-mobile">
           <div className="what-we-do-section-heading-mobile">
             <Discovery />
-            <h4>Discovery</h4>
+            <h3>Discovery</h3>
           </div>
           <p>{DESCRIPTIONS[DISCOVERY]}</p>
         </div>
@@ -387,7 +387,7 @@ export default function WhatWeDoDiagram() {
         <div className="what-we-do-section-mobile">
           <div className="what-we-do-section-heading-mobile">
             <Design />
-            <h4>Design</h4>
+            <h3>Design</h3>
           </div>
           <p>{DESCRIPTIONS[DESIGN]}</p>
         </div>
@@ -395,7 +395,7 @@ export default function WhatWeDoDiagram() {
         <div className="what-we-do-section-mobile">
           <div className="what-we-do-section-heading-mobile">
             <Delivery />
-            <h4>Delivery</h4>
+            <h3>Delivery</h3>
           </div>
           <p>{DESCRIPTIONS[DELIVERY]}</p>
         </div>
@@ -403,7 +403,7 @@ export default function WhatWeDoDiagram() {
         <div className="what-we-do-section-mobile">
           <div className="what-we-do-section-heading-mobile">
             <Feedback />
-            <h4>Feedback</h4>
+            <h3>Feedback</h3>
           </div>
           <p>{DESCRIPTIONS[FEEDBACK]}</p>
         </div>

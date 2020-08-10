@@ -1,13 +1,16 @@
 @use './shared';
 
+$nav-width: 112px;
+
 nav {
   position: fixed;
   height: 100vh;
   text-align: right;
   box-sizing: border-box;
   border-right: shared.$dividing-border;
-  width: 112px;
+  width: $nav-width;
   padding: 10px;
+  z-index: 2;
 
   @include shared.media-down(mobile) {
     display: none !important;

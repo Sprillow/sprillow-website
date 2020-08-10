@@ -1,19 +1,22 @@
 @use './shared';
 
+$nav-width: 112px;
+
 .section {
   position: relative;
-  padding-top: 110px;
+  // padding-top: 110px;
 
   // because mobile is currently the breakpoint where the left menu disappears
   @include shared.media-up(mobile) {
-    padding-left: 111px;
+    padding-left: $nav-width;
   }
 
   @include shared.media-up(tablet) {
     height: 100vh;
   }
 
-  &#focus {
+  &#focus,
+  &#connect {
     height: auto;
     .section-body {
       height: auto;
@@ -21,7 +24,6 @@
   }
 
   .section-heading {
-    position: absolute;
     top: 0;
     width: 100%;
     color: #fff;
@@ -30,6 +32,10 @@
     text-align: center;
     padding: 30px 0;
     margin-bottom: 0;
+    // @include shared.media-up(tablet) {
+    //   //padding equal to padding that covers the nav width
+    //   padding-right: $nav-width;
+    // }
 
     // hero / home
     span {
@@ -39,7 +45,7 @@
 
   .section-body {
     @include shared.media-up(tablet) {
-      height: calc(100vh - 110px);
+      height: calc(100vh - 123px);
     }
     position: relative;
   }
@@ -58,8 +64,19 @@
 #hello .section-heading {
   font-size: 4rem;
   z-index: 1;
+  line-height: 0.5;
+  border-top: none;
 
   .left-adjust-heading {
     margin-left: -13rem;
+    @include shared.media-down(tablet) {
+      margin-left: -0.5rem;
+    }
+
+    .hero-heading-desktop {
+      @include shared.media-down(mobile) {
+        display: none;
+      }
+    }
   }
 }

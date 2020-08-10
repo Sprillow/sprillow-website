@@ -1,7 +1,7 @@
 import React from "react"
 import "./button.scss"
 
-export default function Button({ text, className }) {
+export default function Button({ text, className, href, onClickA }) {
   return (
     <div className={`custom-button-wrapper ${className}`}>
       <div className="custom-button-bars custom-button-left-bars">
@@ -9,7 +9,13 @@ export default function Button({ text, className }) {
         <div />
         <div />
       </div>
-      <button className="custom-button">{text}</button>
+      {!href && <button className="custom-button"></button>}
+      {href && (
+        <a className="custom-button" href={href} onClick={onClickA}>
+          {text}
+        </a>
+      )}
+
       <div className="custom-button-bars custom-button-right-bars">
         <div />
         <div />

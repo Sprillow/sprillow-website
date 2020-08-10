@@ -93,7 +93,7 @@ const queries = graphql`
 const Image = ({ type, imgName }) => {
   const data = useStaticQuery(queries)
   const props = {
-    [type]: data[imgName] ? data[imgName].childImageSharp[type] : null
+    [type]: data[imgName] ? data[imgName].childImageSharp[type] : null,
   }
   return <Img {...props} />
 }

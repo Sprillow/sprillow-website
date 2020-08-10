@@ -1,6 +1,7 @@
 import React from "react"
 import "./styles.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import scrollToSection from "../components/scroll-help"
 
 // import svg images here:
 
@@ -28,6 +29,7 @@ function ProjectPreview({ project }) {
       rel="noreferrer"
     >
       <h3 className="project-preview-name">{project.project}</h3>
+      <p className="project-preview-objective">{project.objective}</p>
       <div className="project-preview-deliverable">{project.deliverable}</div>
       <div className="project-preview-image-wrapper">
         <div className="project-preview-image" />
@@ -64,6 +66,7 @@ const IndexPage = () => {
         nodes {
           id
           project
+          objective
           deliverable
           link
         }
@@ -80,32 +83,42 @@ const IndexPage = () => {
       </a> */}
 
       {/* HERO */}
+      {/* Desktop and Tablet Hero */}
       <Section
         id="hello"
         heading={
-          <div className='left-adjust-heading'>
-            <span>We are</span> Sprillow<span>.</span>
+          <div className="left-adjust-heading">
+            <span className="hero-heading-desktop">We are</span> Sprillow
+            <span>.</span>
           </div>
         }
         h1heading
       >
-        <div className="hello-compass" />
         <div className="hello-willow" />
         <div className="hello-spruce" />
+        <div className="hello-compass" />
+
         <p className="biz-intro">
           We are a design, development and consultation{" "}
-          <a href="/#about">studio</a> <br />
-          <a href="/#focus">focused</a> on co-creating initiatives
+          <a href="/#about" onClick={scrollToSection}>
+            studio
+          </a>{" "}
+          <br />
+          <a href="/#focus" onClick={scrollToSection}>
+            focused
+          </a>{" "}
+          on co-creating initiatives
           <br />
           with systems change leverage.
         </p>
-        <a href="/#portfolio">
-          <Button
-            text="Our Recent Work"
-            className="recent-work-button"
-          ></Button>
-        </a>
+        <Button
+          text="Our Recent Work"
+          className="recent-work-button"
+          href="/#portfolio"
+          onClickA={scrollToSection}
+        ></Button>
       </Section>
+
       <Section id="portfolio" heading="Recent Work">
         <Quadrants>
           {/* there should only be 4 projects, since we use quadrants */}
@@ -223,27 +236,30 @@ const IndexPage = () => {
 
       <Section id="connect" heading="Let's Work Together">
         <div className="contact-content">
-          <div className="bi-section contact-text">
+          <div className="contact-text">
             <p>
               Sounds like a right fit? We’re excited to collaborate with you.
-              Tell us about your project using our contact form, plus any
-              details to help us make your dream come through. If you’d rather
-              email us directly, send us a message at connor@sprillow.com
+              Tell us about yourself and your project by emailing us directly at{" "}
+              <a href="mailto:connor@sprillow.com">connor@sprillow.com</a>.
             </p>
+            {/* <p>
+              Sounds like a right fit? We’re excited to collaborate with you.
+              Tell us about your project using our contact form, plus any
+              details to help us make your vision come true. If you’d rather
+              email us directly, send us a message at connor@sprillow.com
+            </p> */}
             {/* <div className="contact-button">
           <a href="mailto:pegah@sprillow.com">Send us a message</a>
         </div> */}
           </div>
 
-          <div className="bi-section contact-form">form</div>
+          {/* <div className="bi-section contact-form">form</div> */}
         </div>
 
         {/* <a className="contact-button"></a> */}
       </Section>
 
-      <div className="footer">
-        
-      </div>
+      <div className="footer">Sprillow Limited - Ontario, Canada</div>
     </Layout>
   )
 }

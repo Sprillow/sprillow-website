@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import _ from "underscore"
 import React, { useEffect, useState } from "react"
 import { Logo } from "./images"
-import GithubIcon from "../images/github-icon.inline.svg"
+import GithubIcon from "../images/github.inline.svg"
 import scrollToSection from "./scroll-help"
 
 import "./header.scss"

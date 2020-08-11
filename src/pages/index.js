@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import "./styles.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import scrollToSection from "../components/scroll-help"
+import { CSSTransition } from "react-transition-group"
 
 // import svg images here:
 
@@ -19,6 +20,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/button"
 import Quadrants, { Quadrant } from "../components/quadrants/quadrants"
+import Burger from "../components/burger/burger"
 
 function ProjectPreview({ project }) {
   return (
@@ -74,14 +76,24 @@ const IndexPage = () => {
     }
   `)
 
+  const [openBurgerMenu, setOpenBurgerMenu] = useState(false)
   return (
     <Layout>
       <SEO title="Home" />
 
-      {/* <a href="mailto:pegah@sprillow.com">
-        <Contact className="contact-icon" />
-      </a> */}
-
+      {/* burger menu (hidden on larger screens) */}
+      <Burger
+        isOpen={openBurgerMenu}
+        closeMenu={() => setOpenBurgerMenu(false)}
+      />
+      <div className="burger-menu-button">
+        <Button
+          text="menu"
+          className="menu"
+          onClick={() => setOpenBurgerMenu(true)}
+          menu
+        ></Button>
+      </div>
       {/* HERO */}
       {/* Desktop and Tablet Hero */}
       <Section
@@ -99,16 +111,14 @@ const IndexPage = () => {
         <div className="hello-compass" />
 
         <p className="biz-intro">
-          We are a design, development and consultation{" "}
           <a href="/#about" onClick={scrollToSection}>
-            studio
+            We are
           </a>{" "}
-          <br />
+          a design, development and consultation studio{" "}
           <a href="/#focus" onClick={scrollToSection}>
             focused
           </a>{" "}
-          on co-creating initiatives
-          <br />
+          on co-creating initiatives <br />
           with systems change leverage.
         </p>
         <Button

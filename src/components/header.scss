@@ -34,6 +34,20 @@ nav {
       text-decoration: none;
       color: shared.$offwhite;
       font-family: europa;
+      transition: color 0.2s ease-in-out;
+      &:hover {
+        color: shared.$gold;
+      }
     }
+  }
+}
+
+.github-icon {
+  position: fixed;
+  left: 60px;
+  bottom: 10px;
+  transition: opacity 0.2s ease-in-out;
+  &:hover {
+    opacity: 0.7;
   }
 }

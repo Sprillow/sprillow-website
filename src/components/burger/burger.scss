@@ -1,0 +1,86 @@
+@use '../shared';
+
+.burger-menu-wrapper {
+  position: fixed;
+  z-index: 100;
+}
+
+/* Burger Menu Animation */
+.burger-menu-list-wrapper {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.burger-menu-animation-enter-active,
+.burger-menu-animation-enter-done {
+  opacity: 1;
+}
+
+.burger-menu-list-wrapper {
+  width: 100vw;
+  background-color: shared.$dark-green-semi-transparent;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .logo-image-link {
+    position: fixed;
+    top: 10vh;
+  }
+
+  .burger-close-button {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 200;
+    cursor: pointer;
+    padding: 1rem;
+
+    .close-icon {
+      height: 36px;
+      width: 36px;
+
+      transition: opacity 0.2s ease-in-out;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .burger-menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    li {
+      margin-top: 10px;
+      a {
+        text-decoration: none;
+        color: shared.$offwhite;
+        font-family: "latienne-pro", serif;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 36px;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: shared.$gold;
+        }
+      }
+    }
+  }
+}
+
+.burger-signup-button {
+  border: 1.5px solid black;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: border 0.2s ease;
+  &:hover {
+    border: 1.5px solid gold;
+  }
+}

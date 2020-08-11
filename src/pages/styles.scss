@@ -141,9 +141,10 @@ a {
     background-size: contain;
     background-position: right top;
     opacity: 0.08;
+    z-index: -2;
     @include shared.media-down(mobile) {
       transform: scale(0.7);
-      top: -189px;
+      top: -218px;
       right: -115px;
     }
   }
@@ -153,13 +154,14 @@ a {
     height: 30%;
     width: 100%;
     // height of section header
-    top: -119px;
+    top: -153px;
     right: 0;
     background-image: url("../images/spruce-branch-hello.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left top;
     opacity: 0.1;
+    z-index: -2;
   }
 
   .biz-intro {
@@ -167,22 +169,28 @@ a {
     top: 0;
     right: 0;
     text-align: right;
-    margin: 60px;
+    margin: 3rem;
     font-family: latienne-pro;
     font-size: 1.8rem;
     line-height: 2.2rem;
-    color: #fff;
+    color: shared.$offwhite;
     font-weight: 500;
 
     @include shared.media-up(tablet) {
-      max-width: 70vw;
+      max-width: 60vw;
+    }
+
+    br {
+      @include shared.media-down(tablet) {
+        display: none;
+      }
     }
   }
 
   .recent-work-button {
     position: absolute;
-    bottom: 60px;
-    right: 60px;
+    bottom: 3rem;
+    right: 3rem;
   }
 }
 
@@ -219,8 +227,11 @@ a {
       margin: auto;
       width: 100%;
       color: #fff;
-      opacity: 0.7;
+      opacity: 0.9;
       font-weight: 300;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      padding: 1rem;
     }
 
     .project-preview-deliverable {
@@ -424,7 +435,21 @@ a {
   padding: 2rem;
   font-family: europa;
 
-  @include shared.media-up(tablet) {
+  @include shared.media-up(mobile) {
     margin-left: $nav-width;
+  }
+}
+
+// Burger Menu
+
+.burger-menu-button {
+  z-index: 2;
+  cursor: pointer;
+  position: fixed;
+  right: 5px;
+  top: 5px;
+
+  @include shared.media-up(mobile) {
+    display: none;
   }
 }

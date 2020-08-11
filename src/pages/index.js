@@ -22,7 +22,21 @@ import Button from "../components/button"
 import Quadrants, { Quadrant } from "../components/quadrants/quadrants"
 import Burger from "../components/burger/burger"
 
-function ProjectPreview({ project }) {
+function ProjectPreview({ project, index }) {
+  const main = (
+    <>
+      <h3 className="project-preview-name">{project.project}</h3>
+      <p className="project-preview-objective">{project.objective}</p>
+      <div className="project-preview-deliverable">{project.deliverable}</div>
+      <div className="project-preview-image-wrapper">
+        <div className="project-preview-image" />
+      </div>
+    </>
+  )
+  // disable OWW link for now
+  if (index === 3) {
+    return <div className="project-preview disabled-link">{main}</div>
+  }
   return (
     <a
       className="project-preview"
@@ -30,12 +44,7 @@ function ProjectPreview({ project }) {
       target="_blank"
       rel="noreferrer"
     >
-      <h3 className="project-preview-name">{project.project}</h3>
-      <p className="project-preview-objective">{project.objective}</p>
-      <div className="project-preview-deliverable">{project.deliverable}</div>
-      <div className="project-preview-image-wrapper">
-        <div className="project-preview-image" />
-      </div>
+      {main}
     </a>
   )
 }
@@ -134,7 +143,7 @@ const IndexPage = () => {
           {/* there should only be 4 projects, since we use quadrants */}
           {portfolio.map((project, index) => (
             <Quadrant key={index}>
-              <ProjectPreview project={project} />
+              <ProjectPreview project={project} index={index} />
             </Quadrant>
           ))}
         </Quadrants>

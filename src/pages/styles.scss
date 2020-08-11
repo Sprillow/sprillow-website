@@ -209,6 +209,10 @@ a {
     cursor: pointer;
     min-height: 30vh;
 
+    &.disabled-link {
+      cursor: default;
+    }
+
     @include shared.media-down(mobile) {
       padding: 120px 0;
     }
@@ -295,16 +299,22 @@ a {
 
 #focus {
   .focus-quadrant {
-    padding: 2rem;
+    padding: 1rem 2rem;
     width: 100%;
     height: 100%;
-    background-repeat: no-repeat;
-    background-size: auto 70%;
+
+    h3 {
+      margin-bottom: 0.5rem;
+    }
 
     @include shared.media-up(tablet) {
       .focus-quadrant-description {
-        max-width: 500px;
+        max-width: 600px;
       }
+    }
+
+    .focus-quadrant-description {
+      font-size: 1rem;
     }
 
     @include shared.media-down(tablet) {
@@ -312,20 +322,25 @@ a {
     }
   }
 
-  .quadrant:nth-child(1) .focus-quadrant {
+  .quadrant {
+    background-repeat: no-repeat;
+    background-size: auto 70%;
+  }
+
+  .quadrant:nth-child(1) {
     background-image: url("../images/davinci.png");
     background-position: right center;
   }
-  .quadrant:nth-child(2) .focus-quadrant {
+  .quadrant:nth-child(2) {
     background-image: url("../images/mushroom.png");
     background-position: 110% center;
   }
-  .quadrant:nth-child(3) .focus-quadrant {
+  .quadrant:nth-child(3) {
     background-image: url("../images/solar.png");
     background-position: right bottom;
     background-size: auto 60%;
   }
-  .quadrant:nth-child(4) .focus-quadrant {
+  .quadrant:nth-child(4) {
     background-image: url("../images/waterbottle.png");
     background-position: right center;
   }
@@ -365,6 +380,7 @@ a {
       }
 
       .about-description {
+        padding-bottom: 3rem;
       }
 
       .about-person-image-name-role {

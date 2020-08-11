@@ -14,8 +14,11 @@ $nav-width: 112px;
   @include shared.media-up(tablet) {
     height: 100vh;
   }
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 
-  &#focus,
+  // &#focus,
   &#connect {
     height: auto;
     .section-body {
@@ -44,9 +47,10 @@ $nav-width: 112px;
   }
 
   .section-body {
-    @include shared.media-up(tablet) {
-      height: calc(100vh - 123px);
-    }
+    // @include shared.media-up(tablet) {
+    flex-grow: 1;
+    overflow: hidden;
+    // }
     position: relative;
   }
 }
@@ -55,12 +59,16 @@ $nav-width: 112px;
 
 #hello {
   height: 100vh;
+  overflow: visible;
+
+  // to adjust for the menu button in the top right
   @include shared.media-down(mobile) {
-    margin-top: 58px;
+    padding-top: 58px;
   }
 
   .section-body {
-    height: calc(100vh - 110px);
+    // height: calc(100vh - 110px);
+    overflow: visible;
   }
 }
 

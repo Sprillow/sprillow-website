@@ -4,7 +4,7 @@
   display: grid;
   height: 100%;
   width: 100%;
-  
+
   @include shared.media-down(tablet) {
     grid-template-columns: 1fr;
   }
@@ -15,8 +15,10 @@
   .quadrant {
     display: flex;
     align-items: center;
+    height: 100%;
+    overflow: scroll;
 
-    // first and third child have 
+    // first and third child have
     &:nth-child(1),
     &:nth-child(3) {
       border-right: shared.$dividing-border;

@@ -33,10 +33,6 @@ function ProjectPreview({ project, index }) {
       </div>
     </>
   )
-  // disable OWW link for now
-  if (index === 3) {
-    return <div className="project-preview disabled-link">{main}</div>
-  }
   return (
     <a
       className="project-preview"
@@ -127,8 +123,8 @@ const IndexPage = () => {
           <a href="/#focus" onClick={scrollToSection}>
             focused
           </a>{" "}
-          on co-creating initiatives <br />
-          with systems change leverage.
+          on co-creating <br />
+          systems change initiatives.
         </p>
         <Button
           text="Our Recent Work"

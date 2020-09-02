@@ -52,6 +52,7 @@ $nav-width: 112px;
     overflow: hidden;
     // }
     position: relative;
+    height: 100%;
   }
 }
 
@@ -89,7 +90,7 @@ $nav-width: 112px;
       }
     }
     @include shared.media-down(mobile) {
-      margin-left: -0.5rem;
+      margin-left: 0;
     }
 
     .hero-heading-desktop {

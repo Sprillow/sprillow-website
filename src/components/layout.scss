@@ -1,5 +1,7 @@
 html {
+  // website's default background color
   background-color: #1b3428;
+  // background-color: #02331b;
   color: #ffffff;
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -9,6 +11,11 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: url("../images/compass.png"), default;
+}
+.cursor {
+  width: 20px;
+  height: 20px;
 }
 article,
 aside,

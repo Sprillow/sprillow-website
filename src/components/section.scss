@@ -83,18 +83,13 @@ $nav-width: 112px;
   }
 
   .left-adjust-heading {
-    margin-left: -13rem;
+    margin-left: -16rem;
     @include shared.media-down(tablet) {
-      @include shared.media-up(mobile) {
-        margin-left: -8rem;
-      }
-    }
-    @include shared.media-down(mobile) {
-      margin-left: 0;
+      margin-left: -0.5rem;
     }
 
     .hero-heading-desktop {
-      @include shared.media-down(mobile) {
+      @include shared.media-down(tablet) {
         display: none;
       }
     }

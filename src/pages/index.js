@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "./styles.scss"
+
 import { useStaticQuery, graphql, Link } from "gatsby"
 import scrollToSection from "../components/scroll-help"
 import { CSSTransition } from "react-transition-group"
@@ -82,6 +83,7 @@ const IndexPage = () => {
   `)
 
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false)
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -116,15 +118,16 @@ const IndexPage = () => {
         <div className="hello-compass" />
 
         <p className="biz-intro">
-          <a href="/#about" onClick={scrollToSection}>
-            We are
-          </a>{" "}
-          a design, development and consultation studio{" "}
+          Sprillow is a design, development and consultation studio{" "}
           <a href="/#focus" onClick={scrollToSection}>
             focused
           </a>{" "}
-          on co-creating <br />
-          systems change initiatives.
+          on co-creating systems change initiatives.{" "}
+          <a href="/#about" onClick={scrollToSection}>
+            We are
+          </a>{" "}
+          a small team lit up with a will to create, and bring impactful
+          projects beautifully and functionally to life.
         </p>
         <Button
           text="Our Recent Work"

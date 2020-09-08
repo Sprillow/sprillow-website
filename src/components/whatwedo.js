@@ -377,11 +377,17 @@ export default function WhatWeDoDiagram() {
       {/* MOBILE */}
       <div className="what-we-do-mobile">
         <div className="what-we-do-section-mobile">
+          <Discovery />
           <div className="what-we-do-section-heading-mobile">
-            <Discovery />
             <h3>Discovery</h3>
           </div>
           <p>{DESCRIPTIONS[DISCOVERY]}</p>
+          <div className="approach-subcategories-wrapper-mobile">
+            <div className="approach-subcategory-mobile">Strategy</div>
+            <div className="approach-subcategory-mobile">Consultation</div>
+            <div className="approach-subcategory-mobile">UX Research</div>
+            <div className="approach-subcategory-mobile">Facilication</div>
+          </div>
         </div>
 
         <div className="what-we-do-section-mobile">

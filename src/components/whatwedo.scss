@@ -293,6 +293,9 @@ $hover-drop-shadow: drop-shadow(0px 0px 20px shared.$gold);
 
   .what-we-do-section-mobile {
     padding: 4rem;
+    @include shared.media-down(very-small-mobile) {
+      padding: 3rem;
+    }
 
     svg {
       max-height: 12rem;
@@ -329,11 +332,27 @@ $hover-drop-shadow: drop-shadow(0px 0px 20px shared.$gold);
 
 .approach-subcategories-wrapper-mobile {
   display: flex;
+
+  .approach-subcategories-column-mobile {
+    @include shared.media-down(small-mobile) {
+      flex-direction: column;
+    }
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
   .approach-subcategory-mobile {
     margin-right: 1rem;
+    @include shared.media-down(small-mobile) {
+      margin-right: 0.5rem;
+    }
     font-family: "europa", sans-serif;
     font-size: 1rem;
-    color: shared.$light-grey;
+    @include shared.media-down(very-small-mobile) {
+      font-size: 0.96rem;
+    }
+    // color: shared.$light-grey;
+    color: #c5b37de6;
     transition: opacity 0.2s ease-in-out;
     &:hover {
       opacity: 0.8;

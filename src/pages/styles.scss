@@ -94,6 +94,9 @@ a {
   @include shared.media-down(tablet) {
     padding: 4rem;
   }
+  @include shared.media-down(very-small-mobile) {
+    padding: 3rem;
+  }
 }
 
 /* Hello Section */
@@ -175,6 +178,12 @@ a {
       max-width: 900px;
     }
 
+    @include shared.media-down(small-mobile) {
+      margin: 2rem 2.8rem;
+      font-size: 1.64rem;
+      line-height: 2rem;
+    }
+
     br {
       @include shared.media-down(tablet) {
         display: none;
@@ -186,6 +195,16 @@ a {
     position: absolute;
     bottom: 4rem;
     right: 3rem;
+    @include shared.media-down(mobile) {
+      bottom: 2rem;
+      right: 2.5rem;
+    }
+    @include shared.media-down(small-mobile) {
+      right: 2.5rem;
+    }
+    @include shared.media-down(very-small-mobile) {
+      display: none;
+    }
   }
 }
 
@@ -319,6 +338,10 @@ a {
     @include shared.media-down(tablet) {
       padding: 4rem;
     }
+
+    @include shared.media-down(very-small-mobile) {
+      padding: 3rem;
+    }
   }
 
   .quadrant {
@@ -443,6 +466,9 @@ a {
     }
     @include shared.media-down(tablet) {
       padding: 4rem;
+    }
+    @include shared.media-down(very-small-mobile) {
+      padding: 3rem;
     }
   }
 }

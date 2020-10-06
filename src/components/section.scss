@@ -64,7 +64,7 @@ $nav-width: 112px;
 
   // to adjust for the menu button in the top right
   @include shared.media-down(mobile) {
-    padding-top: 58px;
+    padding-top: 60px;
   }
 
   .section-body {
@@ -86,6 +86,9 @@ $nav-width: 112px;
     margin-left: -16rem;
     @include shared.media-down(tablet) {
       margin-left: -0.5rem;
+    }
+    @include shared.media-down(very-small-mobile) {
+      margin-left: 0.5rem;
     }
 
     .hero-heading-desktop {

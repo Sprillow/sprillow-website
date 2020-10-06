@@ -383,10 +383,14 @@ export default function WhatWeDoDiagram() {
           </div>
           <p>{DESCRIPTIONS[DISCOVERY]}</p>
           <div className="approach-subcategories-wrapper-mobile">
-            <div className="approach-subcategory-mobile">Strategy</div>
-            <div className="approach-subcategory-mobile">Consultation</div>
-            <div className="approach-subcategory-mobile">UX Research</div>
-            <div className="approach-subcategory-mobile">Facilication</div>
+            <div className="approach-subcategories-column-mobile">
+              <div className="approach-subcategory-mobile">Strategy</div>
+              <div className="approach-subcategory-mobile">Consultation</div>
+            </div>
+            <div className="approach-subcategories-column-mobile">
+              <div className="approach-subcategory-mobile">UX Research</div>
+              <div className="approach-subcategory-mobile">Facilication</div>
+            </div>
           </div>
         </div>
 
@@ -396,6 +400,16 @@ export default function WhatWeDoDiagram() {
             <h3>Design</h3>
           </div>
           <p>{DESCRIPTIONS[DESIGN]}</p>
+          <div className="approach-subcategories-wrapper-mobile">
+            <div className="approach-subcategories-column-mobile">
+              <div className="approach-subcategory-mobile">UX Design</div>
+              <div className="approach-subcategory-mobile">UI Design</div>
+            </div>
+            <div className="approach-subcategories-column-mobile">
+              <div className="approach-subcategory-mobile">Visual Identity</div>
+              <div className="approach-subcategory-mobile"></div>
+            </div>
+          </div>
         </div>
 
         <div className="what-we-do-section-mobile">
@@ -404,6 +418,20 @@ export default function WhatWeDoDiagram() {
             <h3>Delivery</h3>
           </div>
           <p>{DESCRIPTIONS[DELIVERY]}</p>
+          <div className="approach-subcategories-wrapper-mobile">
+            <div className="approach-subcategories-column-mobile">
+              <div className="approach-subcategory-mobile">Mobile Apps</div>
+              <div className="approach-subcategory-mobile">Native Apps</div>
+            </div>
+            <div className="approach-subcategories-column-mobile">
+              <div className="approach-subcategory-mobile">
+                Peer-to-peer Solutions
+              </div>
+              <div className="approach-subcategory-mobile">
+                E-commerce Solutions
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="what-we-do-section-mobile">
@@ -412,6 +440,16 @@ export default function WhatWeDoDiagram() {
             <h3>Feedback</h3>
           </div>
           <p>{DESCRIPTIONS[FEEDBACK]}</p>
+          <div className="approach-subcategories-wrapper-mobile">
+            <div className="approach-subcategories-column-mobile">
+              <div className="approach-subcategory-mobile">Retrospectives</div>
+              <div className="approach-subcategory-mobile">Analytics</div>
+            </div>
+            <div className="approach-subcategories-column-mobile">
+              <div className="approach-subcategory-mobile">Optimization</div>
+              <div className="approach-subcategory-mobile"></div>
+            </div>
+          </div>
         </div>
       </div>
     </>

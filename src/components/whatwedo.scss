@@ -304,7 +304,7 @@ $hover-drop-shadow: drop-shadow(0px 0px 20px shared.$gold);
       left: -1rem;
       margin-top: -2rem;
       z-index: -4;
-      opacity: 0.5;
+      opacity: 0.35;
     }
 
     &:nth-child(1),
@@ -334,9 +334,11 @@ $hover-drop-shadow: drop-shadow(0px 0px 20px shared.$gold);
   display: flex;
 
   .approach-subcategories-column-mobile {
-    @include shared.media-down(small-mobile) {
+    @include shared.media-down(very-small-mobile) {
       flex-direction: column;
     }
+    display: flex;
+    flex-direction: row;
     &:first-child {
       margin-right: 16px;
     }
@@ -351,8 +353,8 @@ $hover-drop-shadow: drop-shadow(0px 0px 20px shared.$gold);
     @include shared.media-down(very-small-mobile) {
       font-size: 0.96rem;
     }
-    color: shared.$light-grey;
-    // color: #c5b37de6;
+    // color: shared.$light-grey;
+    color: #ad9044;
     transition: opacity 0.2s ease-in-out;
     &:hover {
       opacity: 0.8;

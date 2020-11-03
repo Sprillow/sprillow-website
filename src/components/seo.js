@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const { site, ogImageDefault } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,6 +19,16 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
+          }
+        }
+        ogImageDefault: file(
+          relativePath: { eq: "sprillow-social-sharing-preview.png" }
+        ) {
+          childImageSharp {
+            fixed(height: 900, width: 1600) {
+              src
+            }
           }
         }
       }
@@ -26,6 +36,9 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const ogImage = site.siteMetadata.siteUrl.concat(
+    ogImageDefault.childImageSharp.fixed.src
+  )
 
   return (
     <Helmet
@@ -42,6 +55,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:title`,
           content: title,
+        },
+        {
+          property: `og:image`,
+          content: ogImage,
         },
         {
           property: `og:description`,

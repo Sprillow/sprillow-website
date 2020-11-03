@@ -3,6 +3,7 @@ module.exports = {
     title: `Sprillow`,
     description: `Sprillow Limited is a design, development and consultation studio focused on co-creating systems change initiatives. It was founded in July of 2019.`,
     author: `@Sprillow`,
+    siteUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://sprillow.com'
   },
   plugins: [
     {
@@ -54,7 +55,7 @@ module.exports = {
         background_color: `#1B2723`,
         theme_color: `#1B2723`,
         display: `minimal-ui`,
-        icon: `src/images/sprillow-logo-light-green.png`, // This path is relative to the root of the site.
+        icon: `src/images/sprillow-logo-with-text-anzac.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

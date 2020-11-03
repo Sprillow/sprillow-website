@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -22,6 +22,17 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  // only run this once on component mount
+  useEffect(() => {
+    const id = window.location.hash
+    if (id) {
+      const element = document.querySelector(id)
+      element.scrollIntoView({
+        behavior: "smooth",
+      })
+    }
+  }, [])
 
   return (
     <>

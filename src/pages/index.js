@@ -22,6 +22,7 @@ import SEO from "../components/seo"
 import Button from "../components/button"
 import Quadrants, { Quadrant } from "../components/quadrants/quadrants"
 import Burger from "../components/burger/burger"
+import ContactForm from "../components/contact-form/contact-form"
 
 function ProjectPreview({ project, index }) {
   const main = (
@@ -254,30 +255,22 @@ const IndexPage = () => {
 
       <Section id="connect" heading="Let's Work Together">
         <div className="contact-content">
-          <div className="contact-text">
+          <div className="contact-text bi-section">
             <p>
-              Sounds like a right fit? We’re excited to collaborate with you.
-              Tell us about yourself and your project by emailing us directly at{" "}
-              <a href="mailto:connor@sprillow.com">connor@sprillow.com</a>.
-            </p>
-            {/* <p>
-              Sounds like a right fit? We’re excited to collaborate with you.
+              Sounds like a good fit? We’re excited to collaborate with you.
               Tell us about your project using our contact form, plus any
               details to help us make your vision come true. If you’d rather
-              email us directly, send us a message at connor@sprillow.com
-            </p> */}
-            {/* <div className="contact-button">
-          <a href="mailto:pegah@sprillow.com">Send us a message</a>
-        </div> */}
+              email us directly, send us a message at{" "}
+              <a href="mailto:connor@sprillow.com">connor@sprillow.com</a>.
+            </p>
+            <div className="company">Sprillow Limited - Ontario, Canada</div>
           </div>
 
-          {/* <div className="bi-section contact-form">form</div> */}
+          <div className="bi-section contact-form-bi-section">
+            <ContactForm />
+          </div>
         </div>
-
-        {/* <a className="contact-button"></a> */}
       </Section>
-
-      <div className="footer">Sprillow Limited - Ontario, Canada</div>
     </Layout>
   )
 }

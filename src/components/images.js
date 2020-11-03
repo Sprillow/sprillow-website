@@ -15,7 +15,7 @@ import Img from "gatsby-image"
 
 const queries = graphql`
   query {
-    logo: file(relativePath: { eq: "sprillow-logo-light-green.png" }) {
+    logo: file(relativePath: { eq: "sprillow-logo-with-text-anzac.png" }) {
       childImageSharp {
         fixed(width: 86) {
           ...GatsbyImageSharpFixed

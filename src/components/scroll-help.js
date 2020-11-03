@@ -1,12 +1,16 @@
 const scrollToSection = event => {
-  event.persist()
-  console.log(event)
-  event.preventDefault()
-  const id = new URL(event.target.href).hash
-  const element = document.querySelector(id)
-  element.scrollIntoView({
-    behavior: "smooth",
-  })
+  // event.persist()
+
+  // only do this behaviour if already on the homepage
+  if (window.location.pathname === "/") {
+    event.preventDefault()
+    const url = new URL(event.target.href)
+    const id = url.hash
+    const element = document.querySelector(id)
+    element.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
 }
 
 export default scrollToSection

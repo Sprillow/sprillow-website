@@ -76,7 +76,8 @@ $menu-spacer: 6px;
       margin-top: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: rgba(256, 256, 256, 0.2);
       cursor: pointer;
     }

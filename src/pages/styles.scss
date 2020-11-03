@@ -44,6 +44,7 @@ h3 {
 
 h4 {
   font-size: 1.6rem;
+  line-height: 1.8rem;
   font-weight: 500;
   font-family: latienne-pro;
   color: #b7b7b7;
@@ -51,6 +52,7 @@ h4 {
 
 h5 {
   font-size: 1.4rem;
+  line-height: 1.6rem;
   font-weight: 500;
   font-family: latienne-pro;
   color: #b7b7b7;
@@ -58,7 +60,6 @@ h5 {
 
 p {
   font-size: 1.2rem;
-  font-weight: 300;
   font-family: europa;
   line-height: 1.6rem;
 }
@@ -460,27 +461,32 @@ a {
 /* Lets Work Together section */
 #connect {
   .contact-content {
-    padding: 2rem;
-    @include shared.media-up(desktop) {
-      padding: 3rem;
-    }
     @include shared.media-down(tablet) {
-      padding: 4rem;
+      flex-direction: column;
     }
-    @include shared.media-down(very-small-mobile) {
-      padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+
+    .contact-text {
+      position: relative;
+
+      @include shared.media-up(tablet) {
+        border-right: 1px solid rgba(214, 214, 214, 0.2);
+      }
+
+      .company {
+        position: absolute;
+        bottom: 3rem;
+        font-family: europa;
+      }
     }
   }
-}
 
-// Footer Section
-
-.footer {
-  padding: 2rem;
-  font-family: europa;
-
-  @include shared.media-up(mobile) {
-    margin-left: $nav-width;
+  .contact-form-bi-section {
+    position: relative;
+    padding: 0;
   }
 }
 

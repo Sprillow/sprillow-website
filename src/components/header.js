@@ -83,11 +83,13 @@ const Header = () => {
   // }, [])
 
   const scrollToHome = event => {
-    event.preventDefault()
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
+    if (window.location.pathname === '/') {
+      event.preventDefault()
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
+    }
   }
 
   return (

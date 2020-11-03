@@ -15,12 +15,14 @@ const Burger = ({ isOpen, closeMenu }) => {
     closeMenu()
   }
   const scrollToHome = event => {
-    event.preventDefault()
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
-    closeMenu()
+    if (window.location.pathname === '/') {
+      event.preventDefault()
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
+      closeMenu()
+    }
   }
   return (
     <div className="burger-menu-wrapper">

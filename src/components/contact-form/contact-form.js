@@ -156,9 +156,8 @@ export default function ContactForm() {
           </div>
           <div className="form-row">
             <TextInput
-              required
               register={register}
-              placeholder="Website"
+              placeholder="Website (optional)"
               name="organization-website"
               error={errors["organization-website"]}
             />

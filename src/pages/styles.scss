@@ -318,6 +318,7 @@ a {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    scrollbar-width: none; /* Firefox 64 */
 
     h3 {
       margin-bottom: 1.5rem;
@@ -384,6 +385,7 @@ a {
 
     .about-person {
       overflow-y: scroll;
+      scrollbar-width: none; /* Firefox 64 */
 
       @include shared.media-up(tablet) {
         &:nth-child(1) {

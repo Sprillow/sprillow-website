@@ -17,6 +17,7 @@
     align-items: center;
     // height: 100%;
     overflow: scroll;
+    scrollbar-width: none; /* Firefox 64 */
 
     // first and third child have
     &:nth-child(1),

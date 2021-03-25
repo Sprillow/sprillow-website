@@ -6,6 +6,7 @@
   .contact-form-fields {
     height: 100%;
     overflow-y: scroll;
+    scrollbar-width: none; /* Firefox 64 */
     padding: 2rem;
     @include shared.media-up(desktop) {
       padding: 3rem;

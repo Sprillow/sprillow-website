@@ -119,15 +119,11 @@ const IndexPage = () => {
         <div className="hello-compass" />
 
         <p className="biz-intro">
-          Sprillow is a design, development and consultation studio{" "}
-          <a href="/#focus" onClick={scrollToSection}>
-            focused
+          Sprillow is a design & development studio specializing in distributed systems software applications. {" "}
+          We <a href="/#focus" onClick={scrollToSection}>
+            focus
           </a>{" "}
-          on co-creating systems change initiatives.{" "}
-          <a href="/#about" onClick={scrollToSection}>
-            We are
-          </a>{" "}
-          a small team lit up with a will to create, and bring impactful
+          on co-creating systems change by bringing impactful
           projects beautifully and functionally to life.
         </p>
         <Button

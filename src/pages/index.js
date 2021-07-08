@@ -263,7 +263,7 @@ const IndexPage = () => {
               email us directly, send us a message at{" "}
               <a href="mailto:connor@sprillow.com">connor@sprillow.com</a>.
             </p>
-            <div className="company">Sprillow Limited - Ontario, Canada</div>
+            <div className="company">Sprillow Limited - British Columbia, Canada</div>
           </div>
 
           <div className="bi-section contact-form-bi-section">

@@ -76,8 +76,7 @@ module.exports = {
         // },
         // Amplitude JS SDK configuration options (optional)
         amplitudeConfig: {
-          // no cookies!
-          storage: 'localStorage',
+          disableCookies: true,
           trackingOptions: {
             city: true,
             country: true,

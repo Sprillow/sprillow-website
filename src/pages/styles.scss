@@ -176,7 +176,7 @@ a {
     }
 
     @include shared.media-up(tablet) {
-      max-width: 900px;
+      max-width: 800px;
     }
 
     @include shared.media-down(small-mobile) {

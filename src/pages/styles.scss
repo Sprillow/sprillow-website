@@ -292,21 +292,21 @@ a {
     }
   }
 
-  // acorn
+  // hrea
   .quadrant:nth-child(1) .project-preview-image {
-    background-image: url("../images/work-acorn-hover.png");
+    background-image: url("../images/work-hrea-2022.png");
   }
-  // red cat bakery
+  // acorn
   .quadrant:nth-child(2) .project-preview-image {
-    background-image: url("../images/work-red-cat-hover.png");
+    background-image: url("../images/work-acorn-2022.png");
+  }
+  // mova
+  .quadrant:nth-child(3) .project-preview-image {
+    background-image: url("../images/work-mova-2022.png");
   }
   // fouladi projects
-  .quadrant:nth-child(3) .project-preview-image {
-    background-image: url("../images/work-fouladi-projects-hover.png");
-  }
-  // online writing workshop
   .quadrant:nth-child(4) .project-preview-image {
-    background-image: url("../images/work-oww-hover.png");
+    background-image: url("../images/work-fouladi-projects-2022.png");
   }
 }
 

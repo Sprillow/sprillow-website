@@ -16,7 +16,7 @@ function Acorn() {
       deliverable="MacOS and Linux App"
       shortDescription="Modelled playfully after the energetic nature of squirrels, Acorn is a collaborative desktop application for teams and individuals to map their aspirational goals and efforts. We used cutting edge peer-to-peer software Holochain for this project."
       services="UX Design     UI Design      App Development "
-      selectedImage="../work-acorn-hover.png"
+      selectedImage="../work-fouladi-projects-2022.png"
       buttonText="See on Github"
       buttonLink=""
     />

@@ -39,21 +39,6 @@ const queries = graphql`
       }
     }
 
-    cosense: file(relativePath: { eq: "cosense.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 700) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    ufc: file(relativePath: { eq: "acorn-app-screenshot.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 700) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     pegahProfile: file(relativePath: { eq: "pegah-image.png" }) {
       childImageSharp {
         fixed(width: 180) {
@@ -69,24 +54,7 @@ const queries = graphql`
         }
       }
     }
-
-    connorWorking: file(relativePath: { eq: "sprillow-connor-working.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 700) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    connorFacilitating: file(
-      relativePath: { eq: "sprillow-connor-facilitating-dweb.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 700) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+    
   }
 `
 

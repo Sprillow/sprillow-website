@@ -87,7 +87,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Software design and development studio" />
 
       {/* burger menu (hidden on larger screens) */}
       <Burger
@@ -170,7 +170,8 @@ const IndexPage = () => {
         bgColor="rgba(256, 256, 256, 0.05)"
       >
         <div className="about-content">
-          <div className="bi-section about-person">
+          {/* TOO: add general team description */}
+          {/* <div className="bi-section about-person">
             <div className="about-person-image-name-role">
               <div className="about-profile-image-wrapper">
                 <PegahProfile />
@@ -181,38 +182,7 @@ const IndexPage = () => {
               </div>
             </div>
             <p className="about-description">
-              {/* Pegah loves plants, the metaphors they bring, and their tangible
-                beauty. When she's not designing, she's probably researching,
-                watering plants, or enjoying some culinary exploration. Pegah
-                loves unique things created with character and thoughtfulness.
-                She is at her best when she is inspired by and listens to
-                nature. The best moments are when her work brings
-                thoughtfulness, joy, and inspiration to people, and is in
-                respect of the environment and humanity. */}
-              Pegah loves to be in the garden with the plants. She marvels at
-              nature, and finds her inspiration there. She believes in the
-              saying that we have to "think globally, and act locally", because
-              we have to understand the interconnections, and then make changes
-              to ourselves and in our communities and workplaces that reflect
-              the impacts we all have on each other, and the world. <br />
-              <br />
-              Pegah won't let go of the details. She pays meticulous attention
-              to things that many people would overlook. Because of this Pegah
-              feels a strong connection with the things she touches and sees,
-              whether it's her latest design, the clothing she wears, or the
-              food she loves to cook. She loves to feel the joy of her designs
-              invoking joy, thoughtfulness and inspiration for other people.
-              {/* attention to detail */}
-              {/* aligned with her spirit */}
-              {/*  */}
-              {/* connecting the disciplines is good because it gives more insight */}
-              {/* finding inspiration in nature */}
-              {/* in nature, everything is connected */}
-              {/* life is harmonious, there is less hate */}
-              {/* eliminate short-sightedness */}
-              {/* think global, act local */}
-              {/* critical reflexivity, critical thinking from art background, into the world of work and design */}
-            </p>
+           </p>
           </div>
           <div className="bi-section about-person">
             <div className="about-person-image-name-role">
@@ -225,27 +195,9 @@ const IndexPage = () => {
               </div>
             </div>
             <p className="about-description">
-              {/* Connor is a minimalist, and obsesses about learning. He likes
-                keeping life simple so that he can focus on the macro picture. Connor has a bad habit of over-thinking. He is
-                currently learning Farsi (Persian) and Spanish. Connor is a
-                tinkerer and fixer. He grew up tearing about and putting
-                together the raw parts of computers for fun, and was always
-                entranced by technology. He is a self-taught developer and
-                facilitator. */}
-              Connor is obsessed with seeing the systems that our lives are
-              woven into. Economic, environmental, political, and everything in
-              between that connects them, are all fields of fascination. He will
-              want to talk with you about them longer than you will want to
-              talk. As much as that sounds abstract, Connor has the urge to get
-              hands-on and apply the precious time of his life to confront
-              systemic challenges head-on. <br />
-              <br /> He has been devoted since a young age to the arts and
-              crafts of digital technology, but is also aware that tech isn't a
-              silver bullet. Connor has fun with everything from getting deep in
-              the code, to working face-to-face facilitating at hackathons,
-              workshops, classrooms, and client meetings.
+            
             </p>
-          </div>
+          </div> */}
         </div>
       </Section>
 

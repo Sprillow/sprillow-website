@@ -1,42 +1,42 @@
-import React, { useState } from 'react'
-import './styles.scss'
+import React, { useState } from "react"
+import "./styles.scss"
 
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import scrollToSection from '../components/scroll-help'
+import { useStaticQuery, graphql, Link } from "gatsby"
+import scrollToSection from "../components/scroll-help"
 
 // import svg images here:
 
 // SVGS as react components MUST
 // have .inline.svg at the end of their
 // file names or they will not work
-import WhatWeDoDiagram from '../components/whatwedo'
+import WhatWeDoDiagram from "../components/whatwedo"
 
-import Section from '../components/section'
+import Section from "../components/section"
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Button from '../components/button'
-import Quadrants, { Quadrant } from '../components/quadrants/quadrants'
-import Burger from '../components/burger/burger'
-import ContactForm from '../components/contact-form/contact-form'
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Button from "../components/button"
+import Quadrants, { Quadrant } from "../components/quadrants/quadrants"
+import Burger from "../components/burger/burger"
+import ContactForm from "../components/contact-form/contact-form"
 
 function ProjectPreview({ project, index }) {
   const main = (
     <>
-      <h3 className='project-preview-name'>{project.project}</h3>
-      <p className='project-preview-objective'>{project.objective}</p>
-      <div className='project-preview-deliverable'>{project.deliverable}</div>
-      <div className='project-preview-image-wrapper'>
-        <div className='project-preview-image' />
+      <h3 className="project-preview-name">{project.project}</h3>
+      <p className="project-preview-objective">{project.objective}</p>
+      <div className="project-preview-deliverable">{project.deliverable}</div>
+      <div className="project-preview-image-wrapper">
+        <div className="project-preview-image" />
       </div>
     </>
   )
   return (
     <a
-      className='project-preview'
+      className="project-preview"
       href={project.link}
-      target='_blank'
-      rel='noreferrer'
+      target="_blank"
+      rel="noreferrer"
     >
       {main}
     </a>
@@ -44,9 +44,9 @@ function ProjectPreview({ project, index }) {
 }
 function Focus({ focus }) {
   return (
-    <div className='focus-quadrant'>
+    <div className="focus-quadrant">
       <h3>{focus.Title}</h3>
-      <p className='focus-quadrant-description'>{focus.Description}</p>
+      <p className="focus-quadrant-description">{focus.Description}</p>
     </div>
   )
 }
@@ -90,10 +90,10 @@ const IndexPage = () => {
         isOpen={openBurgerMenu}
         closeMenu={() => setOpenBurgerMenu(false)}
       />
-      <div className='burger-menu-button'>
+      <div className="burger-menu-button">
         <Button
-          text='menu'
-          className='menu'
+          text="menu"
+          className="menu"
           onClick={() => setOpenBurgerMenu(true)}
           menu
         ></Button>
@@ -101,37 +101,37 @@ const IndexPage = () => {
       {/* HERO */}
       {/* Desktop and Tablet Hero */}
       <Section
-        id='hello'
+        id="hello"
         heading={
-          <div className='left-adjust-heading'>
-            <span className='hero-heading-desktop'>We are</span> Sprillow
+          <div className="left-adjust-heading">
+            <span className="hero-heading-desktop">We are</span> Sprillow
             <span>.</span>
           </div>
         }
         h1heading
       >
-        <div className='hello-willow' />
-        <div className='hello-spruce' />
-        <div className='hello-compass' />
+        <div className="hello-willow" />
+        <div className="hello-spruce" />
+        <div className="hello-compass" />
 
-        <p className='biz-intro'>
+        <p className="biz-intro">
           Sprillow is a design & development studio specializing in distributed
-          systems software applications. We{' '}
-          <a href='/#focus' onClick={scrollToSection}>
+          systems software applications. We{" "}
+          <a href="/#focus" onClick={scrollToSection}>
             focus
-          </a>{' '}
+          </a>{" "}
           on co-creating systems change by bringing impactful projects
           beautifully and functionally to life.
         </p>
         <Button
-          text='Our Recent Work'
-          className='recent-work-button'
-          href='/#portfolio'
+          text="Our Recent Work"
+          className="recent-work-button"
+          href="/#portfolio"
           onClickA={scrollToSection}
         ></Button>
       </Section>
 
-      <Section id='portfolio' heading='Recent Work'>
+      <Section id="portfolio" heading="Recent Work">
         {/* there should only be 4 projects, since we use quadrants */}
         <Quadrants>
           {portfolio.map((project, index) => (
@@ -143,17 +143,17 @@ const IndexPage = () => {
       </Section>
 
       <Section
-        id='services'
-        heading='Our Approach'
-        bgColor='rgba(88, 7, 7, 0.1)'
+        id="services"
+        heading="Our Approach"
+        bgColor="rgba(88, 7, 7, 0.1)"
       >
         <WhatWeDoDiagram />
       </Section>
 
-      <Section id='focus' heading='Our Focus'>
+      <Section id="focus" heading="Our Focus">
         {/* there should only be 4 focus, since we use quadrants */}
         <Quadrants>
-          {focuses.map(focus => (
+          {focuses.map((focus) => (
             <Quadrant key={focus.id}>
               <Focus focus={focus} />
             </Quadrant>
@@ -162,11 +162,11 @@ const IndexPage = () => {
       </Section>
 
       <Section
-        id='about'
-        heading='Get To Know Us'
-        bgColor='rgba(256, 256, 256, 0.05)'
+        id="about"
+        heading="Get To Know Us"
+        bgColor="rgba(256, 256, 256, 0.05)"
       >
-        <div className='about-content'>
+        <div className="about-content">
           {/* TOO: add general team description */}
           {/* <div className="bi-section about-person">
             <div className="about-person-image-name-role">
@@ -198,20 +198,20 @@ const IndexPage = () => {
         </div>
       </Section>
 
-      <Section id='connect' heading="Let's Work Together">
-        <div className='contact-content'>
-          <div className='contact-text bi-section'>
+      <Section id="connect" heading="Let's Work Together">
+        <div className="contact-content">
+          <div className="contact-text bi-section">
             <p>
               Sounds like a good fit? We’re excited to collaborate with you.
               Tell us about your project using our contact form, plus any
               details to help us make your vision come true. If you’d rather
-              email us directly, send us a message at{' '}
-              <a href='mailto:connor@sprillow.com'>connor@sprillow.com</a>.
+              email us directly, send us a message at{" "}
+              <a href="mailto:connor@sprillow.com">connor@sprillow.com</a>.
             </p>
-            <div className='company'>Sprillow Limited - Canada, Earth</div>
+            <div className="company">Sprillow Limited - Canada, Earth</div>
           </div>
 
-          <div className='bi-section contact-form-bi-section'>
+          <div className="bi-section contact-form-bi-section">
             <ContactForm />
           </div>
         </div>

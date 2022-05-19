@@ -1,12 +1,12 @@
-import React from 'react'
-import { CSSTransition } from 'react-transition-group'
+import React from "react"
+import { CSSTransition } from "react-transition-group"
 
-import { Logo } from '../images'
-import scrollToSection from '../scroll-help'
+import { Logo } from "../images"
+import scrollToSection from "../scroll-help"
 
-import CloseLine from '../../images/close-line-gold.inline.svg'
+import CloseLine from "../../images/close-line-gold.inline.svg"
 
-import './burger.scss'
+import "./burger.scss"
 
 const Burger = ({ isOpen, closeMenu }) => {
   const onClickA = (event) => {
@@ -14,57 +14,57 @@ const Burger = ({ isOpen, closeMenu }) => {
     closeMenu()
   }
   const scrollToHome = (event) => {
-    if (window.location.pathname === '/') {
+    if (window.location.pathname === "/") {
       event.preventDefault()
       window.scrollTo({
         top: 0,
-        behavior: 'smooth',
+        behavior: "smooth",
       })
       closeMenu()
     }
   }
   return (
-    <div className='burger-menu-wrapper'>
+    <div className="burger-menu-wrapper">
       <CSSTransition
         in={isOpen}
         timeout={200}
-        classNames='burger-menu-animation'
+        classNames="burger-menu-animation"
         unmountOnExit
       >
-        <div className='burger-menu-list-wrapper'>
-          <div className='burger-close-button' onClick={closeMenu}>
-            <CloseLine className='close-icon' />
+        <div className="burger-menu-list-wrapper">
+          <div className="burger-close-button" onClick={closeMenu}>
+            <CloseLine className="close-icon" />
           </div>
-          <a className='logo-image-link' href='/#hello' onClick={scrollToHome}>
+          <a className="logo-image-link" href="/#hello" onClick={scrollToHome}>
             <Logo />
           </a>
-          <ul className='burger-menu-list'>
+          <ul className="burger-menu-list">
             <li>
-              <a href='/#portfolio' onClick={onClickA}>
+              <a href="/#portfolio" onClick={onClickA}>
                 work
               </a>
             </li>
             <li>
-              <a href='/#services' onClick={onClickA}>
+              <a href="/#services" onClick={onClickA}>
                 approach
               </a>
             </li>
             <li>
-              <a href='/#focus' onClick={onClickA}>
+              <a href="/#focus" onClick={onClickA}>
                 focus
               </a>
             </li>
             <li>
-              <a href='/#about' onClick={onClickA}>
+              <a href="/#about" onClick={onClickA}>
                 about
               </a>
             </li>
             <li>
-              <a href='/#connect' onClick={onClickA}>
+              <a href="/#connect" onClick={onClickA}>
                 connect
               </a>
             </li>
-          </ul>{' '}
+          </ul>{" "}
         </div>
       </CSSTransition>
     </div>

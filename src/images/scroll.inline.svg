@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="75.509" height="153.02" viewBox="0 0 75.509 153.02">
+  <defs>
+    <style>
+      .scroll-cls-1 {
+        fill: none;
+        stroke: #ffbaba;
+        stroke-linecap: round;
+        stroke-width: 4px;
+      }
+
+      .scroll-cls-2 {
+        fill: #ffbaba;
+      }
+    </style>
+  </defs>
+  <g id="scroll_" data-name="scroll " transform="translate(-921.85 -894.25)">
+    <g id="arrow" transform="translate(942.196 981.128)">
+      <line id="Line_15" data-name="Line 15" class="scroll-cls-1" y2="61.038" transform="translate(17.928 0)"/>
+      <path id="line-angle-right" class="scroll-cls-2" d="M18.876,32.313A2,2,0,1,1,16.01,35.1L.572,19.179l1.433-1.393-1.439,1.4a2,2,0,0,1,.043-2.835l.07-.065L16.01.606a2,2,0,1,1,2.866,2.787L4.795,17.792l14.081,14.52Z" transform="translate(0 66.142) rotate(-90)"/>
+      <line id="Line_16" data-name="Line 16" class="scroll-cls-1" y2="61.038" transform="translate(17.928 0)"/>
+    </g>
+    <path id="computer-mouse-wireless" class="scroll-cls-2" d="M50.9,9.7A19.312,19.312,0,0,1,47.781,32.81L32.81,47.781a19.232,19.232,0,0,1-27.2-27.2l14.97-14.97a19.3,19.3,0,0,1,24.53-2.224A23.631,23.631,0,0,1,50.9,9.7ZM37,16.076a3.668,3.668,0,0,1,0,5.173l-2.665,2.665a3.658,3.658,0,0,1-5.173-5.173l2.665-2.665A3.669,3.669,0,0,1,37,16.076Zm11.845,3.135A14.686,14.686,0,0,0,23.8,8.826L8.826,23.8A14.687,14.687,0,0,0,29.6,44.566L44.566,29.6a14.64,14.64,0,0,0,4.281-10.385Z" transform="translate(921.85 932.004) rotate(-45)"/>
+  </g>
+</svg>

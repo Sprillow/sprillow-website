@@ -1,183 +1,222 @@
-import * as React from "react"
+import React, { useState } from 'react'
+import './styles.scss'
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import scrollToSection from '../components/scroll-help'
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
+// import svg images here:
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
+// SVGS as react components MUST
+// have .inline.svg at the end of their
+// file names or they will not work
+import WhatWeDoDiagram from '../components/whatwedo'
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
+import Section from '../components/section'
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Button from '../components/button'
+import Quadrants, { Quadrant } from '../components/quadrants/quadrants'
+import Burger from '../components/burger/burger'
+import ContactForm from '../components/contact-form/contact-form'
 
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
-
-// markup
-const IndexPage = () => {
+function ProjectPreview({ project, index }) {
+  const main = (
+    <>
+      <h3 className='project-preview-name'>{project.project}</h3>
+      <p className='project-preview-objective'>{project.objective}</p>
+      <div className='project-preview-deliverable'>{project.deliverable}</div>
+      <div className='project-preview-image-wrapper'>
+        <div className='project-preview-image' />
+      </div>
+    </>
+  )
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
+    <a
+      className='project-preview'
+      href={project.link}
+      target='_blank'
+      rel='noreferrer'
+    >
+      {main}
+    </a>
+  )
+}
+function Focus({ focus }) {
+  return (
+    <div className='focus-quadrant'>
+      <h3>{focus.Title}</h3>
+      <p className='focus-quadrant-description'>{focus.Description}</p>
+    </div>
+  )
+}
+
+const IndexPage = () => {
+  // /content/focus.csv
+  // /content/portfolio.csv
+  // source: https://docs.google.com/spreadsheets/d/1ZGSQMlkejbzv6D22im4BNN6oI5YuD-X4i6Br00dKqRU/edit
+  const {
+    allFocusCsv: { nodes: focuses },
+    allPortfolioCsv: { nodes: portfolio },
+  } = useStaticQuery(graphql`
+    {
+      allFocusCsv {
+        nodes {
+          id
+          Title
+          Description
+        }
+      }
+      allPortfolioCsv {
+        nodes {
+          id
+          project
+          objective
+          deliverable
+          link
+        }
+      }
+    }
+  `)
+
+  const [openBurgerMenu, setOpenBurgerMenu] = useState(false)
+
+  return (
+    <Layout>
+      <SEO title="Software design and development studio" />
+
+      {/* burger menu (hidden on larger screens) */}
+      <Burger
+        isOpen={openBurgerMenu}
+        closeMenu={() => setOpenBurgerMenu(false)}
       />
-    </main>
+      <div className='burger-menu-button'>
+        <Button
+          text='menu'
+          className='menu'
+          onClick={() => setOpenBurgerMenu(true)}
+          menu
+        ></Button>
+      </div>
+      {/* HERO */}
+      {/* Desktop and Tablet Hero */}
+      <Section
+        id='hello'
+        heading={
+          <div className='left-adjust-heading'>
+            <span className='hero-heading-desktop'>We are</span> Sprillow
+            <span>.</span>
+          </div>
+        }
+        h1heading
+      >
+        <div className='hello-willow' />
+        <div className='hello-spruce' />
+        <div className='hello-compass' />
+
+        <p className='biz-intro'>
+          Sprillow is a design & development studio specializing in distributed
+          systems software applications. We{' '}
+          <a href='/#focus' onClick={scrollToSection}>
+            focus
+          </a>{' '}
+          on co-creating systems change by bringing impactful projects
+          beautifully and functionally to life.
+        </p>
+        <Button
+          text='Our Recent Work'
+          className='recent-work-button'
+          href='/#portfolio'
+          onClickA={scrollToSection}
+        ></Button>
+      </Section>
+
+      <Section id='portfolio' heading='Recent Work'>
+        {/* there should only be 4 projects, since we use quadrants */}
+        <Quadrants>
+          {portfolio.map((project, index) => (
+            <Quadrant key={index}>
+              <ProjectPreview project={project} index={index} />
+            </Quadrant>
+          ))}
+        </Quadrants>
+      </Section>
+
+      <Section
+        id='services'
+        heading='Our Approach'
+        bgColor='rgba(88, 7, 7, 0.1)'
+      >
+        <WhatWeDoDiagram />
+      </Section>
+
+      <Section id='focus' heading='Our Focus'>
+        {/* there should only be 4 focus, since we use quadrants */}
+        <Quadrants>
+          {focuses.map(focus => (
+            <Quadrant key={focus.id}>
+              <Focus focus={focus} />
+            </Quadrant>
+          ))}
+        </Quadrants>
+      </Section>
+
+      <Section
+        id='about'
+        heading='Get To Know Us'
+        bgColor='rgba(256, 256, 256, 0.05)'
+      >
+        <div className='about-content'>
+          {/* TOO: add general team description */}
+          {/* <div className="bi-section about-person">
+            <div className="about-person-image-name-role">
+              <div className="about-profile-image-wrapper">
+                <PegahProfile />
+              </div>
+              <div className="about-person-name-role">
+                <h3 className="about-title">Pegah Vaezi</h3>
+                <h5 className="about-subtitle">Designer</h5>
+              </div>
+            </div>
+            <p className="about-description">
+           </p>
+          </div>
+          <div className="bi-section about-person">
+            <div className="about-person-image-name-role">
+              <div className="about-profile-image-wrapper">
+                <ConnorProfile />
+              </div>
+              <div className="about-person-name-role">
+                <h3 className="about-title">Connor Turland</h3>
+                <h5 className="about-subtitle">Developer, facilitator</h5>
+              </div>
+            </div>
+            <p className="about-description">
+            
+            </p>
+          </div> */}
+        </div>
+      </Section>
+
+      <Section id='connect' heading="Let's Work Together">
+        <div className='contact-content'>
+          <div className='contact-text bi-section'>
+            <p>
+              Sounds like a good fit? We’re excited to collaborate with you.
+              Tell us about your project using our contact form, plus any
+              details to help us make your vision come true. If you’d rather
+              email us directly, send us a message at{' '}
+              <a href='mailto:connor@sprillow.com'>connor@sprillow.com</a>.
+            </p>
+            <div className='company'>Sprillow Limited - Canada, Earth</div>
+          </div>
+
+          <div className='bi-section contact-form-bi-section'>
+            <ContactForm />
+          </div>
+        </div>
+      </Section>
+    </Layout>
   )
 }
 

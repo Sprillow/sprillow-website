@@ -1,0 +1,37 @@
+@use '../shared';
+
+.quadrants {
+  display: grid;
+  height: 100%;
+  width: 100%;
+
+  @include shared.media-down(tablet) {
+    grid-template-columns: 1fr;
+  }
+  @include shared.media-up(tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quadrant {
+    display: flex;
+    align-items: center;
+    // height: 100%;
+    overflow: scroll;
+    scrollbar-width: none; /* Firefox 64 */
+
+    // first and third child have
+    &:nth-child(1),
+    &:nth-child(3) {
+      border-right: shared.$dividing-border;
+    }
+    @include shared.media-down(tablet) {
+      &:nth-child(3) {
+        border-bottom: shared.$dividing-border;
+      }
+    }
+    &:nth-child(1),
+    &:nth-child(2) {
+      border-bottom: shared.$dividing-border;
+    }
+  }
+}

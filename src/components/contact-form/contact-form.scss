@@ -1,0 +1,222 @@
+@use '../shared';
+
+.contact-form {
+  height: 100%;
+
+  .contact-form-fields {
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox 64 */
+    padding: 2rem;
+    @include shared.media-up(desktop) {
+      padding: 3rem;
+    }
+    @include shared.media-down(tablet) {
+      padding: 4rem;
+    }
+    @include shared.media-down(very-small-mobile) {
+      padding: 3rem;
+    }
+  }
+
+  .contact-form-fields-enter {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  .contact-form-fields-enter-active {
+    opacity: 1;
+    transform: translateY(0vh);
+    transition: opacity 600ms, transform 600ms ease;
+  }
+  .contact-form-fields-exit {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
+  .contact-form-fields-exit-active {
+    opacity: 0;
+    transform: translateY(100vh);
+    transition: opacity 600ms, transform 600ms ease;
+  }
+  
+  .contact-form-success, .contact-form-error {
+    position: absolute;
+    top: 0;
+  }
+  .contact-form-success-enter, .contact-form-error-enter {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  .contact-form-success-enter-active, .contact-form-error-enter-active {
+    opacity: 1;
+    transform: translateY(0vh);
+    transition: opacity 600ms, transform 600ms ease;
+  }
+  .contact-form-success-exit, .contact-form-error-exit {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
+  .contact-form-success-exit-active, .contact-form-error-exit-active {
+    opacity: 0;
+    transform: translateY(100vh);
+    transition: opacity 600ms, transform 600ms ease;
+  }
+
+  .contact-form-title {
+    display: flex;
+    flex-direction: row;
+    .contact-form-title-number {
+      background-image: url("../../images/compass.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      padding: 0.7rem;
+      margin-right: 1.2rem;
+      margin-top: -0.7rem;
+      line-height: 1.6rem;
+      height: 1.6rem;
+      box-sizing: content-box;
+    }
+    .contact-form-title-number,
+    .contact-form-title-text {
+      color: #fff;
+    }
+  }
+
+  .form-row {
+    width: 100%;
+    margin-bottom: 2.6rem;
+    padding-left: 4rem;
+  }
+
+  .two-column-inputs {
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
+
+    .text-input:nth-child(1) {
+      margin-right: 10%;
+    }
+  }
+
+  .input-label {
+    font-size: 1.2rem;
+    font-family: europa;
+    font-weight: normal;
+    color: #fff;
+    margin-bottom: 1.2rem;
+  }
+
+  .radio-input-label {
+    &:hover {
+      color: shared.$gold;
+    }
+    font-size: 1rem;
+    font-family: europa;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex; 
+    align-items: center; 
+  }
+
+  .radio-input {
+    .input-label {
+      margin-bottom: 1.2rem;
+    }
+
+    input {
+      // margin-left: 1rem;
+      // margin-bottom: 1rem;
+      padding: 0;
+      height: initial;
+      width: initial;
+      margin-bottom: 0;
+      display: none;
+      cursor: pointer;
+    }
+
+    label {
+      // padding-left: 0.5rem;
+      // vertical-align: middle;
+    }
+  }
+
+  .text-input {
+    width: 100%;
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: 0.4rem 0;
+      font-size: 1.1rem;
+      font-family: europa;
+      color: #fff;
+      background: transparent;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid #ddd;
+      transition: border-bottom 0.5s ease;
+
+      &:focus {
+        border-bottom: 2px solid #ffcd45;
+      }
+    }
+  }
+
+  .contact-form-submit-button {
+    button.custom-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+.circle {
+  content: '';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid #c6c6c6d4;
+  padding: 8px;
+  display: inline-block; 
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+
+
+.circle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #d0a600;
+  width: 10px;
+  height: 10px;
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%, -50%); 
+  border-radius: 50%; 
+  opacity: 0; 
+}
+
+.contact-form .radio-input input:checked~.circle:after {
+  opacity: 1; 
+}
+
+.contact-form .radio-input input:checked~.radio-input-label {
+  color: shared.$gold;
+}
+
+.contact-form-option-row {
+  margin-bottom: 8px;
+  display: flex; 
+  align-items: center; 
+  
+}
+
+.error-message {
+  font-family: europa;
+  font-weight: normal;
+  color: pink;
+  position: absolute;
+}

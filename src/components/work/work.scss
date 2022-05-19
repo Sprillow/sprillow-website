@@ -1,0 +1,38 @@
+@use '../shared';
+
+.work-intro-section {
+  // overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+
+  .bi-section {
+    height: 100%;
+    @include shared.media-up(tablet) {
+      &:nth-child(1) {
+        border-right: 1px solid rgba(214, 214, 214, 0.2);
+      }
+    }
+    @include shared.media-down(tablet) {
+      &:nth-child(1) {
+        border-bottom: 1px solid rgba(214, 214, 214, 0.2);
+      }
+    }
+
+    .work-deliverable {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      color: #b7b7b7;
+      text-transform: uppercase;
+      font-family: europa;
+      font-weight: 500;
+    }
+
+    .work-description-services-wrapper {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+    }
+  }
+}

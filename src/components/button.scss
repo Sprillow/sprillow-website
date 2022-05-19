@@ -1,0 +1,85 @@
+@use './shared';
+
+$button-height: 76px;
+$spacer: 10px;
+
+$menu-button-height: 40px;
+$menu-spacer: 6px;
+
+.custom-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &.menu {
+    .custom-button-bars {
+      div {
+        width: $menu-spacer;
+      }
+      div:nth-child(1),
+      div:nth-child(3) {
+        height: $menu-spacer;
+      }
+      div:nth-child(2) {
+        height: $menu-button-height;
+      }
+    }
+    .custom-button {
+      height: $menu-button-height;
+      font-family: "latienne-pro", serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      // padding: 0.5rem;
+      color: #fff7e8;
+    }
+  }
+
+  .custom-button-bars {
+    div {
+      width: $spacer;
+    }
+    div:nth-child(1),
+    div:nth-child(3) {
+      height: $spacer;
+    }
+    div:nth-child(2) {
+      height: $button-height;
+      border-top: shared.$dividing-border;
+      border-bottom: shared.$dividing-border;
+    }
+  }
+
+  .custom-button-left-bars div {
+    border-right: shared.$dividing-border;
+  }
+  .custom-button-right-bars div {
+    border-left: shared.$dividing-border;
+  }
+
+  .custom-button {
+    background-color: rgba(256, 256, 256, 0.06);
+    border-top: shared.$dividing-border;
+    border-bottom: shared.$dividing-border;
+    border-left: none;
+    border-right: none;
+    padding: 0 20px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: $button-height;
+    color: shared.$gold;
+    font-size: 1.4rem;
+    font-family: europa;
+
+    p {
+      margin-top: 0;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: rgba(256, 256, 256, 0.2);
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,363 @@
+@use './shared';
+
+.what-we-do-diagram {
+  height: 100%;
+
+  .quadrant {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  @include shared.media-down(tablet) {
+    display: none;
+  }
+}
+
+.what-we-do-circle {
+  position: absolute;
+  width: 65vmin;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @include shared.media-down(desktop) {
+    width: 63vmin;
+  }
+}
+
+.what-we-do-step-description {
+  max-width: 340px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  // margin-left: -130px;
+  // margin-top: -50%;
+  z-index: 2;
+  opacity: 0;
+  transition: transform 0.7s ease, opacity 0.5s ease;
+  transform: translateX(-50%) translateY(-20%);
+  font-size: 1.1rem;
+  text-align: center;
+
+  &.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 3;
+  }
+
+  p & {
+  }
+}
+
+.what-we-do-diagram {
+  .top-left {
+    position: absolute;
+    left: 13%;
+    top: 15%;
+  }
+
+  .top-right {
+    position: absolute;
+    right: 18%;
+    top: 15%;
+  }
+
+  .bottom-right {
+    position: absolute;
+    right: 16%;
+    bottom: 16%;
+  }
+
+  .bottom-left {
+    position: absolute;
+    left: 14%;
+    bottom: 16%;
+  }
+}
+
+.what-we-do-step-title {
+  position: absolute;
+  transition: color 0.1s ease;
+  cursor: pointer;
+  z-index: 2;
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  font-weight: 800;
+
+  &.hovering {
+    color: shared.$gold;
+  }
+
+  &.active {
+    color: shared.$gold;
+  }
+}
+
+.subcategories {
+  z-index: 1;
+  width: 1px;
+  height: 1px;
+}
+
+.subcategory {
+  position: absolute;
+  font: normal 1rem europa;
+  line-height: 1.5rem;
+  color: #f4ffed;
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.discovery-subcategories {
+  .discovery-subcategory {
+    top: 0;
+    left: 0;
+  }
+
+  &.active,
+  &.hovering {
+    .discovery-subcategory {
+      opacity: 0.8;
+
+      &.first {
+        transform: translate(60px, -90px);
+      }
+
+      &.second {
+        transform: translate(-60px, -60px);
+      }
+
+      &.third {
+        transform: translate(-130px, 0px);
+      }
+
+      &.fourth {
+        transform: translate(-60px, 60px);
+      }
+    }
+  }
+}
+
+.design-subcategories {
+  .design-subcategory {
+    top: 0;
+    right: 0;
+  }
+
+  &.active,
+  &.hovering {
+    .design-subcategory {
+      opacity: 0.8;
+
+      &.first {
+        transform: translate(20px, -70px);
+      }
+
+      &.second {
+        transform: translate(110px, -10px);
+      }
+
+      &.third {
+        transform: translate(125px, 60px);
+      }
+    }
+  }
+}
+
+.delivery-subcategories {
+  .delivery-subcategory {
+    bottom: -3px;
+    right: -15px;
+  }
+
+  &.active,
+  &.hovering {
+    .delivery-subcategory {
+      opacity: 0.8;
+      line-height: 1.26;
+      text-align: center;
+
+      // e-commerce solutions
+      &.first {
+        transform: translate(-40px, 86px);
+      }
+
+      // native apps
+      &.second {
+        transform: translate(90px, 40px);
+      }
+
+      // mobile apps
+      &.third {
+        transform: translate(140px, -20px);
+      }
+
+      // peer-to-peer solutions
+      &.fourth {
+        transform: translate(90px, -90px);
+      }
+    }
+  }
+}
+
+.feedback-subcategories {
+  .feedback-subcategory {
+    bottom: -10px;
+    left: 0;
+  }
+
+  &.active,
+  &.hovering {
+    .feedback-subcategory {
+      opacity: 0.8;
+
+      &.first {
+        transform: translate(-20px, 60px);
+      }
+
+      &.second {
+        transform: translate(-110px, 10px);
+      }
+
+      &.third {
+        transform: translate(-105px, -70px);
+      }
+    }
+  }
+}
+
+$default-drop-shadow: drop-shadow(0px 0px 20px transparent);
+$active-drop-shadow: drop-shadow(0px 0px 20px shared.$gold);
+$hover-drop-shadow: drop-shadow(0px 0px 20px shared.$gold);
+
+#compass {
+  -webkit-filter: $default-drop-shadow;
+  filter: $default-drop-shadow;
+  transition: filter 0.2s ease;
+  cursor: pointer;
+
+  &.hovering {
+    -webkit-filter: $hover-drop-shadow;
+    filter: $hover-drop-shadow;
+  }
+
+  &.active {
+    -webkit-filter: $active-drop-shadow;
+    filter: $active-drop-shadow;
+  }
+}
+
+#compass,
+#willow-leaf,
+#spruce-cone,
+#bee,
+#masking-green-circle,
+#masking-green-circle-2,
+#masking-green-circle-3,
+#masking-green-circle-4 {
+  cursor: pointer;
+}
+
+#ellipse-honeybee,
+#ellipse-ear-of-rice,
+#ellipse-seedling {
+  .what-we-do-circle-cls-5 {
+    -webkit-filter: $default-drop-shadow;
+    filter: $default-drop-shadow;
+    transition: filter 0.2s ease;
+    cursor: pointer;
+  }
+
+  &.hovering {
+    .what-we-do-circle-cls-5 {
+      -webkit-filter: $hover-drop-shadow;
+      filter: $hover-drop-shadow;
+    }
+  }
+
+  &.active {
+    .what-we-do-circle-cls-5 {
+      -webkit-filter: $active-drop-shadow;
+      filter: $active-drop-shadow;
+    }
+  }
+}
+
+.what-we-do-mobile {
+  @include shared.media-up(tablet) {
+    display: none;
+  }
+
+  .what-we-do-section-mobile {
+    padding: 4rem;
+    @include shared.media-down(very-small-mobile) {
+      padding: 3rem;
+    }
+
+    svg {
+      max-height: 12rem;
+      max-width: 12rem;
+      position: absolute;
+      left: -1rem;
+      margin-top: -2rem;
+      z-index: -4;
+      opacity: 0.35;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      border-bottom: 1px solid rgba(214, 214, 214, 0.2);
+    }
+
+    p {
+      // margin-left: 3.2rem;
+    }
+
+    .what-we-do-section-heading-mobile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      h3 {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.approach-subcategories-wrapper-mobile {
+  display: flex;
+
+  .approach-subcategories-column-mobile {
+    @include shared.media-down(very-small-mobile) {
+      flex-direction: column;
+    }
+    display: flex;
+    flex-direction: row;
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+  .approach-subcategory-mobile {
+    margin-right: 1rem;
+    @include shared.media-down(small-mobile) {
+      margin-right: 0.5rem;
+    }
+    font-family: "europa", sans-serif;
+    font-size: 1rem;
+    @include shared.media-down(very-small-mobile) {
+      font-size: 0.96rem;
+    }
+    // color: shared.$light-grey;
+    color: #D9B040;
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

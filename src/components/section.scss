@@ -1,0 +1,100 @@
+@use './shared';
+
+$nav-width: 112px;
+
+.section {
+  position: relative;
+  // padding-top: 110px;
+
+  // because mobile is currently the breakpoint where the left menu disappears
+  @include shared.media-up(mobile) {
+    padding-left: $nav-width;
+  }
+
+  @include shared.media-up(tablet) {
+    height: 100vh;
+  }
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  // &#focus,
+  // &#connect {
+  //   height: auto;
+  //   .section-body {
+  //     height: auto;
+  //   }
+  // }
+
+  .section-heading {
+    top: 0;
+    width: 100%;
+    color: #fff;
+    border-top: shared.$dividing-border;
+    border-bottom: shared.$dividing-border;
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 0;
+    // @include shared.media-up(tablet) {
+    //   //padding equal to padding that covers the nav width
+    //   padding-right: $nav-width;
+    // }
+
+    // hero / home
+    span {
+      color: #44584e;
+    }
+  }
+
+  .section-body {
+    // @include shared.media-up(tablet) {
+    flex-grow: 1;
+    overflow: hidden;
+    // }
+    position: relative;
+    height: 100%;
+  }
+}
+
+// EXCEPTIONS
+
+#hello {
+  height: 100vh;
+  overflow: visible;
+
+  // to adjust for the menu button in the top right
+  @include shared.media-down(mobile) {
+    padding-top: 60px;
+  }
+
+  .section-body {
+    // height: calc(100vh - 110px);
+    overflow: visible;
+  }
+}
+
+#hello .section-heading {
+  font-size: 4rem;
+  z-index: 1;
+  line-height: 0.5;
+  border-top: none;
+  @include shared.media-down(mobile) {
+    border-top: 1px solid rgba(214, 214, 214, 0.2);
+  }
+
+  .left-adjust-heading {
+    margin-left: -16rem;
+    @include shared.media-down(tablet) {
+      margin-left: -0.5rem;
+    }
+    @include shared.media-down(very-small-mobile) {
+      margin-left: 0.5rem;
+    }
+
+    .hero-heading-desktop {
+      @include shared.media-down(tablet) {
+        display: none;
+      }
+    }
+  }
+}

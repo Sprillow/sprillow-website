@@ -1,5 +1,4 @@
 import React from "react"
-import { bool } from "prop-types"
 import { CSSTransition } from "react-transition-group"
 
 import { Logo } from "../images"
@@ -10,12 +9,12 @@ import CloseLine from "../../images/close-line-gold.inline.svg"
 import "./burger.scss"
 
 const Burger = ({ isOpen, closeMenu }) => {
-  const onClickA = event => {
+  const onClickA = (event) => {
     scrollToSection(event)
     closeMenu()
   }
-  const scrollToHome = event => {
-    if (window.location.pathname === '/') {
+  const scrollToHome = (event) => {
+    if (window.location.pathname === "/") {
       event.preventDefault()
       window.scrollTo({
         top: 0,
@@ -70,8 +69,5 @@ const Burger = ({ isOpen, closeMenu }) => {
       </CSSTransition>
     </div>
   )
-}
-Burger.propTypes = {
-  openBurgerMenu: bool.isRequired,
 }
 export default Burger

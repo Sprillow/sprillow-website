@@ -3,17 +3,13 @@ import "./styles.scss"
 
 import { useStaticQuery, graphql, Link } from "gatsby"
 import scrollToSection from "../components/scroll-help"
-import { CSSTransition } from "react-transition-group"
 
 // import svg images here:
 
 // SVGS as react components MUST
 // have .inline.svg at the end of their
 // file names or they will not work
-import Contact from "../images/contact.inline.svg"
 import WhatWeDoDiagram from "../components/whatwedo"
-import { PegahProfile, ConnorProfile } from "../components/images"
-import Projects from "../components/projects"
 
 import Section from "../components/section"
 
@@ -119,12 +115,13 @@ const IndexPage = () => {
         <div className="hello-compass" />
 
         <p className="biz-intro">
-          Sprillow is a design & development studio specializing in distributed systems software applications. {" "}
-          We <a href="/#focus" onClick={scrollToSection}>
+          Sprillow is a design & development studio specializing in distributed
+          systems software applications. We{" "}
+          <a href="/#focus" onClick={scrollToSection}>
             focus
           </a>{" "}
-          on co-creating systems change by bringing impactful
-          projects beautifully and functionally to life.
+          on co-creating systems change by bringing impactful projects
+          beautifully and functionally to life.
         </p>
         <Button
           text="Our Recent Work"
@@ -135,8 +132,8 @@ const IndexPage = () => {
       </Section>
 
       <Section id="portfolio" heading="Recent Work">
+        {/* there should only be 4 projects, since we use quadrants */}
         <Quadrants>
-          {/* there should only be 4 projects, since we use quadrants */}
           {portfolio.map((project, index) => (
             <Quadrant key={index}>
               <ProjectPreview project={project} index={index} />
@@ -154,9 +151,9 @@ const IndexPage = () => {
       </Section>
 
       <Section id="focus" heading="Our Focus">
+        {/* there should only be 4 focus, since we use quadrants */}
         <Quadrants>
-          {/* there should only be 4 focus, since we use quadrants */}
-          {focuses.map(focus => (
+          {focuses.map((focus) => (
             <Quadrant key={focus.id}>
               <Focus focus={focus} />
             </Quadrant>

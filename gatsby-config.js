@@ -3,19 +3,22 @@ module.exports = {
     title: `Sprillow`,
     description: `Sprillow Limited is a design & development studio specializing in distributed systems software applications. It was founded in July of 2019.`,
     author: `@Sprillow`,
-    siteUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://sprillow.com'
+    siteUrl:
+      process.env.NODE_ENV === 'development'
+        ? 'http://localhost:8000'
+        : 'https://sprillow.com',
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
         typekit: {
-          id: "tpp7wji",
+          id: 'tpp7wji',
         },
       },
     },
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
           include: /\.inline\.svg$/,
@@ -23,46 +26,30 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        implementation: require("sass"),
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
+    'gatsby-plugin-sass',
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "content",
-        path: "content",
+        name: 'content',
+        path: 'content',
       },
     },
-    `gatsby-transformer-csv`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Sprillow`,
-        short_name: `sprillow`,
-        start_url: `/`,
-        background_color: `#1B2723`,
-        theme_color: `#1B2723`,
-        display: `minimal-ui`,
-        icon: `src/images/sprillow-logo-with-text-anzac.png`, // This path is relative to the root of the site.
-      },
-    },
+    'gatsby-transformer-csv',
     {
       resolve: `gatsby-plugin-amplitude-analytics`,
       options: {
         // Specify the API key for your Amplitude Project (required)
-        apiKey: "70b44a7909b7b50b16441d99fe68f24d",
+        apiKey: '70b44a7909b7b50b16441d99fe68f24d',
         // Puts tracking script in the head instead of the body (optional)
         head: false,
         // Prevents loading Amplitude and logging events if visitors have "Do Not Track" enabled (optional)
@@ -91,14 +78,11 @@ module.exports = {
             platform: true,
             region: true,
             version_name: true,
-          }
+          },
         },
         // Specify NODE_ENVs in which the plugin should be loaded (optional)
-        environments: ["production"],
+        environments: ['production'],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

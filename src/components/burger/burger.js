@@ -1,10 +1,14 @@
 import React from "react"
 import { CSSTransition } from "react-transition-group"
-
-import { Logo } from "../images"
 import scrollToSection from "../scroll-help"
 
+import { Logo } from "../images"
+// SVGS as react components MUST
+// have .inline.svg at the end of their
+// file names or they will not work
 import CloseLine from "../../images/close-line-gold.inline.svg"
+import GithubIcon from "../../images/github.inline.svg"
+import TwitterIcon from "../../images/twitter.inline.svg"
 
 import "./burger.scss"
 
@@ -64,7 +68,20 @@ const Burger = ({ isOpen, closeMenu }) => {
                 connect
               </a>
             </li>
+
+            {/* Social Links */}
+            <div>
+              <a href="https://github.com/Sprillow" target="_blank">
+                <GithubIcon className="social-icon github" />
+              </a>
+
+              <a href="https://twitter.com/sprillow" target="_blank">
+                <TwitterIcon className="social-icon twitter" />
+              </a>
+            </div>
           </ul>{" "}
+
+
         </div>
       </CSSTransition>
     </div>

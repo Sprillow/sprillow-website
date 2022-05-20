@@ -145,7 +145,7 @@ const IndexPage = () => {
       <Section
         id="services"
         heading="Our Approach"
-        bgColor="rgba(88, 7, 7, 0.1)"
+        // bgColor="rgba(88, 7, 7, 0.1)"
       >
         <WhatWeDoDiagram />
       </Section>
@@ -164,10 +164,24 @@ const IndexPage = () => {
       <Section
         id="about"
         heading="Get To Know Us"
-        bgColor="rgba(256, 256, 256, 0.05)"
+        // bgColor="rgba(256, 256, 256, 0.05)"
       >
         <div className="about-content">
           {/* TOO: add general team description */}
+          <div className="bi-section">
+            <p>Sounds like a good fit? We’re excited to collaborate with you.
+              Tell us about your project using our contact form, plus any
+              details to help us make your vision come true. If you’d rather
+              email us directly, send us a message at</p>
+          </div>
+          {/* <div className="bi-section">
+            <p>Sounds like a good fit? We’re excited to collaborate with you.
+              Tell us about your project using our contact form, plus any
+              details to help us make your vision come true. If you’d rather
+              email us directly, send us a message at</p>
+          </div> */}
+
+
           {/* <div className="bi-section about-person">
             <div className="about-person-image-name-role">
               <div className="about-profile-image-wrapper">

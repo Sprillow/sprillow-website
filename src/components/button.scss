@@ -29,7 +29,6 @@ $menu-spacer: 6px;
       font-family: "latienne-pro", serif;
       font-weight: 600;
       font-size: 1.5rem;
-      // padding: 0.5rem;
       color: #fff7e8;
     }
   }
@@ -70,7 +69,8 @@ $menu-spacer: 6px;
     height: $button-height;
     color: shared.$gold;
     font-size: 1.4rem;
-    font-family: europa;
+    font-family: europa, sans-serif;
+    font-weight: 500;
 
     p {
       margin-top: 0;

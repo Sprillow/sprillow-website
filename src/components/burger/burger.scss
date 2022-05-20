@@ -1,4 +1,4 @@
-@use '../shared';
+@use "../shared";
 
 .burger-menu-wrapper {
   position: fixed;
@@ -70,6 +70,26 @@
         &:hover {
           color: shared.$gold;
         }
+      }
+    }
+
+    .social-icon {
+      margin: 1rem 0.5rem;
+      position: relative;
+      transition: opacity 0.2s ease-in-out;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &.github {
+        left: unset;
+        bottom: unset;
+      }
+
+      &.twitter {
+        left: unset;
+        bottom: unset;
       }
     }
   }

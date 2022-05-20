@@ -1,4 +1,4 @@
-@use './shared';
+@use "./shared";
 
 $nav-width: 112px;
 
@@ -24,6 +24,7 @@ nav {
 
   ul {
     margin-left: 0;
+    flex: 1;
   }
 
   li {
@@ -42,12 +43,22 @@ nav {
   }
 }
 
-.github-icon {
+.social-icon {
   position: fixed;
-  left: 60px;
-  bottom: 10px;
+  
   transition: opacity 0.2s ease-in-out;
+
   &:hover {
     opacity: 0.7;
+  }
+
+  &.github {
+    left: 70px;
+    bottom: 20px;
+  }
+
+  &.twitter {
+    left: 28px;
+    bottom: 20px;
   }
 }

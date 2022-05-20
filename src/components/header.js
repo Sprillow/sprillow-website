@@ -1,16 +1,17 @@
 import PropTypes from "prop-types"
 import _ from "underscore"
 import React, { useEffect, useState } from "react"
-import { Logo } from "./images"
-import GithubIcon from "../images/github.inline.svg"
 import scrollToSection from "./scroll-help"
 
-import "./header.scss"
-
+import { Logo } from "./images"
 // SVGS as react components MUST
 // have .inline.svg at the end of their
 // file names or they will not work
+import GithubIcon from "../images/github.inline.svg"
+import TwitterIcon from "../images/twitter.inline.svg"
 import ToggleNavButton from "../images/toggle-nav-button.inline.svg"
+
+import "./header.scss"
 
 const NavLinks = () => {
   const items = [
@@ -100,8 +101,13 @@ const Header = () => {
       <ul>
         <NavLinks />
       </ul>
+      {/* Social Links */}
       <a href="https://github.com/Sprillow" target="_blank">
-        <GithubIcon className="github-icon" />
+        <GithubIcon className="social-icon github" />
+      </a>
+
+      <a href="https://twitter.com/sprillow" target="_blank">
+        <TwitterIcon className="social-icon twitter" />
       </a>
     </nav>
   )

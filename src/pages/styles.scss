@@ -1,4 +1,4 @@
-@use '../components/shared';
+@use "../components/shared";
 
 $nav-width: 110px;
 
@@ -34,12 +34,13 @@ h2 {
 }
 
 h3 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 600;
   font-family: latienne-pro;
   line-height: 2.6rem;
-  color: #ffffff;
-  // color: shared.$gold;
+  // color: #ffffff;
+  color: #dbc282;
+  text-shadow: 0 0 1rem #f5e2af26;
 }
 
 h4 {
@@ -59,16 +60,14 @@ h5 {
 }
 
 p {
-  font-size: 1.2rem;
-  font-family: europa;
-  line-height: 1.6rem;
+  font-size: 1.05rem;
+  font-family: europa, sans-serif;
+  font-weight: 400;
+  line-height: 1.45rem;
+  color: hsla(32, 28.3%, 89.6%, 0.9);
 }
 
 a {
-  // font-size: 1.2rem;
-  // line-height: 1.5rem;
-  // font-weight: normal;
-  // font-family: europa;
   color: shared.$gold;
 }
 
@@ -245,9 +244,9 @@ a {
       text-align: center;
       margin: auto;
       width: 100%;
-      color: #fff;
-      opacity: 0.9;
-      font-weight: 300;
+      color: rgb(243, 242, 234);
+      opacity: 0.8;
+      font-weight: 400;
       font-size: 0.9rem;
       line-height: 1.45;
       padding: 1rem;
@@ -270,9 +269,8 @@ a {
     }
 
     .project-preview-image-wrapper {
-      padding: 1rem;
       position: absolute;
-      background-color: #343434;
+      background-color: #1b3428;
       opacity: 0;
       transition: opacity 0.3s ease;
       width: 100%;
@@ -292,21 +290,21 @@ a {
     }
   }
 
-  // acorn
+  // hrea
   .quadrant:nth-child(1) .project-preview-image {
-    background-image: url("../images/work-acorn-hover.png");
+    background-image: url("../images/work-hrea-2022.png");
   }
-  // red cat bakery
+  // acorn
   .quadrant:nth-child(2) .project-preview-image {
-    background-image: url("../images/work-red-cat-hover.png");
+    background-image: url("../images/work-acorn-2022.png");
+  }
+  // mova
+  .quadrant:nth-child(3) .project-preview-image {
+    background-image: url("../images/work-mova-2022.png");
   }
   // fouladi projects
-  .quadrant:nth-child(3) .project-preview-image {
-    background-image: url("../images/work-fouladi-projects-hover.png");
-  }
-  // online writing workshop
   .quadrant:nth-child(4) .project-preview-image {
-    background-image: url("../images/work-oww-hover.png");
+    background-image: url("../images/work-fouladi-projects-2022.png");
   }
 }
 
@@ -314,7 +312,7 @@ a {
 
 #focus {
   .focus-quadrant {
-    padding: 2rem;
+    padding: 1.5rem 2rem 1rem 2rem;
     width: 100%;
     height: 100%;
     overflow-y: scroll;

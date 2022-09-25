@@ -115,12 +115,9 @@ const IndexPage = () => {
         <div className="hello-compass" />
 
         <p className="biz-intro">
-          Sprillow is a design & development studio specializing in distributed
-          systems software applications. We{" "}
-          <a href="/#focus" onClick={scrollToSection}>
-            focus
-          </a>{" "}
-          on co-creating systems change by bringing impactful projects
+          Sprillow is a custom software design & development studio. With a design-led approach, we specialize in creating distributed
+          systems software applications.
+          We bring <a href="/#focus" onClick={scrollToSection}>impactful</a> projects
           beautifully and functionally to life.
         </p>
         <Button

@@ -166,16 +166,18 @@ a {
     margin: 3rem;
     font-family: latienne-pro;
     font-size: 1.8rem;
-    line-height: 2.2rem;
+    line-height: 1.2;
     color: rgba(246, 243, 234, 0.9);
     font-weight: 500;
 
     @include shared.media-up(desktop) {
       margin: 4rem;
+      font-size: 2.4rem;
     }
 
     @include shared.media-up(tablet) {
       max-width: 800px;
+      font-size: 2.2rem;
     }
 
     @include shared.media-down(small-mobile) {
@@ -302,9 +304,9 @@ a {
   .quadrant:nth-child(3) .project-preview-image {
     background-image: url("../images/work-mova-2022.png");
   }
-  // fouladi projects
+  // proudly kincardine
   .quadrant:nth-child(4) .project-preview-image {
-    background-image: url("../images/work-fouladi-projects-2022.png");
+    background-image: url("../images/work-proudly-kincardine-2022.png");
   }
 }
 

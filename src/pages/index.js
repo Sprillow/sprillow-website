@@ -156,7 +156,7 @@ const IndexPage = () => {
         </Quadrants>
       </Section>
 
-      <Section
+      /*<Section
         id="about"
         heading="Get To Know Us"
         // bgColor="rgba(256, 256, 256, 0.05)"
@@ -205,6 +205,7 @@ const IndexPage = () => {
           </div> */}
         </div>
       </Section>
+      */
 
       <Section id="connect" heading="Let's Work Together">
         <div className="contact-content">

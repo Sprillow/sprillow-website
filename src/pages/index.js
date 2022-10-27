@@ -83,7 +83,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Software design and development studio" />
+      <SEO title="Custom software studio" />
 
       {/* burger menu (hidden on larger screens) */}
       <Burger

@@ -115,7 +115,7 @@ const IndexPage = () => {
         <div className="hello-compass" />
 
         <p className="biz-intro">
-          Sprillow is a custom software design & development studio. With a design-led approach, we bring <a href="/#focus" onClick={scrollToSection}>impactful</a> projects
+          Sprillow is a custom software studio. We bring projects
           beautifully and functionally to life.
         </p>
         <Button

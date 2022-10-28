@@ -18,7 +18,7 @@ const NavLinks = () => {
     ["/#portfolio", "work"],
     ["/#services", "approach"],
     ["/#focus", "focus"],
-    ["/#about", "about"],
+//     ["/#about", "about"],
     ["/#connect", "connect"],
   ]
 

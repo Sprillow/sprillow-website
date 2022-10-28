@@ -58,11 +58,11 @@ const Burger = ({ isOpen, closeMenu }) => {
                 focus
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="/#about" onClick={onClickA}>
                 about
               </a>
-            </li>
+            </li> */}
             <li>
               <a href="/#connect" onClick={onClickA}>
                 connect

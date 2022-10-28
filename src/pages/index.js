@@ -156,56 +156,6 @@ const IndexPage = () => {
         </Quadrants>
       </Section>
 
-      {/*<Section
-        id="about"
-        heading="Get To Know Us"
-        // bgColor="rgba(256, 256, 256, 0.05)"
-      >
-        <div className="about-content">
-          <div className="bi-section">
-            <p>
-            From day 1 Sprillow has existed because of a conviction to be in service to hope and beauty at a time of looming darkness, and to take pressing matters into our own capable hands. Sprillow is an experiment to apply specialized knowledge of emerging technologies to grassroots problems. It is a home to artisans, combining creativity, craft and technology to unglue sticky problems. Sprillow periodically takes on external projects, while generating and testing business solutions and offerings internally, and is a revolving door for innovative and breakthrough thinking.
-            </p>
-          </div>
-          {/* <div className="bi-section">
-            <p>Sounds like a good fit? We’re excited to collaborate with you.
-              Tell us about your project using our contact form, plus any
-              details to help us make your vision come true. If you’d rather
-              email us directly, send us a message at</p>
-          </div> */}
-
-
-          {/* <div className="bi-section about-person">
-            <div className="about-person-image-name-role">
-              <div className="about-profile-image-wrapper">
-                <PegahProfile />
-              </div>
-              <div className="about-person-name-role">
-                <h3 className="about-title">Pegah Vaezi</h3>
-                <h5 className="about-subtitle">Designer</h5>
-              </div>
-            </div>
-            <p className="about-description">
-           </p>
-          </div>
-          <div className="bi-section about-person">
-            <div className="about-person-image-name-role">
-              <div className="about-profile-image-wrapper">
-                <ConnorProfile />
-              </div>
-              <div className="about-person-name-role">
-                <h3 className="about-title">Connor Turland</h3>
-                <h5 className="about-subtitle">Developer, facilitator</h5>
-              </div>
-            </div>
-            <p className="about-description">
-            
-            </p>
-          </div> */}
-        </div>
-      </Section>
-      */}
-
       <Section id="connect" heading="Let's Work Together">
         <div className="contact-content">
           <div className="contact-text bi-section">

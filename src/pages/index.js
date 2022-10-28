@@ -116,7 +116,7 @@ const IndexPage = () => {
 
         <p className="biz-intro">
           Sprillow is a custom software studio. We bring projects
-          beautifully and functionally to life.
+          to life without compromising on form or function.
         </p>
         <Button
           text="Our Recent Work"

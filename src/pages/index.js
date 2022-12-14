@@ -164,7 +164,7 @@ const IndexPage = () => {
               Tell us about your project using our contact form, plus any
               details to help us make your vision come true. If you’d rather
               email us directly, send us a message at{" "}
-              <a href="mailto:connor@sprillow.com">connor@sprillow.com</a>.
+              <a href="mailto:connor@sprillow.com">hello@sprillow.com</a>.
             </p>
             <div className="company">Sprillow Limited - Canada, Earth</div>
           </div>

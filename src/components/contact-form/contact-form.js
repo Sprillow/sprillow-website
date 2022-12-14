@@ -234,7 +234,6 @@ export default function ContactForm() {
               label="How much are you looking to invest into your ideal result?"
               name="project-budget"
               options={[
-                "$5,000 - $10,000",
                 "$10,000 - $20,000",
                 "$20,000 - $30,000",
                 "$30,000 - $50,000",

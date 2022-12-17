@@ -162,42 +162,6 @@ export default function ContactForm() {
               error={errors["organization-website"]}
             />
           </div>
-          <div className="form-row two-column-inputs">
-            <TextInput
-              required
-              register={register}
-              placeholder="City"
-              name="organization-city"
-              error={errors["organization-city"]}
-            />
-            <TextInput
-              required
-              register={register}
-              placeholder="Country / Territory"
-              name="organization-country"
-              error={errors["organization-country"]}
-            />
-          </div>
-          <div className="form-row">
-            <RadioInput
-              required
-              register={register}
-              label="How long has your organization been running?"
-              name="organization-age"
-              options={["Pre-launch", "0-5 years", "6-10 years", "10+ years"]}
-              error={errors["organization-age"]}
-            />
-          </div>
-          <div className="form-row">
-            <RadioInput
-              required
-              register={register}
-              label="How many people work for your organization?"
-              name="organization-size"
-              options={["Just myself", "2-10", "11-50", "51-100", "100+"]}
-              error={errors["organization-size"]}
-            />
-          </div>
 
           <Title n="3" t="Tell us about your project" />
           <div className="form-row">
@@ -217,14 +181,6 @@ export default function ContactForm() {
                 "I need your help determining this",
               ]}
               error={errors["project-type"]}
-            />
-          </div>
-          <div className="form-row">
-            <TextInput
-              register={register}
-              label="What is the motivation behind this project? (optional)"
-              name="project-motivation"
-              error={errors["project-motivation"]}
             />
           </div>
           <div className="form-row">
@@ -263,14 +219,6 @@ export default function ContactForm() {
             </div>
           </div>
           <div className="form-row">
-            <TextInput
-              register={register}
-              label="Why would you like to work with us? (optional)"
-              name="project-reason"
-              error={errors["project-reason"]}
-            />
-            </div>
-            <div className="form-row">
             <TextInput
               register={register}
               label="Tell us anything else that you'd like us to know (optional)"

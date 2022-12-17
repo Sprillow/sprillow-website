@@ -171,32 +171,16 @@ export default function ContactForm() {
               label="What kind of project is this?"
               name="project-type"
               options={[
-                "Digital Strategy",
-                "UX/UI Design",
-                "Mobile App",
+                "Microservices",
+                "API",
+                "Integrations",
+                "holochain",
+                "Native Desktop App",
+                "Native Mobile App",
                 "Web App",
-                "E-commerce",
-                "Website",
-                "Everything",
                 "I need your help determining this",
               ]}
               error={errors["project-type"]}
-            />
-          </div>
-          <div className="form-row">
-            <RadioInput
-              required
-              register={register}
-              label="How much are you looking to invest into your ideal result?"
-              name="project-budget"
-              options={[
-                "$10,000 - $20,000",
-                "$20,000 - $30,000",
-                "$30,000 - $50,000",
-                "$50,000+",
-                "I'm looking for a retainer relationship",
-              ]}
-              error={errors["project-budget"]}
             />
           </div>
           <div className="form-row">
